@@ -68,7 +68,7 @@ const ProductPage = props => {
 }
 
 export const query = graphql`
-  query ProductPage($locale: String!, $dateFormat: String!, $skip: Int!, $limit: Int!) {
+  query ProductList($locale: String!, $dateFormat: String!, $skip: Int!, $limit: Int!) {
     allMarkdownRemark(
       sort: {fields: frontmatter___date, order: DESC}, 
       filter: { 
@@ -87,6 +87,7 @@ export const query = graphql`
             background
             image
             date(formatString: $dateFormat)
+            product
 
           }
           timeToRead
@@ -98,6 +99,7 @@ export const query = graphql`
       }
     }
   }
+
 `
 
 export default ProductPage

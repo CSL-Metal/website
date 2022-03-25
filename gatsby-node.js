@@ -83,6 +83,7 @@ exports.createPages = async ({ graphql, actions }) => {
 
     // Templates for Posts List and Single post
     const postTemplate = path.resolve(`./src/templates/post.js`)
+    const productTemplate = path.resolve(`./src/templates/product.js`)
     const postsListTemplate = path.resolve(`./src/templates/posts-list.js`)
     const pageTemplate = path.resolve(`./src/templates/page.js`)
     const productPageTemplate = path.resolve(`./src/templates/product-page.js`)
@@ -102,6 +103,7 @@ exports.createPages = async ({ graphql, actions }) => {
                         frontmatter {
                             title
                             page
+                            product
                         }
                     }
                 }
@@ -121,6 +123,10 @@ exports.createPages = async ({ graphql, actions }) => {
     // It will be increase by the next loop
     let postsTotal = 0
 
+    // Total of products (only products, no pages)
+    // It will be increase by the next loop
+    let productsTotal = 0
+
     // Creating each post
     contentMarkdown.forEach(({ node: file }) => {
         // Getting Slug and Title
@@ -134,14 +140,34 @@ exports.createPages = async ({ graphql, actions }) => {
         // Check if it's page (to differentiate post and page)
         const isPage = file.frontmatter.page
 
+        // check if product
+        const isProduct = file.frontmatter.product
+
+        // check if product
+
         // Setting a template for page or post depending on the content
-        const template = isPage ? pageTemplate : postTemplate
+        // const template = isPage ? pageTemplate : postTemplate
+
+        const template = isPage
+            ? pageTemplate
+            : isProduct
+            ? productTemplate
+            : postTemplate
 
         // Count posts
         postsTotal = isPage ? postsTotal + 0 : postsTotal + 1
 
+        //counts products
+        productsTotal = isProduct ? productsTotal + 0 : productsTotal + 1
+
         createPage({
-            path: localizedSlug({ isDefault, locale, slug, isPage }),
+            path: localizedSlug({
+                isDefault,
+                locale,
+                slug,
+                isPage,
+                isProduct,
+            }),
             component: template,
             context: {
                 // Pass both the "title" and "locale" to find a unique file
@@ -164,7 +190,9 @@ exports.createPages = async ({ graphql, actions }) => {
             ? '/blog'
             : `${locales[lang].path}/blog`
 
-        return Array.from({ length: numPages }).forEach((_, index) => {
+        return Array.from({
+            length: numPages,
+        }).forEach((_, index) => {
             createPage({
                 path:
                     index === 0
@@ -183,13 +211,19 @@ exports.createPages = async ({ graphql, actions }) => {
         })
     })
 
+    // Creating Product List and its Pagination
+    const productsPerPage = 4
+    const numProductPages = Math.ceil(productsTotal / langs / productsPerPage)
+
     Object.keys(locales).map(lang => {
         // Use the values defined in "locales" to construct the path
         const localizedPath = locales[lang].default
             ? '/products'
             : `${locales[lang].path}/products`
 
-        return Array.from({ length: numPages }).forEach((_, index) => {
+        return Array.from({
+            length: numProductPages,
+        }).forEach((_, index) => {
             createPage({
                 path:
                     index === 0
@@ -197,8 +231,8 @@ exports.createPages = async ({ graphql, actions }) => {
                         : `${localizedPath}/page/${index + 1}`,
                 component: productPageTemplate,
                 context: {
-                    limit: postsPerPage,
-                    skip: index * postsPerPage,
+                    limit: productsPerPage,
+                    skip: index * productsPerPage,
                     numPages,
                     currentPage: index + 1,
                     locale: lang,

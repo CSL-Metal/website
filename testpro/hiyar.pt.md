@@ -1,18 +1,18 @@
 ---
-title: 'Markdown Examples'
+title: 'hiyar'
 date: '2019-03-22 01:21:23'
-description: Markdown is intended to be as easy-to-read and easy-to-write as is feasible.
+description: O Markdown deve ser o mais fácil de ler e escrever o mais possível.
 category: Markdown
 background: '#353b48'
-image: '/assets/img/03.jpg'
+image: '/assets/img/salatalik.jpg'
 product: true
 ---
 
-Markdown is intended to be as easy-to-read and easy-to-write as is feasible.
+O Markdown deve ser o mais fácil de ler e escrever o mais possível.
 
-Readability, however, is emphasized above all else. A Markdown-formatted document should be publishable as-is, as plain text, without looking like it’s been marked up with tags or formatting instructions. While Markdown’s syntax has been influenced by several existing text-to-HTML filters — including Setext, atx, Textile, reStructuredText, Grutatext, and EtText — the single biggest source of inspiration for Markdown’s syntax is the format of plain text email.
+A legibilidade, no entanto, é enfatizada acima de tudo. Um documento no formato Markdown deve ser publicado como está, como texto sem formatação, sem parecer ter sido marcado com tags ou instruções de formatação. Embora a sintaxe do Markdown tenha sido influenciada por vários filtros de texto para HTML existentes - incluindo Setext, atx, Textile, reStructuredText, Grutatext e EtText - a maior fonte de inspiração para a sintaxe do Markdown é o formato de email em texto sem formatação.
 
-To this end, Markdown’s syntax is comprised entirely of punctuation characters, which punctuation characters have been carefully chosen so as to look like what they mean. E.g., asterisks around a word actually look like _emphasis_. Markdown lists look like, well, lists. Even blockquotes look like quoted passages of text, assuming you’ve ever used email.
+Para esse fim, a sintaxe de Markdown é composta inteiramente de caracteres de pontuação, caracteres de pontuação que foram cuidadosamente escolhidos para parecer com o que significam. Por exemplo, asteriscos em torno de uma palavra realmente se parecem com _ ênfase _. Listas de remarcação parecem, bem, listas. Até as citações em bloco parecem passagens de texto citadas, desde que você já tenha usado o e-mail.
 
 ## Headers
 
@@ -134,6 +134,22 @@ Some text to show that the reference links can follow later.
 [1]: http://slashdot.org
 [link text itself]: http://www.reddit.com
 
+## Tables
+
+```Markdown
+| Tables        | Are           | Cool  |
+| ------------- |:-------------:| -----:|
+| col 3 is      | right-aligned | $1600 |
+| col 2 is      | centered      |   $12 |
+| zebra stripes | are neat      |    $1 |
+```
+
+| Tables        |      Are      |   Cool |
+| ------------- | :-----------: | -----: |
+| col 3 is      | right-aligned | \$1600 |
+| col 2 is      |   centered    |   \$12 |
+| zebra stripes |   are neat    |    \$1 |
+
 ## Blockquotes
 
 ```Markdown
@@ -152,5 +168,5 @@ Quote break.
 
 > This is a very long line that will still be quoted properly when it wraps. Oh boy let's keep writing to make sure this is long enough to actually wrap for everyone. Oh, you can _put_ **Markdown** into a blockquote.
 
-[Reference 1](https://daringfireball.net/projects/markdown/syntax#philosophy)
-[Reference 2](https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet)
+[Referência 1](https://daringfireball.net/projects/markdown/syntax#philosophy)
+[Referência 2](https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet)
