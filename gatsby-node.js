@@ -155,10 +155,14 @@ exports.createPages = async ({ graphql, actions }) => {
             : postTemplate
 
         // Count posts
-        postsTotal = isPage ? postsTotal + 0 : postsTotal + 1
+        postsTotal = isPage
+            ? postsTotal + 0
+            : isProduct
+            ? postsTotal + 0
+            : postsTotal + 1
 
         //counts products
-        productsTotal = isProduct ? productsTotal + 0 : productsTotal + 1
+        productsTotal = isProduct ? productsTotal + 1 : productsTotal + 0
 
         createPage({
             path: localizedSlug({
@@ -183,6 +187,8 @@ exports.createPages = async ({ graphql, actions }) => {
     const postsPerPage = 4
     const langs = Object.keys(locales).length
     const numPages = Math.ceil(postsTotal / langs / postsPerPage)
+
+    console.log(postsTotal)
 
     Object.keys(locales).map(lang => {
         // Use the values defined in "locales" to construct the path
@@ -212,8 +218,9 @@ exports.createPages = async ({ graphql, actions }) => {
     })
 
     // Creating Product List and its Pagination
-    const productsPerPage = 4
+    const productsPerPage = 8
     const numProductPages = Math.ceil(productsTotal / langs / productsPerPage)
+    console.log(productsTotal)
 
     Object.keys(locales).map(lang => {
         // Use the values defined in "locales" to construct the path
@@ -233,7 +240,7 @@ exports.createPages = async ({ graphql, actions }) => {
                 context: {
                     limit: productsPerPage,
                     skip: index * productsPerPage,
-                    numPages,
+                    numPages: numProductPages,
                     currentPage: index + 1,
                     locale: lang,
                     dateFormat: locales[lang].dateFormat,

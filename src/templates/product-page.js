@@ -6,7 +6,7 @@ import SEO from '../components/seo'
 
 import Pagination from '../components/Pagination'
 
-import * as S from '../components/ListWrapper/styled'
+import * as S from '../components/ListWrapperProducts/styled'
 
 const ProductPage = props => {
     const postList = props.data.allMarkdownRemark.edges
@@ -24,7 +24,7 @@ const ProductPage = props => {
             <SEO title="products" />
             <TitlePage text="products" />
 
-            <S.ListWrapper>
+            <S.ListWrapperProducts>
                 {postList.map(
                     ({
                         node: {
@@ -53,7 +53,7 @@ const ProductPage = props => {
                         />
                     )
                 )}
-            </S.ListWrapper>
+            </S.ListWrapperProducts>
 
             <Pagination
                 isFirst={isFirst}

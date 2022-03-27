@@ -17,6 +17,7 @@ const Product = props => {
             />
             <TitlePage text={post.frontmatter.title} />
             <S.Content>
+                <img src={post.frontmatter.image} />
                 <div dangerouslySetInnerHTML={{ __html: post.html }}></div>
             </S.Content>
         </>
