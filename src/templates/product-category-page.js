@@ -9,7 +9,7 @@ import Pagination from '../components/Pagination'
 import * as S from '../components/ListWrapperProducts/styled'
 import ProductNavigation from '../components/ProductNavigation'
 
-const ProductPage = props => {
+const ProductCategoryPage = props => {
     const postList = props.data.allMarkdownRemark.edges
 
     // Logic for Pagination Component
@@ -95,8 +95,8 @@ const ProductPage = props => {
 
 // `
 export const query = graphql`
- query ProductList($locale: String!, $dateFormat: String!, $skip: Int!, $limit: Int!) {
-  allMarkdownRemark(sort: {fields: frontmatter___date, order: DESC}, filter: {fields: {locale: {eq: $locale}}, fileAbsolutePath: {regex: "/(products)/.*\\.md$/"}}, limit: $limit, skip: $skip) {
+ query ProductCategoryList($locale: String!, $dateFormat: String!, $skip: Int!, $limit: Int!, $tag: String!) {
+  allMarkdownRemark(sort: {fields: frontmatter___date, order: DESC}, filter: {fields: {locale: {eq: $locale}}, fileAbsolutePath: {regex: "/(products)/.*\\.md$/"}, frontmatter: {productcategory: {eq: $tag}}}, limit: $limit, skip: $skip) {
     edges {
       node {
         frontmatter {
@@ -119,6 +119,7 @@ export const query = graphql`
   }
 }
 
+
 `
 
-export default ProductPage
+export default ProductCategoryPage

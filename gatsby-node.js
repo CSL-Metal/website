@@ -87,6 +87,56 @@ exports.createPages = async ({ graphql, actions }) => {
     const postsListTemplate = path.resolve(`./src/templates/posts-list.js`)
     const pageTemplate = path.resolve(`./src/templates/page.js`)
     const productPageTemplate = path.resolve(`./src/templates/product-page.js`)
+    const productCategoryPageTemplate = path.resolve(
+        `./src/templates/product-category-page.js`
+    )
+
+    const productResult = await graphql(`
+        {
+            site {
+                siteMetadata {
+                    title
+                }
+            }
+            allMarkdownRemark(
+                limit: 2000
+                sort: { fields: frontmatter___date, order: DESC }
+            ) {
+                group(field: frontmatter___productcategory) {
+                    fieldValue
+                    totalCount
+                    nodes {
+                        fields {
+                            isDefault
+                            locale
+                        }
+                    }
+                }
+                edges {
+                    node {
+                        fields {
+                            isDefault
+                            locale
+                            slug
+                        }
+                        frontmatter {
+                            title
+                            page
+                            product
+                            category
+                            productcategory
+                            subcategory
+                        }
+                    }
+                }
+            }
+        }
+    `)
+
+    if (productResult.errors) {
+        console.error(productResult.errors)
+        return
+    }
 
     const result = await graphql(`
         {
@@ -104,6 +154,9 @@ exports.createPages = async ({ graphql, actions }) => {
                             title
                             page
                             product
+                            category
+                            productcategory
+                            subcategory
                         }
                     }
                 }
@@ -140,13 +193,14 @@ exports.createPages = async ({ graphql, actions }) => {
         // Check if it's page (to differentiate post and page)
         const isPage = file.frontmatter.page
 
+        //check for product categories and subcategories
+        const subCategory = file.frontmatter.subcategory
+        const productCategory = file.frontmatter.productcategory
+
         // check if product
         const isProduct = file.frontmatter.product
 
-        // check if product
-
         // Setting a template for page or post depending on the content
-        // const template = isPage ? pageTemplate : postTemplate
 
         const template = isPage
             ? pageTemplate
@@ -171,6 +225,8 @@ exports.createPages = async ({ graphql, actions }) => {
                 slug,
                 isPage,
                 isProduct,
+                productCategory,
+                subCategory,
             }),
             component: template,
             context: {
@@ -189,6 +245,8 @@ exports.createPages = async ({ graphql, actions }) => {
     const numPages = Math.ceil(postsTotal / langs / postsPerPage)
 
     console.log(postsTotal)
+
+    // list = list.filter((x, i, a) => a.indexOf(x) == i) find uniq items
 
     Object.keys(locales).map(lang => {
         // Use the values defined in "locales" to construct the path
@@ -234,7 +292,7 @@ exports.createPages = async ({ graphql, actions }) => {
             createPage({
                 path:
                     index === 0
-                        ? `${localizedPath}`
+                        ? `${localizedPath}/`
                         : `${localizedPath}/page/${index + 1}`,
                 component: productPageTemplate,
                 context: {
@@ -244,6 +302,49 @@ exports.createPages = async ({ graphql, actions }) => {
                     currentPage: index + 1,
                     locale: lang,
                     dateFormat: locales[lang].dateFormat,
+                },
+            })
+        })
+    })
+
+    //CREATE category pages and pagination
+
+    const productCategories = productResult.data.allMarkdownRemark.group
+
+    console.log(productCategories[0].totalCount)
+
+    productCategories.forEach(tag => {
+        //find number of pgs on each category and figure out if its in default language
+        let numPgs = Math.ceil(tag.totalCount / productsPerPage)
+        let isDefault = tag.nodes[0].fields.isDefault
+        let lang = tag.nodes[0].fields.locale
+
+        // Use the values defined in "locales" to construct the path
+        // const localizedPath = isDefault
+        //     ? `/products/${tag.fieldValue}`
+        //     : `${locales[lang].path}/products/${tag.fieldValue}`
+
+        const localizedPath = isDefault
+            ? `/products/${tag.fieldValue}`
+            : `${locales[lang].path}/products/${tag.fieldValue}`
+
+        return Array.from({
+            length: numPgs,
+        }).forEach((_, index) => {
+            createPage({
+                path:
+                    index === 0
+                        ? `${localizedPath}/`
+                        : `${localizedPath}/page/${index + 1}`,
+                component: productCategoryPageTemplate,
+                context: {
+                    limit: productsPerPage,
+                    skip: index * productsPerPage,
+                    numPages: numPgs,
+                    currentPage: index + 1,
+                    locale: lang,
+                    dateFormat: locales[lang].dateFormat,
+                    tag: tag.fieldValue,
                 },
             })
         })
