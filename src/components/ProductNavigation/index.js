@@ -1,11 +1,11 @@
 import React from 'react'
-import useMenu from '../useMenu'
+import useNavbar from '../useNavbar'
 import useTranslations from '../useTranslations'
 
 import * as S from './styled'
 
 const ProductNavigation = ({ isActive, handleToggleMenu }) => {
-    const menuItems = useMenu()
+    const menuItems = useNavbar()
     const { button } = useTranslations()
 
     return (
@@ -13,7 +13,7 @@ const ProductNavigation = ({ isActive, handleToggleMenu }) => {
             <S.Navigation>
                 {menuItems.map((menu, index) => (
                     <S.NavigationLink
-                        to={menu.link}
+                        to={`/products${menu.link}`}
                         aria-label={menu.name}
                         activeClassName="active"
                         key={`${menu.link}${index}`}
