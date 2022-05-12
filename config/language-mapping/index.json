@@ -2,41 +2,41 @@
     "languageMapping": [
         {
             "en": "/about",
-            "pt": "/sobre"
+            "tr": "/hakkimizda"
         },
         {
             "en": "/blog",
-            "pt": "/blog"
+            "tr": "/blog"
         },
         {
             "en": "/contact",
-            "pt": "/contato"
+            "tr": "/iletisim"
         },
 
         {
             "en": "/products",
-            "pt": "/products"
+            "tr": "/products"
         },
 
         {
             "en": "/blog/markdown-examples",
-            "pt": "/blog/exemplos-de-markdown"
+            "tr": "/blog/exemplos-de-markdown"
         },
         {
             "en": "/blog/javascript-language",
-            "pt": "/blog/linguagem-javascript"
+            "tr": "/blog/linguagem-javascript"
         },
         {
             "en": "/blog/digital-image-processing",
-            "pt": "/blog/processamento-de-imagens-digitais"
+            "tr": "/blog/processamento-de-imagens-digitais"
         },
         {
             "en": "/blog/adding-menu-items",
-            "pt": "/blog/adicionando-itens-no-menu"
+            "tr": "/blog/adicionando-itens-no-menu"
         },
         {
             "en": "/blog/creating-posts-and-pages",
-            "pt": "/blog/criacao-de-posts-e-paginas"
+            "tr": "/blog/criacao-de-posts-e-paginas"
         }
     ]
 }

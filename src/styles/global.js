@@ -1,5 +1,5 @@
-import { createGlobalStyle } from 'styled-components';
-import media from 'styled-media-query';
+import { createGlobalStyle } from 'styled-components'
+import media from 'styled-media-query'
 
 const GlobalStyles = createGlobalStyle`
   /* http://meyerweb.com/eric/tools/css/reset/
@@ -82,9 +82,9 @@ const GlobalStyles = createGlobalStyle`
     --gray: #475060;
     --gray-dark: #2e333e;
 
-    --primary-color: #0066f9;
-    --secondary-color: #2e333e;
-    --thirdy-color: #001ff9;
+    --primary-color: #BF1D2D;
+    --secondary-color: #454447;
+    --thirdy-color: #19b70b;
 
     --body-bg: #FFFFFF; 
 
@@ -108,5 +108,5 @@ const GlobalStyles = createGlobalStyle`
     --space-lg: 3rem;
 
   }
-`;
-export default GlobalStyles;
+`
+export default GlobalStyles

@@ -1,0 +1,9 @@
+{
+    "menuItems": [
+        { "name": "Ana Sayfa", "link": "/" },
+        { "name": "Hakkimizda", "link": "/hakkimizda" },
+        { "name": "Blog", "link": "/blog" },
+        { "name": "Iletisim", "link": "/iletisim" },
+        { "name": "Urunler", "link": "/products" }
+    ]
+}

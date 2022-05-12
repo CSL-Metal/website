@@ -6,9 +6,9 @@ export const ListWrapperProducts = styled.section`
     ${media.greaterThan('small')`
         display: grid;
         grid-gap: 20px;
-        grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     `}
     ${media.greaterThan('large')`
-        grid-template-columns: repeat(auto-fit, minmax(100px, calc(30% - 10px)));
+        grid-template-columns: repeat(auto-fit, minmax(250px, calc(50% - 10px)));
     `}
 `

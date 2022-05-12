@@ -21,10 +21,6 @@ const ProductNavigation = ({ isActive, handleToggleMenu }) => {
                         {menu.name}
                     </S.NavigationLink>
                 ))}
-
-                <S.NavigationButton to="" aria-label="Login">
-                    {button}
-                </S.NavigationButton>
             </S.Navigation>
         </>
     )

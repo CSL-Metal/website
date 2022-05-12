@@ -23,10 +23,10 @@ function useNavbar() {
     //     }
     // })
     let enItems = []
-    let ptItems = []
+    let trItems = []
     let df = [
         { name: 'en', menuItems: enItems },
-        { name: 'pt', menuItems: ptItems },
+        { name: 'tr', menuItems: trItems },
     ]
 
     const menuData = rawData.group.map(item => {
@@ -37,7 +37,7 @@ function useNavbar() {
                 name: item.fieldValue,
             })
         } else {
-            ptItems.push({
+            trItems.push({
                 locale: locale,
                 link: `/${item.fieldValue}`,
                 name: item.fieldValue,

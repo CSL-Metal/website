@@ -2,7 +2,7 @@
 title: 'cool-cucumba'
 date: '2019-03-26 11:21:56'
 description: hijar
-productcategory: Marble
+productcategory: marble
 subcategory: Screw
 background: '#e58e26'
 image: '/assets/img/hiyar.jpg'

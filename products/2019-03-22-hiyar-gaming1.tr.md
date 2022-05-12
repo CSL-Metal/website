@@ -2,7 +2,7 @@
 title: 'hiyar-war'
 date: '2019-03-26 11:21:56'
 description: JavaScript, frequentemente abreviado como JS, é uma linguagem de script interpretada de alto nível que está em conformidade com a especificação ECMAScript.
-productcategory: Mermer
+productcategory: mermer
 subcategory: Vida
 background: '#e58e26'
 image: '/assets/img/hiyar.jpg'
