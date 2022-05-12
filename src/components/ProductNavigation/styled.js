@@ -4,14 +4,16 @@ import LocalizedLink from '../LocalizedLink'
 import { Link } from 'gatsby'
 
 export const Navigation = styled.nav`
-    background: var(--primary-color);
+    background: var(--secondary-color);
+    border-radius: 10px;
     z-index: 999;
     display: flex;
     flex-direction: column;
     margin-top: var(--space-sm);
     ${media.greaterThan('medium')`
 
-    position: fixed;
+    position: absolute;
+    float: left;
     align-items: center;
     
   `}
@@ -29,7 +31,7 @@ export const NavigationLink = styled(LocalizedLink)`
     margin-bottom: 0;
   `}
     ${media.greaterThan('large')`
-    margin-left: var(--space);
+    margin-left: 0;
   `} 
 
   &:after {
@@ -62,18 +64,4 @@ export const NavigationLink = styled(LocalizedLink)`
             width: 100%;
         }
     }
-`
-
-export const NavigationButton = styled(Link)`
-    background: var(--primary-color);
-    border-radius: 2px;
-    color: #fff;
-    display: inline-block;
-    padding: var(--space-sm) var(--space);
-    text-decoration: none;
-    font-weight: bold;
-    text-align: center;
-    ${media.greaterThan('medium')`
-    margin-left: var(--space-lg);
-  `}
 `

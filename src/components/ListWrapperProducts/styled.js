@@ -8,7 +8,8 @@ export const ListWrapperProducts = styled.section`
         grid-gap: 20px;
         grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     `}
-    ${media.greaterThan('large')`
+    ${media.greaterThan('medium')`
+        margin-left: 150px;
         grid-template-columns: repeat(auto-fit, minmax(250px, calc(50% - 10px)));
     `}
 `

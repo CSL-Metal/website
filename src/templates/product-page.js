@@ -3,6 +3,7 @@ import { graphql } from 'gatsby'
 import PostItem from '../components/PostItem'
 import TitlePage from '../components/TitlePage'
 import SEO from '../components/seo'
+import Banner from '../components/Banner'
 
 import Pagination from '../components/Pagination'
 
@@ -24,9 +25,7 @@ const ProductPage = props => {
         <>
             <SEO title="products" />
             <TitlePage text="products" />
-
             <ProductNavigation />
-
             <S.ListWrapperProducts>
                 {postList.map(
                     ({
@@ -57,7 +56,6 @@ const ProductPage = props => {
                     )
                 )}
             </S.ListWrapperProducts>
-
             <Pagination
                 isFirst={isFirst}
                 isLast={isLast}
