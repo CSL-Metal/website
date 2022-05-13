@@ -10,7 +10,7 @@ export const Banner = props => {
     return (
         <Slider
             responsive={responsive}
-            showArrows={true}
+            showArrows={false}
             showDots={true}
             infinite
             aitoSlide={1500}

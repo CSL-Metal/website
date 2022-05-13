@@ -9,7 +9,7 @@ import Banner from '../components/Banner'
 
 import * as S from '../components/ListWrapper/styled'
 
-const Index = ({ data: { allMarkdownRemark } }) => {
+const Index = ({ data: { allMarkdownRemark, bannerData } }) => {
     // useTranslations is aware of the global context (and therefore also "locale")
     // so it'll automatically give back the right translations
     const {
@@ -21,13 +21,14 @@ const Index = ({ data: { allMarkdownRemark } }) => {
     } = useTranslations()
 
     const postList = allMarkdownRemark.edges
+    const bannerList = bannerData.edges
 
     return (
         <div className="homepage">
             <SEO title="Home" />
 
             <Banner>
-                {postList.map(
+                {bannerList.map(
                     ({
                         node: {
                             frontmatter: {
@@ -107,33 +108,46 @@ const Index = ({ data: { allMarkdownRemark } }) => {
 export default Index
 
 export const query = graphql`
-  query Index($locale: String!, $dateFormat: String!, ) {
-    allMarkdownRemark(
-      filter: {
-        fields: { locale: { eq: $locale } }
-        fileAbsolutePath: {regex: "/(blog)\/.*\\.md$/"}
-      }
-      sort: { fields: [frontmatter___date], order: DESC }
-      limit: 10
-    ) {
-      edges {
-        node {
-          frontmatter {
-            title
-            description
-            category
-            background
-            image
-            date(formatString: $dateFormat)
-
-          }
-          timeToRead
-          fields {
-            locale
-            slug
-          }
+  query Index($locale: String!, $dateFormat: String!) {
+  allMarkdownRemark(filter: {fields: {locale: {eq: $locale}}, fileAbsolutePath: {regex: "/(blog)/.*\\.md$/"}}, sort: {fields: [frontmatter___date], order: DESC}, limit: 10) {
+    edges {
+      node {
+        frontmatter {
+          title
+          description
+          category
+          background
+          image
+          date(formatString: $dateFormat)
+        }
+        timeToRead
+        fields {
+          locale
+          slug
         }
       }
     }
   }
+  bannerData: allMarkdownRemark(filter: {fields: {locale: {eq: $locale}}, fileAbsolutePath: {regex: "/(products)/.*\\.md$/"}}, sort: {fields: [frontmatter___date], order: DESC}, limit: 10) {
+    edges {
+      node {
+        frontmatter {
+          title
+          description
+          category
+          background
+          image
+          date(formatString: $dateFormat)
+        }
+        timeToRead
+        fields {
+          locale
+          slug
+        }
+      }
+    }
+  }
+}
+
+
 `
