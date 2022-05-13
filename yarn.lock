@@ -6224,8 +6224,8 @@
 
 "gatsby@^2.0.0", "gatsby@^2.0.101", "gatsby@^2.0.15", "gatsby@^2.0.32", "gatsby@^2.0.33", "gatsby@^2.12.0", "gatsby@^2.2.0", "gatsby@^2.3.3", "gatsby@^2.4.0":
   "integrity" "sha512-P7l3JyXE+3Wcubl2ZbGkkyhj+HUQk9O8cpcSihC28/2si1FQzAp7UsckBMz1xtDcGfahohMIUyBGhruiK4AAkA=="
-  "resolved" "https://registry.npmjs.org/gatsby/-/gatsby-2.16.3.tgz"
-  "version" "2.3.3"
+  "resolved" "https://registry.npmjs.org/gatsby/-/gatsby-2.4.0.tgz"
+  "version" "2.4.0"
   dependencies:
     "@babel/code-frame" "^7.5.5"
     "@babel/core" "^7.6.4"
