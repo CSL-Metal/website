@@ -6,6 +6,25 @@ const {
     removeTrailingSlash,
 } = require(`./src/utils/gatsby-node-helpers`)
 
+exports.onCreateWebpackConfig = ({
+    stage,
+    rules,
+    loaders,
+    plugins,
+    actions,
+}) => {
+    actions.setWebpackConfig({
+        module: {
+            rules: [
+                {
+                    test: /\.gltf$/,
+                    use: [`url-loader`],
+                },
+            ],
+        },
+    })
+}
+
 exports.onCreatePage = ({ page, actions }) => {
     const { createPage, deletePage } = actions
 
