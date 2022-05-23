@@ -37,7 +37,7 @@ export default () => (
             orthographic={false}
             style={{ width: '100%' }}
         >
-            <ambientLight intensity={0.7} />
+            <ambientLight intensity={0.3} />
             <RectAreaLightDecl />
             <RectAreaLightDecl
                 intensity={1}
