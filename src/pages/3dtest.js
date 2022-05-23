@@ -3,8 +3,9 @@ import React from 'react'
 import { Canvas } from 'react-three-fiber'
 import Model from '../components/model'
 import Controls from '../components/controls'
-import GLTF from '../components/probe.glb'
+import GLTF from '../components/klips.glb'
 import uniforms from '../components/uniforms'
+import { Scene } from 'three'
 //import "../style.css"
 
 uniforms.init(THREE)
@@ -31,7 +32,11 @@ const RectAreaLightDecl = ({
 
 export default () => (
     <main>
-        <Canvas camera={{ position: [0, 0, 300] }}>
+        <Canvas
+            camera={{ fov: 45, near: 0.1, far: 10000, position: [0, 0, 800] }}
+            orthographic={false}
+            style={{ width: '100%' }}
+        >
             <ambientLight intensity={0.2} />
             <RectAreaLightDecl />
             <RectAreaLightDecl
@@ -57,11 +62,13 @@ export default () => (
             <Model url={GLTF} />
             <Controls
                 autoRotate
-                enablePan={false}
-                enableZoom={false}
+                enablePan={true}
+                enableZoom={true}
                 enableDamping
                 dampingFactor={0.5}
                 rotateSpeed={1}
+                // maxZoom={2}
+                // minZoom={1}
                 maxPolarAngle={Math.PI / 3}
                 minPolarAngle={Math.PI / 3}
             />

@@ -12,13 +12,16 @@ function Model({ url }) {
                     if (obj.type === 'Mesh') {
                         obj.material.dispose()
                         obj.material = new THREE.MeshPhysicalMaterial({
-                            roughness: 0.4,
+                            roughness: 0.1,
                             clearCoat: 1,
                             clearCoatRoughness: 0.3,
                             color: obj.material.color,
                         })
+                        obj.geometry.center()
+                        obj.scale.set(8000, 8000, 8000)
                     }
                 })
+
                 set(gltf.scene)
             }),
         [url]
