@@ -17,7 +17,20 @@ const Product = props => {
             />
             <TitlePage text={post.frontmatter.title} />
             <S.Content>
-                <img src={post.frontmatter.image} />
+                <div
+                    style={{
+                        display: 'flex',
+                        'flex-direction': 'row',
+                        'flex-wrap': 'wrap',
+                        alignItems: 'center',
+                        justifyContent: 'space-between',
+                    }}
+                >
+                    <img src={post.frontmatter.image} width={'45%'} />
+                    <img src={post.frontmatter.techimage} width={'45%'} />
+                    <img src={post.frontmatter.specsimage} width={'100%'} />
+                </div>
+
                 <div dangerouslySetInnerHTML={{ __html: post.html }}></div>
             </S.Content>
         </>
@@ -34,6 +47,8 @@ export const query = graphql`
                 title
                 description
                 image
+                techimage
+                specsimage
             }
             html
         }
