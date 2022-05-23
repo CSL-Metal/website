@@ -5,6 +5,8 @@ import SEO from '../components/seo'
 
 import * as S from '../components/Content/styled'
 
+var paragraphs = require('lines-to-paragraphs')
+
 const Product = props => {
     const post = props.data.markdownRemark
 
@@ -17,6 +19,7 @@ const Product = props => {
             />
             <TitlePage text={post.frontmatter.title} />
             <S.Content>
+                <hr />
                 <div
                     style={{
                         display: 'flex',
@@ -28,10 +31,19 @@ const Product = props => {
                 >
                     <img src={post.frontmatter.image} width={'45%'} />
                     <img src={post.frontmatter.techimage} width={'45%'} />
-                    <img src={post.frontmatter.specsimage} width={'100%'} />
                 </div>
 
-                <div dangerouslySetInnerHTML={{ __html: post.html }}></div>
+                <hr />
+
+                <img src={post.frontmatter.specsimage} width={'100%'} />
+
+                <hr />
+
+                <div
+                    dangerouslySetInnerHTML={{
+                        __html: paragraphs(post.frontmatter.specs),
+                    }}
+                ></div>
             </S.Content>
         </>
     )
@@ -49,6 +61,7 @@ export const query = graphql`
                 image
                 techimage
                 specsimage
+                specs
             }
             html
         }
