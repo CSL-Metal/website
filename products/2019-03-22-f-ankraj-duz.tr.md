@@ -8,6 +8,7 @@ background: '#e58e26'
 image: '/assets/img/f_ankraj_duz_render.jpg'
 techimage: '/assets/img/f_ankraj_duz_teknik_cizim.jpg'
 specsimage: '/assets/img/f_ankraj_duz_tablo.jpg'
+threedmodel: '/assets/glb/f_ankraj_duz.glb'
 product: true
 specs: "● Kullanım  şekline göre U proil veya L proil üzerine monte edilir.
 

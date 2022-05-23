@@ -2,6 +2,7 @@ import React from 'react'
 import { graphql } from 'gatsby'
 import TitlePage from '../components/TitlePage'
 import SEO from '../components/seo'
+import ThreeD from '../components/Threedviewer'
 
 import * as S from '../components/Content/styled'
 
@@ -19,6 +20,8 @@ const Product = props => {
             />
             <TitlePage text={post.frontmatter.title} />
             <S.Content>
+                <ThreeD />
+
                 <hr />
                 <div
                     style={{
@@ -62,6 +65,7 @@ export const query = graphql`
                 techimage
                 specsimage
                 specs
+                threedmodel
             }
             html
         }
