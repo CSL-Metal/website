@@ -1,4 +1,5 @@
 import { useRef } from 'react'
+import { ActivityDimensions } from 'styled-icons/feather/Activity'
 
 const safeDocument = typeof document !== 'undefined' ? document : {}
 
@@ -26,6 +27,7 @@ export default () => {
          * 2. Fixes a bug in desktop Safari where `overflowY` does not prevent
          *    scroll if an `overflow-x` style is also applied to the body.
          */
+
         html.style.position = 'relative' /* [1] */
         html.style.overflow = 'hidden' /* [2] */
         body.style.position = 'relative' /* [1] */
