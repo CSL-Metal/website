@@ -17,6 +17,7 @@ function Model({ url }) {
                             clearCoatRoughness: 0.3,
                             color: obj.material.color,
                         })
+
                         obj.geometry.center()
                         obj.scale.set(8000, 8000, 8000)
                     }
