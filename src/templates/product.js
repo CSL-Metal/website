@@ -20,7 +20,9 @@ const Product = props => {
             />
             <TitlePage text={post.frontmatter.title} />
             <S.Content>
-                <ThreeD />
+                <div style={{ border: '1px red solid', width: '45%' }}>
+                    <ThreeD />
+                </div>
 
                 <hr />
                 <div
