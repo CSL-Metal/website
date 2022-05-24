@@ -1,10 +1,10 @@
 import * as THREE from 'three'
 import React from 'react'
 import { Canvas } from 'react-three-fiber'
-import Model from '../components/model'
-import Controls from '../components/controls'
-import GLTF from '../components/klips.glb'
-import uniforms from '../components/uniforms'
+import Model from '../model'
+import Controls from '../controls'
+import GLTF from './f_ankraj_duz.glb'
+import uniforms from '../uniforms'
 import { Scene } from 'three'
 //import "../style.css"
 
@@ -30,7 +30,7 @@ const RectAreaLightDecl = ({
     )
 }
 
-export default () => (
+export const ThreeD = props => (
     <main>
         <Canvas
             camera={{ fov: 45, near: 0.1, far: 5000, position: [0, 0, 800] }}
@@ -75,3 +75,5 @@ export default () => (
         </Canvas>
     </main>
 )
+
+export default ThreeD
