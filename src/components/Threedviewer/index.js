@@ -1,6 +1,6 @@
 import * as THREE from 'three'
 import React from 'react'
-import { Canvas, useThree } from 'react-three-fiber'
+import { Canvas } from 'react-three-fiber'
 import Model from '../model'
 import Controls from '../controls'
 import GLTF from './f_ankraj_duz.glb'
