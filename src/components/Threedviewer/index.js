@@ -54,11 +54,11 @@ export const ThreeD = () => {
                 onTouchEnd={e => {
                     setDragState(false)
                 }}
-                onMouseDown={e => {
-                    setDragState(true)
-                }}
                 onMouseUp={e => {
                     setDragState(false)
+                }}
+                onMouseDown={e => {
+                    setDragState(true)
                 }}
                 camera={{
                     fov: 45,
