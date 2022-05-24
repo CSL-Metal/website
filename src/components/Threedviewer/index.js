@@ -5,9 +5,7 @@ import Model from '../model'
 import Controls from '../controls'
 import GLTF from './f_ankraj_duz.glb'
 import uniforms from '../uniforms'
-import { Scene } from 'three'
 import useScrollBlock from '../../utils/useScrollBlock'
-import { CommentsDollarDimensions } from 'styled-icons/fa-solid/CommentsDollar'
 //import "../style.css"
 
 uniforms.init(THREE)
@@ -33,7 +31,7 @@ const RectAreaLightDecl = ({
 }
 
 export const ThreeD = () => {
-    const [blockScroll, allowScroll, blockTouch, allowTouch] = useScrollBlock()
+    const [blockScroll, allowScroll] = useScrollBlock()
     const [zoomState, setZoomState] = React.useState(false)
     const [dragState, setDragState] = React.useState(false)
 
