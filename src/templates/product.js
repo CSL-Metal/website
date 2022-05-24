@@ -3,7 +3,7 @@ import { graphql } from 'gatsby'
 import TitlePage from '../components/TitlePage'
 import SEO from '../components/seo'
 import ThreeD from '../components/Threedviewer'
-
+import * as D from '../components/ListWrapper/styled'
 import * as S from '../components/Content/styled'
 
 var paragraphs = require('lines-to-paragraphs')
@@ -20,9 +20,25 @@ const Product = props => {
             />
             <TitlePage text={post.frontmatter.title} />
             <S.Content>
-                <div style={{ border: '1px red solid', width: '45%' }}>
+                <D.ListWrapper
+                    style={
+                        {
+                            //border: '1px red solid',
+                            // width: '100%',
+                            //display: 'flex',
+                            //'flex-direction': 'row',
+                            // 'flex-wrap': 'wrap',
+                            // alignItems: 'center',
+                            // justifyContent: 'space-between',
+                        }
+                    }
+                >
+                    <img
+                        src={post.frontmatter.threedlogo}
+                        style={{ background: '#eaeaea' }}
+                    />
                     <ThreeD />
-                </div>
+                </D.ListWrapper>
 
                 <hr />
                 <div
@@ -68,6 +84,7 @@ export const query = graphql`
                 specsimage
                 specs
                 threedmodel
+                threedlogo
             }
             html
         }
