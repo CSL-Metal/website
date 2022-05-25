@@ -10,8 +10,7 @@ function useNavbarElements() {
   function capitalizeFirstLetter(string) {
     return string.charAt(0).toUpperCase() + string.slice(1);
   }
-  rawData.group.map(items => items.edges.map(item => menuElements.push({ lang: item.node.fields.locale, product: item.node.frontmatter.description, productCategory: capitalizeFirstLetter(item.node.frontmatter.productcategory), mainCategory: item.node.frontmatter.maincategory })))
-
+  rawData.group.map(items => items.edges.map(item => menuElements.push({ link: item.node.fields.slug, lang: item.node.fields.locale, product: item.node.frontmatter.description, productCategory: capitalizeFirstLetter(item.node.frontmatter.productcategory), mainCategory: item.node.frontmatter.maincategory })))
   return menuElements
 }
 
@@ -25,6 +24,7 @@ query NavbarElements {
         node {
           fields {
             locale
+            slug
           }
           frontmatter {
             description
