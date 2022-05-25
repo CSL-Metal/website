@@ -144,7 +144,7 @@ exports.createPages = async ({ graphql, actions }) => {
                             product
                             category
                             productcategory
-                            subcategory
+                            maincategory
                         }
                     }
                 }
@@ -175,7 +175,7 @@ exports.createPages = async ({ graphql, actions }) => {
                             product
                             category
                             productcategory
-                            subcategory
+                            maincategory
                         }
                     }
                 }
@@ -213,7 +213,7 @@ exports.createPages = async ({ graphql, actions }) => {
         const isPage = file.frontmatter.page
 
         //check for product categories and subcategories
-        const subCategory = file.frontmatter.subcategory
+        const mainCategory = file.frontmatter.maincategory
         const productCategory = file.frontmatter.productcategory
 
         // check if product
@@ -224,15 +224,15 @@ exports.createPages = async ({ graphql, actions }) => {
         const template = isPage
             ? pageTemplate
             : isProduct
-            ? productTemplate
-            : postTemplate
+                ? productTemplate
+                : postTemplate
 
         // Count posts
         postsTotal = isPage
             ? postsTotal + 0
             : isProduct
-            ? postsTotal + 0
-            : postsTotal + 1
+                ? postsTotal + 0
+                : postsTotal + 1
 
         //counts products
         productsTotal = isProduct ? productsTotal + 1 : productsTotal + 0
@@ -245,7 +245,7 @@ exports.createPages = async ({ graphql, actions }) => {
                 isPage,
                 isProduct,
                 productCategory,
-                subCategory,
+                mainCategory,
             }),
             component: template,
             context: {

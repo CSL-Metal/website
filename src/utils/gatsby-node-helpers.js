@@ -9,14 +9,14 @@ exports.localizedSlug = ({
     isPage,
     isProduct,
     productCategory,
-    subCategory,
+    mainCategory,
 }) => {
     // if (isPage) {
     //     return isDefault ? `/${slug}` : `/${locale}/${slug}`
     // } else if (isProduct) {
     //     return isDefault
-    //         ? `/products/${productCategory}/${subCategory}/${slug}`
-    //         : `/${locale}/products/${productCategory}/${subCategory}/${slug}`
+    //         ? `/products/${productCategory}/${mainCategory}/${slug}`
+    //         : `/${locale}/products/${productCategory}/${mainCategory}/${slug}`
     // } else return isDefault ? `/blog/${slug}` : `/${locale}/blog/${slug}`
     if (isPage) {
         return isDefault ? `/${slug}` : `/${locale}/${slug}`

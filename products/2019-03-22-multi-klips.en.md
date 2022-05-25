@@ -1,8 +1,8 @@
 ---
-title: 'F Anchorage'
+title: 'Multi Clips'
 date: '2019-03-26 11:21:56'
-description: F Anchorage
-productcategory: marble
+description: Multi Clips
+productcategory: ceramic
 maincategory: Facade Systems
 background: '#e58e26'
 image: '/assets/img/f_ankraj_duz_render.jpg'

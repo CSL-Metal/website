@@ -33,7 +33,7 @@ const RectAreaLightDecl = ({
 }
 
 export const ThreeD = () => {
-    const [blockScroll, allowScroll, blockTouch, allowTouch] = useScrollBlock()
+    const [blockScroll, allowScroll] = useScrollBlock()
     const [zoomState, setZoomState] = React.useState(false)
     const [dragState, setDragState] = React.useState(false)
 
@@ -108,10 +108,10 @@ export const ThreeD = () => {
                     rotateSpeed={1.2}
                     enableRotate={dragState}
 
-                    // maxZoom={2}
-                    // minZoom={1}
-                    // maxPolarAngle={Math.PI / 3}
-                    // minPolarAngle={Math.PI / 3}
+                // maxZoom={2}
+                // minZoom={1}
+                // maxPolarAngle={Math.PI / 3}
+                // minPolarAngle={Math.PI / 3}
                 />
             </Canvas>
         </main>

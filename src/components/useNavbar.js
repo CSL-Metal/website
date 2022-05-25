@@ -9,89 +9,94 @@ import _ from 'lodash'
 //THX 4 KADIR
 //THX 4 KADIR
 function useNavbar() {
-    // Grab the locale (passed through context) from the Locale Provider
-    // through useLocale() hook
-    const { locale } = useLocale()
-    // Query the JSON files in <rootDir>/i18n/translations
-    const { rawData } = useStaticQuery(query)
+  // Grab the locale (passed through context) from the Locale Provider
+  // through useLocale() hook
+  const { locale } = useLocale()
+  // Query the JSON files in <rootDir>/i18n/translations
+  const { rawData } = useStaticQuery(query)
 
-    // Simplify the response from GraphQL
-    // const simplified = rawData.edges.map(item => {
+  // Simplify the response from GraphQL
+  // const simplified = rawData.edges.map(item => {
+  //     return {
+  //         name: item.node.name,
+  //         menuItems: item.node.translations.menuItems,
+  //     }
+  // })
+  let enItems = []
+  let trItems = []
+  let df = [
+    { name: 'en', menuItems: enItems },
+    { name: 'tr', menuItems: trItems },
+  ]
+
+  const menuData = rawData.group.map(item => {
+    if (item.edges[0].node.fields.locale === 'en') {
+      enItems.push({
+        locale: '',
+        link: `/${item.fieldValue}`,
+        name: item.fieldValue,
+        maincategory: item.edges[0].node.frontmatter.maincategory
+      })
+    } else {
+      trItems.push({
+        locale: locale,
+        link: `/${item.fieldValue}`,
+        name: item.fieldValue,
+        maincategory: item.edges[0].node.frontmatter.maincategory
+      })
+    }
+
+    // if (item.edges[0].node.fields.isDefault) {
     //     return {
-    //         name: item.node.name,
-    //         menuItems: item.node.translations.menuItems,
+    //         name: 'en',
+    //         menuItems: [{
+    //             link: `/${item.fieldValue}`,
+    //             name: item.fieldValue,
+    //         }],
     //     }
-    // })
-    let enItems = []
-    let trItems = []
-    let df = [
-        { name: 'en', menuItems: enItems },
-        { name: 'tr', menuItems: trItems },
-    ]
+    // } else {
+    //     return {
+    //         name: 'pt',
+    //         menuItems: [{
+    //             link: `/${item.fieldValue}`,
+    //             name: item.fieldValue,
+    //         }],
+    //     }
+    // }
+  })
 
-    const menuData = rawData.group.map(item => {
-        if (item.edges[0].node.fields.locale === 'en') {
-            enItems.push({
-                locale: '',
-                link: `/${item.fieldValue}`,
-                name: item.fieldValue,
-            })
-        } else {
-            trItems.push({
-                locale: locale,
-                link: `/${item.fieldValue}`,
-                name: item.fieldValue,
-            })
-        }
+  // const test1 = _.groupBy(menuData, 'name')
 
-        // if (item.edges[0].node.fields.isDefault) {
-        //     return {
-        //         name: 'en',
-        //         menuItems: [{
-        //             link: `/${item.fieldValue}`,
-        //             name: item.fieldValue,
-        //         }],
-        //     }
-        // } else {
-        //     return {
-        //         name: 'pt',
-        //         menuItems: [{
-        //             link: `/${item.fieldValue}`,
-        //             name: item.fieldValue,
-        //         }],
-        //     }
-        // }
-    })
+  // console.log(df)
 
-    // const test1 = _.groupBy(menuData, 'name')
+  // let simplified = menuData.groupBy(({ name }) => name)
 
-    // console.log(df)
-
-    // let simplified = menuData.groupBy(({ name }) => name)
-
-    // Only return menu for the current locale
-    const { menuItems } = df.filter(lang => lang.name === locale)[0]
-    console.log(menuItems)
-    return menuItems
+  // Only return menu for the current locale
+  const { menuItems } = df.filter(lang => lang.name === locale)[0]
+  return menuItems
 }
-
 export default useNavbar
 
+
 const query = graphql`
-    query MyQuery2 {
-        rawData: allMarkdownRemark {
-            group(field: frontmatter___productcategory) {
-                edges {
-                    node {
-                        id
-                        fields {
-                            isDefault
-                            locale
-                        }
-                    }
-                }
-                fieldValue
+query MyQuery2 {
+    rawData: allMarkdownRemark {
+      group(field: frontmatter___productcategory) {
+        edges {
+          node {
+            id
+            fields {
+              isDefault
+              locale
             }
+            frontmatter {
+              description
+              maincategory
+            }
+          }
         }
+        fieldValue
+      }
     }
+  }
 `

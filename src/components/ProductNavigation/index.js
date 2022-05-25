@@ -1,13 +1,21 @@
 import React from 'react'
 import useNavbar from '../useNavbar'
+import useNavbarElements from '../useNavbarElements'
 import useTranslations from '../useTranslations'
 
 import * as S from './styled'
 
 const ProductNavigation = ({ isActive, handleToggleMenu }) => {
     const menuItems = useNavbar()
-    const { button } = useTranslations()
+    useNavbarElements()
+    function onlyUnique(value, index, self) {
+        return self.indexOf(value) === index;
+    }
+    let mainCategories = []
 
+    menuItems.map(items => mainCategories.push(items.maincategory))
+    mainCategories = mainCategories.filter(onlyUnique)
+    const { button } = useTranslations()
     return (
         <>
             <S.Navigation>

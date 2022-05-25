@@ -1,9 +1,9 @@
 ---
-title: 'F Anchorage'
+title: 'Multi Klips'
 date: '2019-03-26 11:21:56'
-description: F Anchorage
-productcategory: marble
-maincategory: Facade Systems
+description: Multi Klips
+productcategory: seramik
+maincategory: Dış Cephe Sistemleri
 background: '#e58e26'
 image: '/assets/img/f_ankraj_duz_render.jpg'
 techimage: '/assets/img/f_ankraj_duz_teknik_cizim.jpg'
