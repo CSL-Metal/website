@@ -10,7 +10,7 @@ techimage: '/assets/img/f_ankraj_duz_teknik_cizim.jpg'
 specsimage: '/assets/img/f_ankraj_duz_tablo.jpg'
 threedmodel: '/assets/glb/f_ankraj_duz.glb'
 product: true
-threedlogo: '/assets/img/3d_logo.jpg'
+threedlogo: '/assets/img/3d_logo.png'
 specs: "● Kullanım  şekline göre U proil veya L proil üzerine monte edilir.
 
 
