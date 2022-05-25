@@ -1,6 +1,7 @@
 import React from 'react'
 import Slider from 'react-styled-carousel'
-import { LeftArrow } from 'styled-icons/boxicons-regular'
+import { ArrowDropLeft } from 'styled-icons/remix-line'
+import { ArrowDropRight } from 'styled-icons/remix-line'
 
 // const responsive = [
 //     { breakPoint: 1280, cardsToShow: 1 }, // this will be applied if screen size is greater than 1280px. cardsToShow will become 4.
@@ -10,6 +11,7 @@ import { LeftArrow } from 'styled-icons/boxicons-regular'
 export const Banner = props => {
     return (
         <Slider
+            style={{ width: '100%' }}
             cardsToShow={1}
             showArrows={true}
             showDots={true}
@@ -18,7 +20,32 @@ export const Banner = props => {
             pauseOnMouseOver
             hideArrowsOnNoSlides
             padding={0}
-            LeftArrow={<LeftArrow style={{ width: 50 }} />}
+            LeftArrow={
+                <ArrowDropLeft
+                    style={{
+                        color: 'var(--primary-color)',
+                        position: 'absolute',
+                        width: '10vh',
+                        left: '-25px',
+                        top: 'calc(50% - 5px)',
+                        cursor: 'pointer',
+                        zIndex: '99999',
+                    }}
+                />
+            }
+            RightArrow={
+                <ArrowDropRight
+                    style={{
+                        color: 'var(--primary-color)',
+                        position: 'absolute',
+                        width: '10vh',
+                        right: '-25px',
+                        top: 'calc(50% - 5px)',
+                        cursor: 'pointer',
+                        zIndex: '99999',
+                    }}
+                />
+            }
         >
             {props.children}
         </Slider>

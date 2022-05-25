@@ -106,10 +106,10 @@ export const ThreeD = () => {
                     rotateSpeed={1.2}
                     enableRotate={dragState}
 
-                // maxZoom={2}
-                // minZoom={1}
-                // maxPolarAngle={Math.PI / 3}
-                // minPolarAngle={Math.PI / 3}
+                    // maxZoom={2}
+                    // minZoom={1}
+                    // maxPolarAngle={Math.PI / 3}
+                    // minPolarAngle={Math.PI / 3}
                 />
             </Canvas>
         </main>

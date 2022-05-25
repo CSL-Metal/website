@@ -35,7 +35,13 @@ const Product = props => {
                 >
                     <img
                         src={post.frontmatter.threedlogo}
-                        style={{ background: '#eaeaea' }}
+                        style={{
+                            background: 'var(--gray-extra-light)',
+                            width: '100%',
+                            height: '100%',
+                            borderRadius: '10px',
+                            marginBottom: '10px',
+                        }}
                     />
                     <ThreeD />
                 </D.ListWrapper>
