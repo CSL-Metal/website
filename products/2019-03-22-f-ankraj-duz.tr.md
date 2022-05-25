@@ -2,8 +2,8 @@
 title: 'F Ankraj'
 date: '2019-03-26 11:21:56'
 description: F Ankraj
-productcategory: seramik
-subcategory: Ankraj
+productcategory: mermer
+maincategory: Dış Cephe Sistemleri
 background: '#e58e26'
 image: '/assets/img/f_ankraj_duz_render.jpg'
 techimage: '/assets/img/f_ankraj_duz_teknik_cizim.jpg'

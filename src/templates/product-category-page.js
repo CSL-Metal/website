@@ -83,7 +83,7 @@ const ProductCategoryPage = props => {
 //           image
 //           date(formatString: $dateFormat)
 //           product
-//           subcategory
+//           maincategory
 //         }
 //         timeToRead
 //         fields {
@@ -109,7 +109,7 @@ export const query = graphql`
           image
           date(formatString: $dateFormat)
           product
-          subcategory
+          maincategory
         }
         timeToRead
         fields {

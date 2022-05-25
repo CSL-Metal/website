@@ -1,5 +1,4 @@
 import React from 'react'
-// import logo from '../../images/logo-iceberg.svg'
 import logo from '../../images/csl-logo.png'
 
 const Logo = () => {
