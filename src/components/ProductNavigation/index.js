@@ -2,12 +2,14 @@ import React from 'react'
 import useNavbar from '../useNavbar'
 import useNavbarElements from '../useNavbarElements'
 import useTranslations from '../useTranslations'
+import { useLocale } from '../../hooks/locale'
 
 import * as S from './styled'
 
 const ProductNavigation = ({ isActive, handleToggleMenu }) => {
     const menuItems = useNavbar()
-    useNavbarElements()
+    const menuElements = useNavbarElements()
+
     function onlyUnique(value, index, self) {
         return self.indexOf(value) === index;
     }
@@ -15,6 +17,7 @@ const ProductNavigation = ({ isActive, handleToggleMenu }) => {
 
     menuItems.map(items => mainCategories.push(items.maincategory))
     mainCategories = mainCategories.filter(onlyUnique)
+
     const { button } = useTranslations()
     return (
         <>
