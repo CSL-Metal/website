@@ -26,7 +26,6 @@ const Index = ({ data: { allMarkdownRemark, bannerData } }) => {
     return (
         <div className="homepage">
             <SEO title="Home" />
-            asd
             <Banner>
                 {bannerList.map(
                     ({
