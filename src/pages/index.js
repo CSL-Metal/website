@@ -26,7 +26,7 @@ const Index = ({ data: { allMarkdownRemark, bannerData } }) => {
     return (
         <div className="homepage">
             <SEO title="Home" />
-
+            asd
             <Banner>
                 {bannerList.map(
                     ({
@@ -57,16 +57,13 @@ const Index = ({ data: { allMarkdownRemark, bannerData } }) => {
                     )
                 )}
             </Banner>
-
             <TitlePage text={hello} />
             <p>{subline}</p>
             <hr style={{ margin: `2rem 0` }} />
             <h2>
                 <strong>{latestPosts}</strong>
             </h2>
-
             <br />
-
             <S.ListWrapper>
                 {postList.map(
                     ({
@@ -97,9 +94,7 @@ const Index = ({ data: { allMarkdownRemark, bannerData } }) => {
                     )
                 )}
             </S.ListWrapper>
-
             <br />
-
             <LocalizedLink to={`/blog/`}>{allPosts}</LocalizedLink>
         </div>
     )

@@ -11,7 +11,6 @@ import { ArrowDropRight } from 'styled-icons/remix-line'
 export const Banner = props => {
     return (
         <Slider
-            style={{ width: '100%' }}
             cardsToShow={1}
             showArrows={true}
             showDots={true}
