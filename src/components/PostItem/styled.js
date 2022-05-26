@@ -30,7 +30,7 @@ export const PostItemWrapper = styled.section`
 // `
 
 export const PostItemImg = styled(Img)`
-  width: 100%;
+  width: 200px;
 `;
 
 export const PostItemInfo = styled.div`

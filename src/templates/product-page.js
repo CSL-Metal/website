@@ -3,7 +3,6 @@ import { graphql } from 'gatsby'
 import PostItem from '../components/PostItem'
 import TitlePage from '../components/TitlePage'
 import SEO from '../components/seo'
-import Banner from '../components/Banner'
 
 import Pagination from '../components/Pagination'
 
@@ -23,47 +22,46 @@ const ProductPage = props => {
 
     return (
         <>
-            <SEO title="products" />
-            <TitlePage text="products" />
-            {/* <ProductNavigation /> */}
-            <S.ListWrapperProducts>
-                {postList.map(
-                    ({
-                        node: {
-                            frontmatter: {
-                                background,
-                                category,
-                                date,
-                                description,
-                                title,
-                                image,
-                            },
-                            timeToRead,
-                            fields: { slug },
-                        },
-                    }) => (
-                        <PostItem
-                            slug={`/products/${slug}`}
-                            background={background}
-                            category={category}
-                            date={date}
-                            timeToRead={timeToRead}
-                            title={title}
-                            description={description}
-                            image={image}
-                            key={slug}
-                        />
-                    )
-                )}
-            </S.ListWrapperProducts>
-            <Pagination
-                isFirst={isFirst}
-                isLast={isLast}
-                currentPage={currentPage}
-                numPages={numPages}
-                prevPage={prevPage}
-                nextPage={nextPage}
-            />
+            <div style={{ display: 'flex', filexDirection: 'row' }}>
+
+                <ProductNavigation />
+                <div style={{ marginLeft: '10px' }}>
+                    <SEO title="products" />
+                    <TitlePage text="Products" />
+                    <hr />
+                    <S.ListWrapperProducts style={{ display: 'flex', flexWrap: 'wrap', justifyContent: 'left', marginLeft: 0, marginRight: 'auto' }}>
+                        {postList.map(
+                            ({
+                                node: {
+                                    frontmatter: {
+                                        background,
+
+                                        title,
+                                        image,
+                                    },
+                                    fields: { slug },
+                                },
+                            }) => (
+                                <PostItem
+                                    slug={`/products/${slug}`}
+                                    background={background}
+                                    title={title}
+                                    image={image}
+                                    key={slug}
+                                />
+                            )
+                        )}
+                    </S.ListWrapperProducts>
+                    <Pagination
+                        isFirst={isFirst}
+                        isLast={isLast}
+                        currentPage={currentPage}
+                        numPages={numPages}
+                        prevPage={prevPage}
+                        nextPage={nextPage}
+                    />
+                </div>
+            </div>
         </>
     )
 }
