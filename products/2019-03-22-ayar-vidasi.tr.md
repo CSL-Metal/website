@@ -1,7 +1,7 @@
 ---
-title: 'Ayar Vidasi'
+title: 'Ayar Vidası'
 date: '2019-03-26 11:21:56'
-description: Ayar Vidasi
+description: Ayar Vidası
 productcategory: mermer
 maincategory: Dış Cephe Sistemleri
 background: '#e58e26'

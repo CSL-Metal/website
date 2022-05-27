@@ -3,13 +3,13 @@ import { graphql } from 'gatsby'
 import PostItem from '../components/PostItem'
 import TitlePage from '../components/TitlePage'
 import SEO from '../components/seo'
-
 import Pagination from '../components/Pagination'
-
+import "./styles.css";
 import * as S from '../components/ListWrapperProducts/styled'
 import ProductNavigation from '../components/ProductNavigation'
 
 const ProductPage = props => {
+
     const postList = props.data.allMarkdownRemark.edges
 
     // Logic for Pagination Component
@@ -22,9 +22,8 @@ const ProductPage = props => {
 
     return (
         <>
-            <div style={{ display: 'flex', filexDirection: 'row' }}>
-
-                <ProductNavigation />
+            <ProductNavigation />
+            <div    >
                 <div style={{ marginLeft: '10px' }}>
                     <SEO title="products" />
                     <TitlePage text="Products" />
@@ -52,14 +51,7 @@ const ProductPage = props => {
                             )
                         )}
                     </S.ListWrapperProducts>
-                    <Pagination
-                        isFirst={isFirst}
-                        isLast={isLast}
-                        currentPage={currentPage}
-                        numPages={numPages}
-                        prevPage={prevPage}
-                        nextPage={nextPage}
-                    />
+
                 </div>
             </div>
         </>

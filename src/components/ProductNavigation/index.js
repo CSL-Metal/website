@@ -6,12 +6,14 @@ import { makeStyles } from '@material-ui/core/styles';
 import Typography from '@material-ui/core/Typography'
 import Link from '@material-ui/core/Link'
 import ExpandMoreIcon from '@material-ui/icons/ExpandMore'
+import ArrowForwardIosIcon from '@material-ui/icons/ArrowForwardIos';
 import useNavbarElements from '../useNavbarElements'
 import useTranslations from '../useTranslations'
+import OutsideClickHandler from '../../utils/OutsideClickHandler.js'
 import { useLocale } from '../../hooks/locale'
 
 const useStyles = makeStyles((theme) => ({
-    root: {
+    sidebarroot: {
         width: '200px',
         position: 'sticky',
         zIndex: 999,
@@ -44,12 +46,10 @@ function ProductCats(props) {
     let productCategories = []
 
     menuElements.map(item => productCategories.push(item.productCategory))
-    console.log(productCategories)
     function onlyUnique(value, index, self) {
         return self.indexOf(value) === index
     }
     productCategories = productCategories.filter(onlyUnique)
-    console.log(productCategories)
     return productCategories.map(item => (
         <AccordionDetails style={{ background: '#797D7F', justifyContent: 'center' }}>
             <Accordion>
@@ -73,9 +73,22 @@ function ProductCats(props) {
     ))
 }
 
-export default function ProductNavigation({ isActive, handleToggleMenu }) {
+export default function ProductNavigation(props) {
+    const [sidebarOpen, setSideBarOpen] = React.useState(false);
+    const [sidebarButtonOpen, setSideBarButtonOpen] = React.useState(true);
+
+    const handleViewSidebar = () => {
+        setSideBarOpen(true);
+        setSideBarButtonOpen(false);
+        console.log("saw")
+    };
+
+    const sidebarClass = sidebarOpen ? "sidebar open" : "sidebar";
+    const sidebarButtonClass = sidebarButtonOpen ? "sidebar-toggle" : "sidebar-toggle off"
+
     const classes = useStyles();
     const { locale } = useLocale()
+
     let menuElements = useNavbarElements()
     menuElements = menuElements.filter(item => item.lang === locale)
     let mainCategories = []
@@ -89,15 +102,28 @@ export default function ProductNavigation({ isActive, handleToggleMenu }) {
 
     const { button } = useTranslations()
     return (
-        <div className={classes.root}>
-            {mainCategories.map(maincat => (
-                <Accordion >
-                    <AccordionSummary expandIcon={<ExpandMoreIcon />} className={classes.root} style={{ height: '75px', }}>
-                        <Typography style={{ fontSize: '20px', }}>{maincat}</Typography>
-                    </AccordionSummary>
-                    <ProductCats item={maincat} />
-                </Accordion>
-            ))}
-        </div>
+        <OutsideClickHandler
+            onOutsideClick={() => {
+                setSideBarOpen(false);
+                setSideBarButtonOpen(true);
+            }}
+        >
+            <div className={sidebarClass}>
+                <div className={classes.sidebarroot}>
+                    {mainCategories.map(maincat => (
+                        <Accordion >
+                            <AccordionSummary expandIcon={<ExpandMoreIcon />} className={classes.root} style={{ height: '100px', }}>
+                                <Typography style={{ fontSize: '20px', }}>{maincat}</Typography>
+                            </AccordionSummary>
+                            <ProductCats item={maincat} />
+                        </Accordion>
+                    ))}
+                </div>
+                <button onClick={handleViewSidebar} className={sidebarButtonClass} >
+                    <p style={{ writingMode: "vertical-lr", fontSize: "2rem", alignContent: "center" }}>Ürün Menüsü</p>
+                    <ArrowForwardIosIcon />
+                </button>
+            </div>
+        </OutsideClickHandler>
     )
 }

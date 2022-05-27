@@ -5,7 +5,7 @@ import SEO from '../components/seo'
 import ThreeD from '../components/Threedviewer'
 import * as D from '../components/ListWrapper/styled'
 import * as S from '../components/Content/styled'
-import ProductsNavigation from '../components/ProductsNavigation'
+import ProductNavigation from '../components/ProductNavigation'
 
 
 var paragraphs = require('lines-to-paragraphs')
@@ -17,7 +17,7 @@ const Product = props => {
         <>
             <div style={{ display: 'flex', filexDirection: 'row' }}>
 
-                <ProductsNavigation />
+                <ProductNavigation />
                 <div style={{ marginLeft: '10px' }}>
 
                     <SEO

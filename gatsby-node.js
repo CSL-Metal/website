@@ -295,7 +295,7 @@ exports.createPages = async ({ graphql, actions }) => {
     })
 
     // Creating Product List and its Pagination
-    const productsPerPage = 8
+    const productsPerPage = 999
     const numProductPages = Math.ceil(productsTotal / langs / productsPerPage)
     console.log(productsTotal)
 

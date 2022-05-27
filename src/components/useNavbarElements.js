@@ -18,7 +18,7 @@ export default useNavbarElements
 
 const query = graphql`
 query NavbarElements {
-  rawData: allMarkdownRemark {
+  rawData: allMarkdownRemark(sort: {fields: frontmatter___description}) {
     group(field: frontmatter___maincategory) {
       edges {
         node {
@@ -36,4 +36,5 @@ query NavbarElements {
     }
   }
 }
+
 `
