@@ -3,30 +3,25 @@ import { graphql } from 'gatsby'
 import PostItem from '../components/PostItem'
 import TitlePage from '../components/TitlePage'
 import SEO from '../components/seo'
-import Pagination from '../components/Pagination'
 import "./styles.css";
 import * as S from '../components/ListWrapperProducts/styled'
 import ProductNavigation from '../components/ProductNavigation'
+import { useLocale } from '../hooks/locale'
+
 
 const ProductPage = props => {
 
     const postList = props.data.allMarkdownRemark.edges
-
-    // Logic for Pagination Component
-    const { currentPage, numPages } = props.pageContext
-    const isFirst = currentPage === 1
-    const isLast = currentPage === numPages
-    const prevPage =
-        currentPage - 1 === 1 ? '/products' : `/products/${currentPage - 1}`
-    const nextPage = `/products/page/${currentPage + 1}`
+    const { locale } = useLocale()
 
     return (
         <>
             <ProductNavigation />
-            <div    >
+            <div>
                 <div style={{ marginLeft: '10px' }}>
                     <SEO title="products" />
-                    <TitlePage text="Products" />
+                    {locale === "tr" ? <TitlePage text="Ürünler" /> : <TitlePage text="Products" />}
+
                     <hr />
                     <S.ListWrapperProducts style={{ display: 'flex', flexWrap: 'wrap', justifyContent: 'left', marginLeft: 0, marginRight: 'auto' }}>
                         {postList.map(

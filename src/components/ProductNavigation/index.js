@@ -6,7 +6,8 @@ import { makeStyles } from '@material-ui/core/styles';
 import Typography from '@material-ui/core/Typography'
 import Link from '@material-ui/core/Link'
 import ExpandMoreIcon from '@material-ui/icons/ExpandMore'
-import ArrowForwardIosIcon from '@material-ui/icons/ArrowForwardIos';
+import Icon from '@material-ui/core/Icon';
+import Button from '@material-ui/core/Button';
 import useNavbarElements from '../useNavbarElements'
 import useTranslations from '../useTranslations'
 import OutsideClickHandler from '../../utils/OutsideClickHandler.js'
@@ -15,13 +16,12 @@ import { useLocale } from '../../hooks/locale'
 const useStyles = makeStyles((theme) => ({
     sidebarroot: {
         width: '200px',
-        position: 'sticky',
-        zIndex: 999,
-        overflow: 'visible',
         top: 0,
         background: '#eaeaea',
         height: '50px',
-        wordWrap: 'break-word',
+        position: "sticky",
+        overflow: "visible",
+        zIndex: 999,
 
     },
     subcats: {
@@ -119,10 +119,14 @@ export default function ProductNavigation(props) {
                         </Accordion>
                     ))}
                 </div>
-                <button onClick={handleViewSidebar} className={sidebarButtonClass} >
-                    <p style={{ writingMode: "vertical-lr", fontSize: "2rem", alignContent: "center" }}>Ürün Menüsü</p>
-                    <ArrowForwardIosIcon />
-                </button>
+                <Button
+                    onClick={handleViewSidebar}
+                    className={sidebarButtonClass}
+                    variant="contained"
+                    style={{ position: "sticky", overflow: "visible" }}
+                >
+                    {locale === "tr" ? <p style={{ writingMode: "vertical-rl", fontSize: "2rem", alignContent: "center" }}>Ürün Menüsü</p> : <p style={{ writingMode: "vertical-rl", fontSize: "2rem", alignContent: "center" }}>Product Menu</p>}
+                </Button>
             </div>
         </OutsideClickHandler>
     )
