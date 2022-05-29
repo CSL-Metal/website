@@ -1,14 +1,34 @@
+import { useStaticQuery } from 'gatsby'
 import React from 'react'
 import Slider from 'react-styled-carousel'
 import { ArrowDropLeft } from 'styled-icons/remix-line'
 import { ArrowDropRight } from 'styled-icons/remix-line'
 
-// const responsive = [
-//     { breakPoint: 1280, cardsToShow: 1 }, // this will be applied if screen size is greater than 1280px. cardsToShow will become 4.
-//     { breakPoint: 760, cardsToShow: 1 },
-// ]
+const Banner = props => {
+    const data = useStaticQuery(graphql`
+        query {
+            listImages: allFile(
+                filter: {
+                    childImageSharp: { fluid: { src: { regex: "/hp_/" } } }
+                }
+                sort: {
+                    fields: childImageSharp___fluid___originalName
+                    order: ASC
+                }
+            ) {
+                edges {
+                    node {
+                        childImageSharp {
+                            fluid(maxWidth: 2080, quality: 100) {
+                                src
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    `)
 
-export const Banner = props => {
     return (
         <Slider
             cardsToShow={1}
@@ -46,6 +66,9 @@ export const Banner = props => {
                 />
             }
         >
+            {data.listImages.edges.map(images => (
+                <img src={images.node.childImageSharp.fluid.src} />
+            ))}
             {props.children}
         </Slider>
     )
