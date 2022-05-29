@@ -25,6 +25,23 @@ const Product = props => {
                     <TitlePage text={post.frontmatter.title} />
                     <hr />
                     <S.Content>
+                        <div
+                            style={{
+                                display: 'flex',
+                                'flex-direction': 'row',
+                                'flex-wrap': 'wrap',
+                                alignItems: 'center',
+                                justifyContent: 'space-between',
+                            }}
+                        >
+                            <img src={post.frontmatter.image} width={'45%'} />
+                            <img
+                                src={post.frontmatter.techimage}
+                                width={'45%'}
+                            />
+                        </div>
+
+                        <hr />
                         <D.ListWrapper
                             style={
                                 {
@@ -50,23 +67,6 @@ const Product = props => {
                             />
                             <ThreeD />
                         </D.ListWrapper>
-
-                        <hr />
-                        <div
-                            style={{
-                                display: 'flex',
-                                'flex-direction': 'row',
-                                'flex-wrap': 'wrap',
-                                alignItems: 'center',
-                                justifyContent: 'space-between',
-                            }}
-                        >
-                            <img src={post.frontmatter.image} width={'45%'} />
-                            <img
-                                src={post.frontmatter.techimage}
-                                width={'45%'}
-                            />
-                        </div>
 
                         <hr />
 

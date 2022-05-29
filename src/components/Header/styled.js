@@ -16,8 +16,9 @@ export const Container = styled.div`
     margin: 0 auto;
     justify-content: flex-start;
     align-items: center;
-    padding: calc(var(--space) * 1.3) var(--space);
+    padding: 0;
     position: relative;
+
     ${media.greaterThan('medium')`
     flex-direction: row;
   `}

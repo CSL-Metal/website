@@ -2,7 +2,7 @@
 
 module.exports = {
     en: {
-        default: true,
+
         path: `en`,
         locale: `en-US`,
         dateFormat: `DD/MM/YYYY`,
@@ -12,6 +12,7 @@ module.exports = {
         defaultDescription: `Gatsby example site using Markdown, i18n and CMS`,
     },
     tr: {
+        default: true,
         path: `tr`,
         locale: `tr-TR`,
         dateFormat: `DD/MM/YYYY`,
