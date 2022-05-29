@@ -80,7 +80,6 @@ export default function ProductNavigation(props) {
     const handleViewSidebar = () => {
         setSideBarOpen(true);
         setSideBarButtonOpen(false);
-        console.log("saw")
     };
 
     const sidebarClass = sidebarOpen ? "sidebar open" : "sidebar";

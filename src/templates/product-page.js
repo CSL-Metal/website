@@ -29,7 +29,6 @@ const ProductPage = props => {
                                 node: {
                                     frontmatter: {
                                         background,
-
                                         title,
                                         image,
                                     },
