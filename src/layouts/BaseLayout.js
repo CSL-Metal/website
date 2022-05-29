@@ -9,7 +9,6 @@ import Banner from '../components/Banner'
 import { useLocale } from '../hooks/locale'
 
 import * as S from './styled'
-import { Ban } from 'styled-icons/fa-solid'
 
 const BaseLayout = ({ children, pageContext: { locale } }) => {
     // Using the useLocale() hook to define the correct locale

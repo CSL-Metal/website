@@ -34,6 +34,8 @@ const Banner = props => {
     return (
         <div
             style={{
+                width: '100%',
+                overflow: 'hidden',
                 display:
                     globalHistory.location.pathname === '/'
                         ? 'flex'
