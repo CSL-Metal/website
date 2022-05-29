@@ -5,7 +5,6 @@ import PostItem from '../components/PostItem'
 import TitlePage from '../components/TitlePage'
 import LocalizedLink from '../components/LocalizedLink'
 import useTranslations from '../components/useTranslations'
-import Banner from '../components/Banner'
 
 import * as S from '../components/ListWrapper/styled'
 

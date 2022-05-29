@@ -9,6 +9,7 @@ import Banner from '../components/Banner'
 import { useLocale } from '../hooks/locale'
 
 import * as S from './styled'
+import { Ban } from 'styled-icons/fa-solid'
 
 const BaseLayout = ({ children, pageContext: { locale } }) => {
     // Using the useLocale() hook to define the correct locale
@@ -16,21 +17,12 @@ const BaseLayout = ({ children, pageContext: { locale } }) => {
     const { changeLocale } = useLocale()
     changeLocale(locale)
 
-    let banner
-    if (
-        window.location.pathname === '/' ||
-        window.location.pathname === '/en' ||
-        window.location.pathname === '/en/'
-    ) {
-        banner = <Banner></Banner>
-    }
-
     return (
         <>
             <GlobalStyles />
             <S.Wrapper>
                 <Header />
-                {banner}
+                <Banner></Banner>
                 <S.SiteContent role="main">
                     <S.Container>{children}</S.Container>
                 </S.SiteContent>
