@@ -47,7 +47,7 @@ const PostItem = ({
             return img.node.childImageSharp.fluid.src.includes(imgName)
         })
         : false
-
+    console.log(postImg)
     return (
         <S.PostItemLink to={slug}>
             <S.PostItemWrapper>

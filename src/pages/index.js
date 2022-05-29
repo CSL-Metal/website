@@ -6,6 +6,7 @@ import TitlePage from '../components/TitlePage'
 import LocalizedLink from '../components/LocalizedLink'
 import useTranslations from '../components/useTranslations'
 import Banner from '../components/Banner'
+import ProductSlider from '../components/ProductSlider'
 
 import * as S from '../components/ListWrapper/styled'
 
@@ -22,14 +23,13 @@ const Index = ({ data: { allMarkdownRemark, listImages } }) => {
 
   const postList = allMarkdownRemark.edges
 
-  console.log(listImages.edges.map(images => images.node.childImageSharp.fluid.src))
-
   return (
     <div className="homepage">
       <SEO title="Home" />
       <Banner>
         {listImages.edges.map(images => <img src={images.node.childImageSharp.fluid.src} />)}
       </Banner>
+      <ProductSlider />
       <TitlePage text={hello} />
       <p>{subline}</p>
       <hr style={{ margin: `2rem 0` }} />
@@ -107,6 +107,7 @@ query Index($locale: String!, $dateFormat: String!) {
       }
     }
   }
+  
 }
 
 

@@ -9,6 +9,7 @@ import { ArrowDropRight } from 'styled-icons/remix-line'
 // ]
 
 export const Banner = props => {
+    console.log(props.children)
     return (
         <Slider
             cardsToShow={1}
