@@ -49,7 +49,7 @@ const Banner = props => {
                 showArrows={true}
                 showDots={true}
                 infinite
-                autoSlide={1500}
+                autoSlide={3000}
                 pauseOnMouseOver
                 hideArrowsOnNoSlides
                 padding={0}
