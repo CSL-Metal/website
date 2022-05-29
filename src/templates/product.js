@@ -7,7 +7,6 @@ import * as D from '../components/ListWrapper/styled'
 import * as S from '../components/Content/styled'
 import ProductNavigation from '../components/ProductNavigation'
 
-
 var paragraphs = require('lines-to-paragraphs')
 
 const Product = props => {
@@ -16,10 +15,8 @@ const Product = props => {
     return (
         <>
             <div style={{ display: 'flex', filexDirection: 'row' }}>
-
                 <ProductNavigation />
                 <div style={{ marginLeft: '10px' }}>
-
                     <SEO
                         title={post.frontmatter.title}
                         description={post.frontmatter.description}
@@ -65,7 +62,10 @@ const Product = props => {
                             }}
                         >
                             <img src={post.frontmatter.image} width={'45%'} />
-                            <img src={post.frontmatter.techimage} width={'45%'} />
+                            <img
+                                src={post.frontmatter.techimage}
+                                width={'45%'}
+                            />
                         </div>
 
                         <hr />
