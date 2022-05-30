@@ -9,8 +9,9 @@ image: '/assets/img/l_bayrak_yarim_render.jpg'
 techimage: '/assets/img/f_ankraj_duz_teknik_cizim.jpg'
 specsimage: '/assets/img/f_ankraj_duz_tablo.jpg'
 threedmodel: '/assets/glb/f_ankraj_duz.glb'
+threedscale: 8000
 product: true
-threedlogo: '/assets/img/3d_logo.png'
+threedlogo: '/assets/img/3d_logo_tr.png'
 specs: "● L braket dübel yardımıyla betona monte edilir. Somun, civata ve pul yardımıyla u profil l braket üzerine monte edilir.
 
 

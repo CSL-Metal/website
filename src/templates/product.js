@@ -11,6 +11,7 @@ var paragraphs = require('lines-to-paragraphs')
 
 const Product = props => {
     const post = props.data.markdownRemark
+    console.log(post)
 
     return (
         <>
@@ -55,7 +56,7 @@ const Product = props => {
                                     marginBottom: '10px',
                                 }}
                             />
-                            <ThreeD />
+                            <ThreeD threed={post.frontmatter.threedmodel} scale={post.frontmatter.threedscale} />
                         </D.ListWrapper>
 
                         <hr />
@@ -90,6 +91,7 @@ export const query = graphql`
                 specsimage
                 specs
                 threedmodel
+                threedscale
                 threedlogo
             }
             html
