@@ -31,6 +31,7 @@ const Banner = props => {
         }
     `)
 
+
     return (
         <div
             style={{
