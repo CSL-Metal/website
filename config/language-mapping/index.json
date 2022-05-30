@@ -12,12 +12,10 @@
             "en": "/contact",
             "tr": "/iletisim"
         },
-
         {
             "en": "/products",
             "tr": "/products"
         },
-
         {
             "en": "/blog/markdown-examples",
             "tr": "/blog/exemplos-de-markdown"
@@ -37,6 +35,54 @@
         {
             "en": "/blog/creating-posts-and-pages",
             "tr": "/blog/criacao-de-posts-e-paginas"
+        },
+        {
+            "en": "/products/adjustment-screw",
+            "tr": "/products/ayar-vidasi"
+        },
+        {
+            "en": "/products/f-anchorage-plain",
+            "tr": "/products/f-ankraj-duz"
+        },
+        {
+            "en": "/products/f-anchorage-serrated",
+            "tr": "/products/f-ankraj-tirtikli"
+        },
+        {
+            "en": "/products/flanged-pin",
+            "tr": "/products/flansli-pim"
+        },
+        {
+            "en": "/products/l-bracket-half",
+            "tr": "/products/l-bayrak-yarim"
+        },
+        {
+            "en": "/products/l-bracket",
+            "tr": "/products/l-bayrak"
+        },
+        {
+            "en": "/products/l-profile",
+            "tr": "/products/l-profil"
+        },
+        {
+            "en": "/products/plain-leaf-anchorage",
+            "tr": "/products/duz-yaprak-ankraj"
+        },
+        {
+            "en": "/products/multi-clips",
+            "tr": "/products/multi-klips"
+        },
+        {
+            "en": "/products/twisted-leaf-anchorage",
+            "tr": "/products/bukumlu-yaprak-ankraj"
+        },
+        {
+            "en": "/products/plain-pin",
+            "tr": "/products/duz-pim"
+        },
+        {
+            "en": "/products/u-profile",
+            "tr": "/products/u-profil"
         }
     ]
 }

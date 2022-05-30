@@ -5,6 +5,7 @@ import Header from '../components/Header'
 import Footer from '../components/Footer'
 
 import Banner from '../components/Banner'
+import SubBanner from '../components/SubBanner'
 
 import { useLocale } from '../hooks/locale'
 
@@ -22,6 +23,7 @@ const BaseLayout = ({ children, pageContext: { locale } }) => {
             <S.Wrapper>
                 <Header />
                 <Banner></Banner>
+                <SubBanner></SubBanner>
                 <S.SiteContent role="main">
                     <S.Container>{children}</S.Container>
                 </S.SiteContent>
