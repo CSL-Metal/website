@@ -3,14 +3,12 @@ import { graphql } from 'gatsby'
 import PostItem from '../components/PostItem'
 import TitlePage from '../components/TitlePage'
 import SEO from '../components/seo'
-import "./styles.css";
+import './styles.css'
 import * as S from '../components/ListWrapperProducts/styled'
 import ProductNavigation from '../components/ProductNavigation'
 import { useLocale } from '../hooks/locale'
 
-
 const ProductPage = props => {
-
     const postList = props.data.allMarkdownRemark.edges
     const { locale } = useLocale()
 
@@ -18,20 +16,20 @@ const ProductPage = props => {
         <>
             <ProductNavigation />
             <div>
-                <div style={{ marginLeft: '10px' }}>
+                <div>
                     <SEO title="products" />
-                    {locale === "tr" ? <TitlePage text="Ürünler" /> : <TitlePage text="Products" />}
+                    {locale === 'tr' ? (
+                        <TitlePage text="Ürünler" />
+                    ) : (
+                        <TitlePage text="Products" />
+                    )}
 
                     <hr />
-                    <S.ListWrapperProducts style={{ display: 'flex', flexWrap: 'wrap', justifyContent: 'left', marginLeft: 0, marginRight: 'auto' }}>
+                    <S.ListWrapperProducts>
                         {postList.map(
                             ({
                                 node: {
-                                    frontmatter: {
-                                        background,
-                                        title,
-                                        image,
-                                    },
+                                    frontmatter: { background, title, image },
                                     fields: { slug },
                                 },
                             }) => (
@@ -45,7 +43,6 @@ const ProductPage = props => {
                             )
                         )}
                     </S.ListWrapperProducts>
-
                 </div>
             </div>
         </>
