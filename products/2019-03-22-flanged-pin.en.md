@@ -11,7 +11,7 @@ specsimage: '/assets/img/f_ankraj_duz_tablo.jpg'
 threedmodel: '/assets/glb/f_ankraj_duz.glb'
 threedscale: 8000
 product: true
-threedlogo: '/assets/img/3d_logo.png'
+threedlogo: '/assets/img/3d_logo_en.png'
 specs: "●  Ayar vidası üzerine yerleştirilip mermerlerin sabitlenmesine yarar.
 
 ●  Ürünler isteğe göre TS 149 elektro galvaniz, TS 822 pregalvaniz , 304 ve 430 paslanmaz çelikten üretilebilmektedir."

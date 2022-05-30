@@ -11,7 +11,7 @@ specsimage: '/assets/img/f_ankraj_duz_tablo.jpg'
 threedmodel: '/assets/glb/f_ankraj_duz.glb'
 threedscale: 8000
 product: true
-threedlogo: '/assets/img/3d_logo.png'
+threedlogo: '/assets/img/3d_logo_tr.png'
 specs: "● Kullanım  şekline göre U proil veya L proil üzerine monte edilir.
 
 
