@@ -11,6 +11,7 @@ var paragraphs = require('lines-to-paragraphs')
 
 const Product = props => {
     const post = props.data.markdownRemark
+    console.log(post)
 
     return (
         <>
@@ -43,17 +44,6 @@ const Product = props => {
 
                         <hr />
                         <D.ListWrapper
-                            style={
-                                {
-                                    //border: '1px red solid',
-                                    // width: '100%',
-                                    //display: 'flex',
-                                    //'flex-direction': 'row',
-                                    // 'flex-wrap': 'wrap',
-                                    // alignItems: 'center',
-                                    // justifyContent: 'space-between',
-                                }
-                            }
                         >
                             <img
                                 src={post.frontmatter.threedlogo}
@@ -65,7 +55,7 @@ const Product = props => {
                                     marginBottom: '10px',
                                 }}
                             />
-                            <ThreeD />
+                            <ThreeD threed={post.frontmatter.threedmodel} scale={post.frontmatter.threedscale} />
                         </D.ListWrapper>
 
                         <hr />
@@ -100,6 +90,7 @@ export const query = graphql`
                 specsimage
                 specs
                 threedmodel
+                threedscale
                 threedlogo
             }
             html

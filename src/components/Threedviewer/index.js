@@ -3,7 +3,6 @@ import React from 'react'
 import { Canvas } from 'react-three-fiber'
 import Model from '../model'
 import Controls from '../controls'
-import GLTF from './f_ankraj_duz.glb'
 import uniforms from '../uniforms'
 import useScrollBlock from '../../utils/useScrollBlock'
 //import "../style.css"
@@ -11,7 +10,7 @@ import useScrollBlock from '../../utils/useScrollBlock'
 uniforms.init(THREE)
 
 const RectAreaLightDecl = ({
-    color = 'white',
+    color = '#696969',
     intensity = 1.5,
     width = 1000,
     height = 400,
@@ -30,7 +29,7 @@ const RectAreaLightDecl = ({
     )
 }
 
-export const ThreeD = () => {
+export const ThreeD = (props) => {
     const [blockScroll, allowScroll] = useScrollBlock()
     const [zoomState, setZoomState] = React.useState(false)
     const [dragState, setDragState] = React.useState(false)
@@ -73,30 +72,34 @@ export const ThreeD = () => {
                     touchAction: 'none',
                 }}
             >
-                <ambientLight intensity={0.3} />
+                <ambientLight color='#808080' intensity={2} />
                 <color attach="background" args={['#eaeaea']} />
-                <RectAreaLightDecl />
                 <RectAreaLightDecl
-                    intensity={1}
-                    width={100}
-                    height={1000}
-                    position={[0, 0, 2000]}
-                    color="red"
+                    intensity={3}
+                    width={5000}
+                    height={50000}
+                    position={[0, 0, -12000]}
                 />
                 <RectAreaLightDecl
-                    intensity={0.5}
-                    width={500}
-                    height={1000}
-                    position={[0, 1000, 0]}
+                    intensity={3}
+                    width={5000}
+                    height={50000}
+                    position={[0, 12000, 0]}
                 />
 
                 <RectAreaLightDecl
-                    intensity={5}
-                    width={1000}
-                    height={100}
-                    position={[-800, 0, 800]}
+                    intensity={3}
+                    width={5000}
+                    height={50000}
+                    position={[-12000, 0, 0]}
                 />
-                <Model url={GLTF} />
+                <RectAreaLightDecl
+                    intensity={3}
+                    width={5000}
+                    height={50000}
+                    position={[12000, 0, 0]}
+                />
+                <Model url={props.threed} scale={props.scale} />
                 <Controls
                     autoRotate
                     enablePan={false}
@@ -106,10 +109,10 @@ export const ThreeD = () => {
                     rotateSpeed={1.2}
                     enableRotate={dragState}
 
-                    // maxZoom={2}
-                    // minZoom={1}
-                    // maxPolarAngle={Math.PI / 3}
-                    // minPolarAngle={Math.PI / 3}
+                // maxZoom={2}
+                // minZoom={1}
+                // maxPolarAngle={Math.PI / 3}
+                // minPolarAngle={Math.PI / 3}
                 />
             </Canvas>
         </main>
