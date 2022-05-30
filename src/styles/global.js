@@ -76,6 +76,10 @@ const GlobalStyles = createGlobalStyle`
     color: var(--primaryColor)
   }
 
+  hr {
+    color: var(--primary-color);
+  }
+
   :root { 
     --gray-extra-light: #eaeaea; 
     --gray-light: #747d8d;  
