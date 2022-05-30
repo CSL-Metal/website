@@ -1,71 +1,57 @@
 import React from 'react'
-import { graphql } from 'gatsby'
-import PostItem from '../PostItem'
-import TitlePage from '../TitlePage'
-import SEO from '../seo'
-import "../../templates/styles.css";
-import * as S from '../ListWrapperProducts/styled'
-import ProductNavigation from '../ProductNavigation'
-import { useLocale } from '../../hooks/locale'
+import { makeStyles } from '@material-ui/core/styles';
+import Card from '@material-ui/core/Card';
+import CardActionArea from '@material-ui/core/CardActionArea';
+import CardActions from '@material-ui/core/CardActions';
+import CardContent from '@material-ui/core/CardContent';
+import CardMedia from '@material-ui/core/CardMedia';
+import Typography from '@material-ui/core/Typography';
+import sliderItems from '../sliderItems'
+import Slider from 'react-styled-carousel'
+import LocalizedLink from '../LocalizedLink'
 
 
-const ProductSlider = props => {
-  const query = useStaticQuery(graphql`
-    query ProductSlider($locale: String!, $dateFormat: String!, $skip: Int!, $limit: Int!) {
-      allMarkdownRemark(sort: {fields: frontmatter___date, order: DESC}, filter: {fields: {locale: {eq: $locale}}, fileAbsolutePath: {regex: "/(products)/.*\\.md$/"}}, limit: $limit, skip: $skip) {
-        edges {
-          node {
-            frontmatter {
-              title
-              description
-              category
-              background
-              image
-              date(formatString: $dateFormat)
-              product
-              maincategory
-            }
-            timeToRead
-            fields {
-              locale
-              slug
-            }
-          }
-        }
-      }
-    }
+const useStyles = makeStyles({
+  root: {
+    width: "100%"
+  },
+  media: {
+    height: 140,
+    width: "100%"
+  },
+});
+const ProductSlider = () => {
 
-`)
-
-  console.log(query)
-  const { locale } = useLocale()
-
+  const classes = useStyles();
+  const sliderData = sliderItems()
   return (
-    <>
-      <S.ListWrapperProducts style={{ display: 'flex', flexWrap: 'wrap', justifyContent: 'left', marginLeft: 0, marginRight: 'auto' }}>
-        {postList.map(
-          ({
-            node: {
-              frontmatter: {
-                background,
-                title,
-                image,
-              },
-              fields: { slug },
-            },
-          }) => (
-            <PostItem
-              slug={`/products/${slug}`}
-              background={background}
-              title={title}
-              image={image}
-              key={slug}
-            />
-          )
-        )}
-      </S.ListWrapperProducts>
-    </>
-  )
+    < Slider
+      cardsToShow={5}
+      showArrows={false}
+      showDots={false}
+      infinite
+      autoSlide={1500}
+      pauseOnMouseOver={false}
+    >
+      {
+        sliderData.map(item =>
+          <LocalizedLink to={`products`}>
+            <Card className={classes.root}>
+              <CardMedia
+                className={classes.media}
+                image={item.img}
+              />
+              <CardContent>
+                <Typography gutterBottom variant="h5" component="h2">
+                  {item.product}
+                </Typography>
+              </CardContent>
+            </Card>
+          </LocalizedLink>
+        )
+      }
+    </Slider >
+  );
 }
 
 
