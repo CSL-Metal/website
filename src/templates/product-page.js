@@ -49,32 +49,6 @@ const ProductPage = props => {
     )
 }
 
-// export const query = graphql`
-//  query ProductList($locale: String!, $dateFormat: String!, $skip: Int!, $limit: Int!, $productCategory: String!) {
-//   allMarkdownRemark(sort: {fields: frontmatter___date, order: DESC}, filter: {fields: {locale: {eq: $locale}}, fileAbsolutePath: {regex: "/(products)/.*\\.md$/"}, frontmatter: {productcategory: {eq: $productCategory}}}, limit: $limit, skip: $skip) {
-//     edges {
-//       node {
-//         frontmatter {
-//           title
-//           description
-//           category
-//           background
-//           image
-//           date(formatString: $dateFormat)
-//           product
-//           maincategory
-//         }
-//         timeToRead
-//         fields {
-//           locale
-//           slug
-//         }
-//       }
-//     }
-//   }
-// }
-
-// `
 export const query = graphql`
  query ProductList($locale: String!, $dateFormat: String!, $skip: Int!, $limit: Int!) {
   allMarkdownRemark(sort: {fields: frontmatter___date, order: DESC}, filter: {fields: {locale: {eq: $locale}}, fileAbsolutePath: {regex: "/(products)/.*\\.md$/"}}, limit: $limit, skip: $skip) {

@@ -44,8 +44,8 @@ const PostItem = ({
 
     const postImg = imgName
         ? listImages.edges.find(img => {
-            return img.node.childImageSharp.fluid.src.includes(imgName)
-        })
+              return img.node.childImageSharp.fluid.src.includes(imgName)
+          })
         : false
     return (
         <S.PostItemLink to={slug}>

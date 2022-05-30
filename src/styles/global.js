@@ -33,9 +33,11 @@ const GlobalStyles = createGlobalStyle`
   }
   html {
     font-size: 62.5%;
+    
   }
   body {
     line-height: 1;
+    
   }
   ol, ul {
     list-style: none;
@@ -57,6 +59,11 @@ const GlobalStyles = createGlobalStyle`
   }
   body {
     background: var(--body-bg);
+
+
+
+
+
     font-weight: 400;
     font-family: "Open Sans", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
 
@@ -111,6 +118,6 @@ const GlobalStyles = createGlobalStyle`
     --space-sm: 1rem;
     --space-lg: 3rem;
 
-  }
+
 `
 export default GlobalStyles
