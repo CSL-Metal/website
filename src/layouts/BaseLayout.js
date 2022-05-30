@@ -4,6 +4,8 @@ import GlobalStyles from '../styles/global'
 import Header from '../components/Header'
 import Footer from '../components/Footer'
 
+import Banner from '../components/Banner'
+
 import { useLocale } from '../hooks/locale'
 
 import * as S from './styled'
@@ -19,6 +21,7 @@ const BaseLayout = ({ children, pageContext: { locale } }) => {
             <GlobalStyles />
             <S.Wrapper>
                 <Header />
+                <Banner></Banner>
                 <S.SiteContent role="main">
                     <S.Container>{children}</S.Container>
                 </S.SiteContent>
