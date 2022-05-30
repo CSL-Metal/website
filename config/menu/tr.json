@@ -1,9 +1,24 @@
 {
     "menuItems": [
-        { "name": "Ana Sayfa", "link": "/" },
-        { "name": "Hakkimizda", "link": "/hakkimizda" },
-        { "name": "Blog", "link": "/blog" },
-        { "name": "Iletisim", "link": "/iletisim" },
-        { "name": "Urunler", "link": "/products" }
+        {
+            "name": "Ana Sayfa",
+            "link": "/"
+        },
+        {
+            "name": "Hakkımızda",
+            "link": "/hakkimizda"
+        },
+        {
+            "name": "Faaliyet Alanları",
+            "link": "/faaliyetalanlari"
+        },
+        {
+            "name": "İletişim",
+            "link": "/iletisim"
+        },
+        {
+            "name": "Ürünler",
+            "link": "/products"
+        }
     ]
 }

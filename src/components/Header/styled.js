@@ -5,7 +5,7 @@ import LocalizedLink from '../LocalizedLink'
 export const HeaderWrapper = styled.div`
     background-color: var(--bg-light);
     ${media.greaterThan('large')`
-    margin-bottom: var(--space);
+    margin-bottom: 0;
   `}
 `
 
@@ -16,8 +16,9 @@ export const Container = styled.div`
     margin: 0 auto;
     justify-content: flex-start;
     align-items: center;
-    padding: calc(var(--space) * 1.3) var(--space);
+    padding: 0;
     position: relative;
+
     ${media.greaterThan('medium')`
     flex-direction: row;
   `}

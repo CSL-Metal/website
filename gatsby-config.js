@@ -12,11 +12,19 @@ module.exports = {
         `gatsby-transformer-sharp`,
         `gatsby-plugin-sharp`,
         // It needs to be the first one to work with gatsby-remark-images
+
         {
             resolve: `gatsby-source-filesystem`,
             options: {
                 path: `${__dirname}/static/assets/img`,
                 name: `uploads`,
+            },
+        },
+        {
+            resolve: `gatsby-source-filesystem`,
+            options: {
+                path: `${__dirname}/static/assets/homepageimg`,
+                name: `homepageimages`,
             },
         },
         {
@@ -83,6 +91,7 @@ module.exports = {
                         options: {
                             maxWidth: 1040,
                             linkImagesToOriginal: false,
+                            quality: 100,
                         },
                     },
                     `gatsby-remark-lazy-load`,

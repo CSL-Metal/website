@@ -25,7 +25,7 @@ const ProductCategoryPage = props => {
             <SEO title="products" />
             <TitlePage text="products" />
 
-            <ProductNavigation />
+            {/* <ProductNavigation /> */}
 
             <S.ListWrapperProducts>
                 {postList.map(

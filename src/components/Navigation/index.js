@@ -1,11 +1,13 @@
 import React from 'react'
 import useMenu from '../useMenu'
 import useTranslations from '../useTranslations'
+import { useMenu as asd } from '../../hooks/menu'
 
 import * as S from './styled'
 
 const Navigation = ({ isActive, handleToggleMenu }) => {
     const menuItems = useMenu()
+    const { openedMenu, toggleMenu } = asd()
     const { button } = useTranslations()
 
     return (
@@ -17,6 +19,7 @@ const Navigation = ({ isActive, handleToggleMenu }) => {
                         aria-label={menu.name}
                         activeClassName="active"
                         key={`${menu.link}${index}`}
+                        onClick={toggleMenu}
                     >
                         {menu.name}
                     </S.NavigationLink>

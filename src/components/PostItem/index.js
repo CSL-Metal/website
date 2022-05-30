@@ -24,7 +24,7 @@ const PostItem = ({
                     edges {
                         node {
                             childImageSharp {
-                                fluid(maxWidth: 600, maxHeight: 350) {
+                                fluid {
                                     src
                                     ...GatsbyImageSharpFluid
                                 }
@@ -44,8 +44,8 @@ const PostItem = ({
 
     const postImg = imgName
         ? listImages.edges.find(img => {
-              return img.node.childImageSharp.fluid.src.includes(imgName)
-          })
+            return img.node.childImageSharp.fluid.src.includes(imgName)
+        })
         : false
 
     return (
@@ -63,16 +63,8 @@ const PostItem = ({
                         alt={title}
                     />
                 )}
-
                 <S.PostItemInfo>
-                    <S.PostItemTag background={background}>
-                        {category}
-                    </S.PostItemTag>
-                    <S.PostItemDate>
-                        {date} • {timeToRead} min {toRead}
-                    </S.PostItemDate>
                     <S.PostItemTitle>{title}</S.PostItemTitle>
-                    <S.PostItemDescription>{description}</S.PostItemDescription>
                 </S.PostItemInfo>
             </S.PostItemWrapper>
         </S.PostItemLink>

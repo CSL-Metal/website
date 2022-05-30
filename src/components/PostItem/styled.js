@@ -30,7 +30,7 @@ export const PostItemWrapper = styled.section`
 // `
 
 export const PostItemImg = styled(Img)`
-  width: 100%;
+  width: 200px;
 `;
 
 export const PostItemInfo = styled.div`
@@ -63,7 +63,7 @@ export const PostItemDate = styled.time`
 `;
 
 export const PostItemTitle = styled.h1`
-  font-size: 2rem;
+  font-size: 1.3rem;
   font-weight: 700;
   line-height: 140%;
 `;
