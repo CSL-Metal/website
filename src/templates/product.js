@@ -34,27 +34,17 @@ const Product = props => {
                                 justifyContent: 'space-between',
                             }}
                         >
-                            <img src={post.frontmatter.image} width={'45%'} />
-                            <img
-                                src={post.frontmatter.techimage}
-                                width={'45%'}
-                            />
+                            <D.ListWrapper>
+                                <img
+                                    src={post.frontmatter.image}
+                                    style={{ alignSelf: 'center' }}
+                                />
+                                <img src={post.frontmatter.techimage} />
+                            </D.ListWrapper>
                         </div>
 
                         <hr />
-                        <D.ListWrapper
-                            style={
-                                {
-                                    //border: '1px red solid',
-                                    // width: '100%',
-                                    //display: 'flex',
-                                    //'flex-direction': 'row',
-                                    // 'flex-wrap': 'wrap',
-                                    // alignItems: 'center',
-                                    // justifyContent: 'space-between',
-                                }
-                            }
-                        >
+                        <D.ListWrapper>
                             <img
                                 src={post.frontmatter.threedlogo}
                                 style={{

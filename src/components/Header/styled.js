@@ -28,10 +28,18 @@ export const Container = styled.div`
 `
 
 export const LogoLink = styled(LocalizedLink)`
-    margin-top: 1.5rem;
+    margin-top: 8rem;
+    ${media.greaterThan('medium')`
+    margin: 2rem;
     display: inline-block;
     margin-right: 0.5rem;
     width: 250px;
+    `} ${media.greaterThan('large')`
+    margin: 3rem;
+    display: inline-block;
+    margin-right: 0.5rem;
+    width: 250px;
+    `};
 `
 
 export const ButtonMenu = styled.div`
