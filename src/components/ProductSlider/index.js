@@ -1,59 +1,61 @@
 import React from 'react'
-import { makeStyles } from '@material-ui/core/styles';
-import Card from '@material-ui/core/Card';
-import CardActionArea from '@material-ui/core/CardActionArea';
-import CardActions from '@material-ui/core/CardActions';
-import CardContent from '@material-ui/core/CardContent';
-import CardMedia from '@material-ui/core/CardMedia';
-import Typography from '@material-ui/core/Typography';
+import { makeStyles } from '@material-ui/core/styles'
+import Card from '@material-ui/core/Card'
+import CardContent from '@material-ui/core/CardContent'
+import CardMedia from '@material-ui/core/CardMedia'
+import Typography from '@material-ui/core/Typography'
 import sliderItems from '../sliderItems'
 import Slider from 'react-styled-carousel'
 import LocalizedLink from '../LocalizedLink'
 
+const responsive = [
+    { breakPoint: 1280, cardsToShow: 6 }, // this will be applied if screen size is greater than 1280px. cardsToShow will become 4.
+    { breakPoint: 760, cardsToShow: 4 },
+    { breakPoint: 360, cardsToShow: 2 },
+]
 
 const useStyles = makeStyles({
-  root: {
-    width: "100%"
-  },
-  media: {
-    height: 140,
-    width: "100%"
-  },
-});
+    root: { margin: '0.5rem' },
+    media: {},
+})
 const ProductSlider = () => {
-
-  const classes = useStyles();
-  const sliderData = sliderItems()
-  return (
-    < Slider
-      cardsToShow={5}
-      showArrows={false}
-      showDots={false}
-      infinite
-      autoSlide={1500}
-      pauseOnMouseOver={false}
-    >
-      {
-        sliderData.map(item =>
-          <LocalizedLink to={`products`}>
-            <Card className={classes.root}>
-              <CardMedia
-                className={classes.media}
-                image={item.img}
-              />
-              <CardContent>
-                <Typography gutterBottom variant="h5" component="h2">
-                  {item.product}
-                </Typography>
-              </CardContent>
-            </Card>
-          </LocalizedLink>
-        )
-      }
-    </Slider >
-  );
+    const classes = useStyles()
+    const sliderData = sliderItems()
+    return (
+        <Slider
+            responsive={responsive}
+            showArrows={false}
+            showDots={false}
+            infinite
+            autoSlide={2500}
+            pauseOnMouseOver={false}
+        >
+            {sliderData.map(item => (
+                <LocalizedLink
+                    to={`products`}
+                    style={{ textDecoration: 'none' }}
+                >
+                    <Card className={classes.root}>
+                        <CardMedia
+                            className={classes.media}
+                            image={item.img}
+                            component="img"
+                        />
+                        <CardContent>
+                            <Typography
+                                variant="h6"
+                                component="h6"
+                                noWrap
+                                align="center"
+                            >
+                                {item.product}
+                            </Typography>
+                        </CardContent>
+                    </Card>
+                </LocalizedLink>
+            ))}
+        </Slider>
+    )
 }
-
-
 
 export default ProductSlider

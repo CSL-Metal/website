@@ -9,7 +9,7 @@ export const ListWrapperProducts = styled.section`
         grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     `}
     ${media.greaterThan('medium')`
-        margin-left: 150px;
-        grid-template-columns: repeat(auto-fit, minmax(250px, calc(50% - 10px)));
+    grid-gap: 50px;
+         grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
     `}
 `
