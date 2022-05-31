@@ -17,6 +17,10 @@
             "tr": "/products"
         },
         {
+            "en": "/services",
+            "tr": "/faaliyet"
+        },
+        {
             "en": "/blog/markdown-examples",
             "tr": "/blog/exemplos-de-markdown"
         },
