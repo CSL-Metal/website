@@ -8,8 +8,8 @@ background: '#e58e26'
 image: '/assets/img/f_ankraj_tirtikli_render.jpg'
 techimage: '/assets/img/f_ankraj_duz_teknik_cizim.jpg'
 specsimage: '/assets/img/f_ankraj_duz_tablo.jpg'
-threedmodel: '/assets/glb/f_ankraj_duz.glb'
-threedscale: 8000
+threedmodel: '/assets/glb/f_ankraj_tirtikli.glb'
+threedscale: 5000
 product: true
 threedlogo: '/assets/img/3d_logo_en.png'
 specs: "● Kullanım  şekline göre U proil veya L proil üzerine monte edilir.

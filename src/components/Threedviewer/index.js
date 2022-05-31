@@ -72,7 +72,7 @@ export const ThreeD = (props) => {
                     touchAction: 'none',
                 }}
             >
-                <ambientLight color='#808080' intensity={2} />
+                <ambientLight color='#696969' intensity={2} />
                 <color attach="background" args={['#eaeaea']} />
                 <RectAreaLightDecl
                     intensity={3}

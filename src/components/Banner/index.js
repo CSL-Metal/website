@@ -6,7 +6,6 @@ import { ArrowDropRight } from 'styled-icons/remix-line'
 import { globalHistory } from '@reach/router'
 
 const Banner = props => {
-    console.log(globalHistory.location.pathname)
     const data = useStaticQuery(graphql`
         query {
             listImages: allFile(
@@ -41,10 +40,10 @@ const Banner = props => {
                     globalHistory.location.pathname === '/'
                         ? 'flex'
                         : globalHistory.location.pathname === '/en'
-                        ? 'flex'
-                        : globalHistory.location.pathname === '/en/'
-                        ? 'flex'
-                        : 'none',
+                            ? 'flex'
+                            : globalHistory.location.pathname === '/en/'
+                                ? 'flex'
+                                : 'none',
             }}
         >
             <Slider
