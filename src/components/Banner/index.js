@@ -27,9 +27,28 @@ const Banner = props => {
                     }
                 }
             }
+
+            listImagesSmall: allFile(
+                filter: {
+                    childImageSharp: { fluid: { src: { regex: "/hpsmall_/" } } }
+                }
+                sort: {
+                    fields: childImageSharp___fluid___originalName
+                    order: ASC
+                }
+            ) {
+                edges {
+                    node {
+                        childImageSharp {
+                            fluid(maxWidth: 2080, quality: 100) {
+                                src
+                            }
+                        }
+                    }
+                }
+            }
         }
     `)
-
 
     return (
         <div
@@ -40,10 +59,10 @@ const Banner = props => {
                     globalHistory.location.pathname === '/'
                         ? 'flex'
                         : globalHistory.location.pathname === '/en'
-                            ? 'flex'
-                            : globalHistory.location.pathname === '/en/'
-                                ? 'flex'
-                                : 'none',
+                        ? 'flex'
+                        : globalHistory.location.pathname === '/en/'
+                        ? 'flex'
+                        : 'none',
             }}
         >
             <Slider
@@ -82,9 +101,19 @@ const Banner = props => {
                     />
                 }
             >
-                {data.listImages.edges.map(images => (
-                    <img src={images.node.childImageSharp.fluid.src} />
-                ))}
+                {typeof window !== 'undefined'
+                    ? window.innerWidth <= 600
+                        ? data.listImagesSmall.edges.map(images => (
+                              <img
+                                  src={images.node.childImageSharp.fluid.src}
+                              />
+                          ))
+                        : data.listImages.edges.map(images => (
+                              <img
+                                  src={images.node.childImageSharp.fluid.src}
+                              />
+                          ))
+                    : null}
             </Slider>
         </div>
     )
