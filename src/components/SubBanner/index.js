@@ -26,7 +26,9 @@ const SubBanner = () => {
     path = path.slice(3,)
   }
   let img = ""
-
+  if (path.slice(-1,) === "/") {
+    path = path.slice(0, -1)
+  }
   df.map((data, i) => {
     if (data.includes(path) && (path != "") && (path != "en")) {
       img = df[i]; astyle = { display: 'flex' }

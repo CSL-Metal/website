@@ -6,14 +6,30 @@ import ThreeD from '../components/Threedviewer'
 import * as D from '../components/ListWrapper/styled'
 import * as S from '../components/Content/styled'
 import ProductNavigation from '../components/ProductNavigation'
+import { useLocale } from '../hooks/locale'
 import './styles.css'
 
 var paragraphs = require('lines-to-paragraphs')
 
 const Product = props => {
+    const { locale } = useLocale()
     const post = props.data.markdownRemark
-    console.log(post)
+    const SpecCheck = () => {
+        if (post.frontmatter.specsimage) {
+            return (
+                <div>
+                    <hr />
+                    <img src={post.frontmatter.specsimage} width={'100%'} />
 
+                    <hr />
+                </div>
+            )
+        } else {
+            return (
+                <hr />
+            )
+        }
+    }
     return (
         <>
             <div style={{ display: 'flex', filexDirection: 'row' }}>
@@ -62,13 +78,8 @@ const Product = props => {
                                 scale={post.frontmatter.threedscale}
                             />
                         </D.ListWrapper>
-
-                        <hr />
-
-                        <img src={post.frontmatter.specsimage} width={'100%'} />
-
-                        <hr />
-
+                        <SpecCheck />
+                        {locale === "tr" ? <TitlePage text={"Ürün Açıklaması"} /> : <TitlePage text={"Product Description"} />}
                         <div
                             dangerouslySetInnerHTML={{
                                 __html: paragraphs(post.frontmatter.specs),
