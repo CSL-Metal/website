@@ -126,7 +126,7 @@ export const Content = styled.section`
         height: 0.25em;
         padding: 0;
         margin: 24px 0;
-        background-color: var(--bg-light);
+        background-color: var(--primary-color);
         border: 0;
     }
 

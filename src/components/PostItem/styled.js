@@ -13,12 +13,14 @@ export const PostItemLink = styled(LocalizedLink)`
 `
 
 export const PostItemWrapper = styled.section`
+    box-shadow: 5px 5px 8px 8px #eaeaea;
+    border-radius: 5px;
     align-items: center;
     display: flex;
     flex-direction: column;
     width: 100%;
     height: 100%;
-    background: var(--bg-light);
+    background: var(--primary-color);
 
     /* .homepage & {
     flex-direction: row;
@@ -62,9 +64,10 @@ export const PostItemDate = styled.time`
 `
 
 export const PostItemTitle = styled.h1`
-    font-size: 2rem;
-    font-weight: 700;
-    line-height: 140%;
+    color: white;
+    font-size: 1.5rem;
+    font-weight: 600;
+    line-height: 100%;
 `
 
 export const PostItemDescription = styled.p`

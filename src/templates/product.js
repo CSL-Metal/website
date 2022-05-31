@@ -6,6 +6,7 @@ import ThreeD from '../components/Threedviewer'
 import * as D from '../components/ListWrapper/styled'
 import * as S from '../components/Content/styled'
 import ProductNavigation from '../components/ProductNavigation'
+import './styles.css'
 
 var paragraphs = require('lines-to-paragraphs')
 
@@ -24,8 +25,8 @@ const Product = props => {
                         image={post.frontmatter.image}
                     />
                     <TitlePage text={post.frontmatter.title} />
-                    <hr />
                     <S.Content>
+                        <hr />
                         <div
                             style={{
                                 display: 'flex',
@@ -56,7 +57,10 @@ const Product = props => {
                                     marginBottom: '10px',
                                 }}
                             />
-                            <ThreeD threed={post.frontmatter.threedmodel} scale={post.frontmatter.threedscale} />
+                            <ThreeD
+                                threed={post.frontmatter.threedmodel}
+                                scale={post.frontmatter.threedscale}
+                            />
                         </D.ListWrapper>
 
                         <hr />
