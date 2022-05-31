@@ -4,18 +4,18 @@ import React from 'react'
 import { globalHistory } from '@reach/router'
 
 const SubBanner = () => {
-  const data = useStaticQuery(graphql`
+    const data = useStaticQuery(graphql`
         query {
-            allImageSharp(filter: {fluid: {src: {regex: "/banner_/"}}}) {
-              edges {
-                node {
-                  fluid(maxWidth: 2080, quality: 100) {
-                    src
-                  }
+            allImageSharp(filter: { fluid: { src: { regex: "/banner_/" } } }) {
+                edges {
+                    node {
+                        fluid(maxWidth: 2080, quality: 100) {
+                            src
+                        }
+                    }
                 }
-              }
             }
-          }
+        }
     `)
   let df = []
   let astyle
@@ -37,18 +37,26 @@ const SubBanner = () => {
     }
   })
 
-
-  return (
-    <div
-      style={{
-        width: '100%',
-        overflow: 'hidden',
-        astyle
-      }}
-    >
-      <img src={img} />
-    </div>
-  )
+    return (
+        <div
+            style={{
+                width: '100%',
+                overflow: 'hidden',
+                astyle,
+                display: 'flex',
+                justifyContent: 'center',
+                backgroundSize: 'contain',
+            }}
+        >
+            <img
+                src={img}
+                style={{
+                    maxWidth: 'calc(90vw + 400px)',
+                    maxHeight: '400px',
+                }}
+            />
+        </div>
+    )
 }
 
 export default SubBanner
