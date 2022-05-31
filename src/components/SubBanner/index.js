@@ -17,24 +17,25 @@ const SubBanner = () => {
             }
         }
     `)
-    let df = []
-    let astyle
-    data.allImageSharp.edges.map(item => df.push(item.node.fluid.src))
-    let path = globalHistory.location.pathname
-    path = path.slice(1)
-    if (path.slice(0, 3) === 'en/') {
-        path = path.slice(3)
+  let df = []
+  let astyle
+  data.allImageSharp.edges.map(item => df.push(item.node.fluid.src))
+  let path = globalHistory.location.pathname
+  path = path.slice(1,)
+  if (path.slice(0, 3) === "en/") {
+    path = path.slice(3,)
+  }
+  let img = ""
+  if (path.slice(-1,) === "/") {
+    path = path.slice(0, -1)
+  }
+  df.map((data, i) => {
+    if (data.includes(path) && (path != "") && (path != "en")) {
+      img = df[i]; astyle = { display: 'flex' }
+    } else {
+      astyle = { display: "none" }
     }
-    let img = ''
-
-    df.map((data, i) => {
-        if (data.includes(path) && path != '' && path != 'en') {
-            img = df[i]
-            astyle = { display: 'flex' }
-        } else {
-            astyle = { display: 'none' }
-        }
-    })
+  })
 
     return (
         <div

@@ -15,7 +15,6 @@ const styleBackground = {
     position: 'fixed',
     width: '100vw',
     height: '100vh',
-
     backgroundColor: 'var(--bg-light)',
     opacity: '0.04',
     backgroundImage:

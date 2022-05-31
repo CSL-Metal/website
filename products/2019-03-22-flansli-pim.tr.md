@@ -6,8 +6,7 @@ productcategory: mermer
 maincategory: Dış Cephe Sistemleri
 background: '#e58e26'
 image: '/assets/img/flansli_pim_render.jpg'
-techimage: '/assets/img/f_ankraj_duz_teknik_cizim.jpg'
-specsimage: '/assets/img/f_ankraj_duz_tablo.jpg'
+techimage: '/assets/img/flansli_pim_teknik_cizim.jpg'
 threedmodel: '/assets/glb/flansli_pim.glb'
 threedscale: 8000
 product: true

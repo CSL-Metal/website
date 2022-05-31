@@ -6,7 +6,7 @@ productcategory: marble
 maincategory: Facade Systems
 background: '#e58e26'
 image: '/assets/img/ayar_vidasi_render.jpg'
-techimage: '/assets/img/f_ankraj_duz_teknik_cizim.jpg'
+techimage: '/assets/img/ayar_vidasi_teknik_cizim.jpg'
 specsimage: '/assets/img/f_ankraj_duz_tablo.jpg'
 threedmodel: '/assets/glb/ayar_vidasi.glb'
 threedscale: 6000

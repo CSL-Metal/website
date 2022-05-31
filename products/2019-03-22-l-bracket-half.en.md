@@ -6,7 +6,7 @@ productcategory: marble
 maincategory: Facade Systems
 background: '#e58e26'
 image: '/assets/img/l_bayrak_yarim_render.jpg'
-techimage: '/assets/img/f_ankraj_duz_teknik_cizim.jpg'
+techimage: '/assets/img/l_bayrak_yarim_teknik_cizim.jpg'
 specsimage: '/assets/img/f_ankraj_duz_tablo.jpg'
 threedmodel: '/assets/glb/l_bayrak_yarim.glb'
 threedscale: 3500
