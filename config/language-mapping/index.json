@@ -5,40 +5,12 @@
             "tr": "/hakkimizda"
         },
         {
-            "en": "/blog",
-            "tr": "/blog"
-        },
-        {
             "en": "/contact",
             "tr": "/iletisim"
         },
         {
             "en": "/products",
             "tr": "/products"
-        },
-        {
-            "en": "/services",
-            "tr": "/faaliyet"
-        },
-        {
-            "en": "/blog/markdown-examples",
-            "tr": "/blog/exemplos-de-markdown"
-        },
-        {
-            "en": "/blog/javascript-language",
-            "tr": "/blog/linguagem-javascript"
-        },
-        {
-            "en": "/blog/digital-image-processing",
-            "tr": "/blog/processamento-de-imagens-digitais"
-        },
-        {
-            "en": "/blog/adding-menu-items",
-            "tr": "/blog/adicionando-itens-no-menu"
-        },
-        {
-            "en": "/blog/creating-posts-and-pages",
-            "tr": "/blog/criacao-de-posts-e-paginas"
         },
         {
             "en": "/products/adjustment-screw",

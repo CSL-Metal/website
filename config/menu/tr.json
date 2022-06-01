@@ -9,16 +9,12 @@
             "link": "/hakkimizda"
         },
         {
-            "name": "Faaliyet Alanları",
-            "link": "/faaliyet"
-        },
-        {
-            "name": "İletişim",
-            "link": "/iletisim"
-        },
-        {
             "name": "Ürünler",
             "link": "/products"
+        },
+        {
+            "name": "Bize Ulaşın",
+            "link": "/iletisim"
         }
     ]
 }

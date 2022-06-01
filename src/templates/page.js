@@ -8,7 +8,6 @@ import { globalHistory } from '@reach/router'
 import * as S from '../components/Content/styled'
 
 const Maps = () => {
-    console.log(globalHistory.location.pathname)
     return (
         <div
             style={{
@@ -16,8 +15,8 @@ const Maps = () => {
                     globalHistory.location.pathname === '/en/contact'
                         ? 'block'
                         : globalHistory.location.pathname === '/iletisim'
-                        ? 'block'
-                        : 'none',
+                            ? 'block'
+                            : 'none',
             }}
         >
             <MyMapComponent
@@ -42,6 +41,7 @@ const Page = props => {
                 image={post.frontmatter.image}
             />
             <TitlePage text={post.frontmatter.title} />
+            <hr style={{ margin: `2rem 0` }} />
             <S.Content>
                 <div dangerouslySetInnerHTML={{ __html: post.html }}></div>
             </S.Content>

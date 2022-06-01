@@ -17,6 +17,7 @@ const styleBackground = {
     height: '100vh',
     backgroundColor: 'var(--bg-light)',
     opacity: '0.04',
+    zIndex: -1,
     backgroundImage:
         'linear-gradient(30deg, #BF1C2D 12%, transparent 12.5%, transparent 87%, #BF1C2D 87.5%, #BF1C2D), linear-gradient(150deg, #BF1C2D 12%, transparent 12.5%, transparent 87%, #BF1C2D 87.5%, #BF1C2D), linear-gradient(30deg, #BF1C2D 12%, transparent 12.5%, transparent 87%, #BF1C2D 87.5%, #BF1C2D), linear-gradient(150deg, #BF1C2D 12%, transparent 12.5%, transparent 87%, #BF1C2D 87.5%, #BF1C2D), linear-gradient(60deg, #BF1C2D77 25%, transparent 25.5%, transparent 75%, #BF1C2D77 75%, #BF1C2D77), linear-gradient(60deg, #BF1C2D77 25%, transparent 25.5%, transparent 75%, #BF1C2D77 75%, #BF1C2D77)',
     backgroundSize: '22px 39px',

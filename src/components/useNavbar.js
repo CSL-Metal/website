@@ -45,33 +45,8 @@ function useNavbar() {
         maincategory: item.edges[0].node.frontmatter.maincategory
       })
     }
-
-    // if (item.edges[0].node.fields.isDefault) {
-    //     return {
-    //         name: 'en',
-    //         menuItems: [{
-    //             link: `/${item.fieldValue}`,
-    //             name: item.fieldValue,
-    //         }],
-    //     }
-    // } else {
-    //     return {
-    //         name: 'pt',
-    //         menuItems: [{
-    //             link: `/${item.fieldValue}`,
-    //             name: item.fieldValue,
-    //         }],
-    //     }
-    // }
   })
 
-  // const test1 = _.groupBy(menuData, 'name')
-
-  // console.log(df)
-
-  // let simplified = menuData.groupBy(({ name }) => name)
-
-  // Only return menu for the current locale
   const { menuItems } = df.filter(lang => lang.name === locale)[0]
   return menuItems
 }

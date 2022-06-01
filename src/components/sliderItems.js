@@ -8,7 +8,6 @@ function sliderItems() {
   let sliderData = []
   rawData.map(items => sliderData.push({ lang: items.edges[0].node.fields.locale, product: items.edges[0].node.frontmatter.description, img: items.edges[0].node.frontmatter.image }))
   sliderData = sliderData.filter(data => data.lang === locale)
-  console.log(sliderData)
   return sliderData
 }
 

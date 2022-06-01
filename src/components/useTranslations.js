@@ -35,14 +35,13 @@ const query = graphql`
                     name
                     translations: childTranslationsJson {
                         home
-
                         hello
                         subline
                         latestPosts
                         category
                         allPosts
                         toRead
-
+                        catalog
                         next
                         prev
                         of
