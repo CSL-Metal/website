@@ -19,6 +19,8 @@ const Product = props => {
             return (
                 <div>
                     <hr />
+
+                    {locale === "tr" ? <TitlePage text={"Ölçü Tablosu"} /> : <TitlePage text={"Size Chart"} />}
                     <img src={post.frontmatter.specsimage} width={'100%'} />
 
                     <hr />
@@ -71,6 +73,7 @@ const Product = props => {
                                     height: '100%',
                                     borderRadius: '10px',
                                     marginBottom: '10px',
+                                    zIndex: 999
                                 }}
                             />
                             <ThreeD

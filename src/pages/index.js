@@ -10,68 +10,68 @@ import ProductSlider from '../components/ProductSlider'
 import * as S from '../components/ListWrapper/styled'
 
 const Index = ({ data: { allMarkdownRemark, listImages } }) => {
-    // useTranslations is aware of the global context (and therefore also "locale")
-    // so it'll automatically give back the right translations
-    const {
-        hello,
-        subline,
-        category,
-        latestPosts,
-        allPosts,
-    } = useTranslations()
+  // useTranslations is aware of the global context (and therefore also "locale")
+  // so it'll automatically give back the right translations
+  const {
+    hello,
+    subline,
+    category,
+    latestPosts,
+    allPosts,
+  } = useTranslations()
 
-    const postList = allMarkdownRemark.edges
+  const postList = allMarkdownRemark.edges
 
 
-    console.log(
-        listImages.edges.map(images => images.node.childImageSharp.fluid.src)
-    )
+  console.log(
+    listImages.edges.map(images => images.node.childImageSharp.fluid.src)
+  )
 
-    return (
-        <div className="homepage">
-            <SEO title="Home" />
-             <ProductSlider />
-            <TitlePage text={hello} />
-            <p>{subline}</p>
-            <hr style={{ margin: `2rem 0` }} />
-            <h2>
-                <strong>{latestPosts}</strong>
-            </h2>
-            <br />
-            <S.ListWrapper>
-                {postList.map(
-                    ({
-                        node: {
-                            frontmatter: {
-                                background,
-                                category,
-                                date,
-                                description,
-                                title,
-                                image,
-                            },
-                            timeToRead,
-                            fields: { slug },
-                        },
-                    }) => (
-                        <PostItem
-                            slug={`/blog/${slug}`}
-                            background={background}
-                            category={category}
-                            date={date}
-                            timeToRead={timeToRead}
-                            title={title}
-                            description={description}
-                            image={image}
-                            key={slug}
-                        />
-                    )
-                )}
-            </S.ListWrapper>
-            <br />
-            <LocalizedLink to={`/blog/`}>{allPosts}</LocalizedLink>
-        </div>
-    )
+  return (
+    <div className="homepage">
+      <SEO title="Home" />
+      <TitlePage text={hello} />
+      <ProductSlider />
+      <p>{subline}</p>
+      <hr style={{ margin: `2rem 0` }} />
+      <h2>
+        <strong>{latestPosts}</strong>
+      </h2>
+      <br />
+      <S.ListWrapper>
+        {postList.map(
+          ({
+            node: {
+              frontmatter: {
+                background,
+                category,
+                date,
+                description,
+                title,
+                image,
+              },
+              timeToRead,
+              fields: { slug },
+            },
+          }) => (
+            <PostItem
+              slug={`/blog/${slug}`}
+              background={background}
+              category={category}
+              date={date}
+              timeToRead={timeToRead}
+              title={title}
+              description={description}
+              image={image}
+              key={slug}
+            />
+          )
+        )}
+      </S.ListWrapper>
+      <br />
+      <LocalizedLink to={`/blog/`}>{allPosts}</LocalizedLink>
+    </div>
+  )
 }
 
 export default Index

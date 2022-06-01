@@ -6,14 +6,14 @@ productcategory: marble
 maincategory: Facade Systems
 background: '#e58e26'
 image: '/assets/img/duz_yaprak_ankraj_render.jpg'
-techimage: '/assets/img/f_ankraj_duz_teknik_cizim.jpg'
-specsimage: '/assets/img/f_ankraj_duz_tablo.jpg'
+techimage: '/assets/img/duz_yaprak_ankraj_teknik_cizim.jpg'
+specsimage: '/assets/img/duz_yaprak_ankraj_tablo_en.jpg'
 threedmodel: '/assets/glb/duz_yaprak_ankraj.glb'
 threedscale: 4000
 product: true
 threedlogo: '/assets/img/3d_logo_en.png'
-specs: "●  Tuğla ve beton duvarlarda kıvrımlı ucu harç ile duvarın içine monte edilir. Delikli ucuna ise pim takılıp dış cephenin sabitlenmesi yapılır.
+specs: "● On brick and concrete walls, the curved end is mounted inside the wall with grout. A pin is attached to the perforated end and the exterior is fixed.
 
 
-●  Ürünler isteğe göre AISI 304 , AISI 316 ve 430 paslanmaz çelikten üretilebilmektedir."
+● Products can be produced from AISI 304, AISI 316 and 430 stainless steel upon request."
 ---

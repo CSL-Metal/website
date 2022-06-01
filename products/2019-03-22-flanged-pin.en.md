@@ -11,7 +11,8 @@ threedmodel: '/assets/glb/flansli_pim.glb'
 threedscale: 8000
 product: true
 threedlogo: '/assets/img/3d_logo_en.png'
-specs: "●  Ayar vidası üzerine yerleştirilip mermerlerin sabitlenmesine yarar.
+specs: "●  It is placed on the adjustment screw and used to fix the natural stones.
+
 
 ●  Ürünler isteğe göre TS 149 elektro galvaniz, TS 822 pregalvaniz , 304 ve 430 paslanmaz çelikten üretilebilmektedir."
 ---

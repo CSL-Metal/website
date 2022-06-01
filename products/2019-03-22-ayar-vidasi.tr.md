@@ -7,7 +7,7 @@ maincategory: Dış Cephe Sistemleri
 background: '#e58e26'
 image: '/assets/img/ayar_vidasi_render.jpg'
 techimage: '/assets/img/ayar_vidasi_teknik_cizim.jpg'
-specsimage: '/assets/img/f_ankraj_duz_tablo.jpg'
+specsimage: '/assets/img/ayar_vidasi_tablo_tr.jpg'
 threedmodel: '/assets/glb/ayar_vidasi.glb'
 threedscale: 6000
 product: true

@@ -7,17 +7,16 @@ maincategory: Facade Systems
 background: '#e58e26'
 image: '/assets/img/f_ankraj_duz_render.jpg'
 techimage: '/assets/img/f_ankraj_duz_teknik_cizim.jpg'
-specsimage: '/assets/img/f_ankraj_duz_tablo.jpg'
+specsimage: '/assets/img/f_ankraj_duz_tablo_en.jpg'
 threedmodel: '/assets/glb/f_ankraj_duz.glb'
 threedscale: 6000
 product: true
 threedlogo: '/assets/img/3d_logo_en.png'
-specs: "● Kullanım  şekline göre U proil veya L proil üzerine monte edilir.
+specs: "● It is mounted on U profile or L profile according to usage.
 
 
-● Urünler isteğe göre TS 149 elektro galvaniz, TS 822 pregalvaniz , TS 914 sıcak daldırma galvaniz, 304 ve 430
-paslanmaz çelikten üretilebilmektedir.
+● The products can be produced from TS 149 electro galvanized, TS 822 pregalvanized, TS 914 hot-dip galvanized, 304 and 430 stainless steel upon request. 
 
 
-● Tüm değerler mm cinsindedir."
+● All dimensions are in mm."
 ---
