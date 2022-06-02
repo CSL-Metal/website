@@ -43,7 +43,8 @@ const Index = ({ data: { listImages } }) => {
       <br />
       <TitlePage text={catalog} />
       <hr style={{ margin: `2rem 0` }} />
-      <img style={{ width: "300px" }} src={image} onClick={saveFile} />
+      <img style={{ position: "relative", zIndex: 500, width: "300px" }} src={image} onClick={saveFile} />
+
     </div>
   )
 }

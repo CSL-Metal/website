@@ -59,6 +59,18 @@
         {
             "en": "/products/u-profile",
             "tr": "/products/u-profil"
+        },
+        {
+            "en": "/products/serrated-washer",
+            "tr": "/products/tirtikli-pul"
+        },
+        {
+            "en": "/products/plain-washer",
+            "tr": "/products/duz-pul"
+        },
+        {
+            "en": "/products/sleeved-dowel",
+            "tr": "/products/sac-gomlekli-dubel"
         }
     ]
 }

@@ -105,8 +105,8 @@ export const ThreeD = (props) => {
                     enablePan={false}
                     enableZoom={zoomState}
                     enableDamping
-                    dampingFactor={0.5}
-                    rotateSpeed={1.2}
+                    dampingFactor={1.5}
+                    rotateSpeed={3.1}
                     enableRotate={dragState}
 
                 // maxZoom={2}
