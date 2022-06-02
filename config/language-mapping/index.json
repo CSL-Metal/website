@@ -69,6 +69,18 @@
             "tr": "/products/duz-pul"
         },
         {
+            "en": "/products/nut",
+            "tr": "/products/somun"
+        },
+        {
+            "en": "/products/bolt",
+            "tr": "/products/civata"
+        },
+        {
+            "en": "/products/washer",
+            "tr": "/products/pul"
+        },
+        {
             "en": "/products/sleeved-dowel",
             "tr": "/products/sac-gomlekli-dubel"
         }
