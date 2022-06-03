@@ -91,6 +91,18 @@
         {
             "en": "/products/multi-clips-veritical",
             "tr": "/products/multi-klips-dikey"
+        },
+        {
+            "en": "/products/3-9-countersunk_screw",
+            "tr": "/products/3-9-havsa_bas_vida"
+        },
+        {
+            "en": "/products/5-5-trapezoidal_screw",
+            "tr": "/products/5-5-trapez_vida"
+        },
+        {
+            "en": "/products/clip-on-steel-dowel",
+            "tr": "/products/klipsli-dubel"
         }
     ]
 }

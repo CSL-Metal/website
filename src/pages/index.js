@@ -5,6 +5,7 @@ import SEO from '../components/seo'
 import TitlePage from '../components/TitlePage'
 import useTranslations from '../components/useTranslations'
 import ProductSlider from '../components/ProductSlider'
+import FacilityImages from '../components/FacilityImages'
 
 import * as S from '../components/ListWrapper/styled'
 
@@ -14,6 +15,7 @@ const Index = ({ data: { listImages } }) => {
   const {
     hello,
     catalog,
+    ourimages,
   } = useTranslations()
   let pdf;
   let image;
@@ -25,7 +27,6 @@ const Index = ({ data: { listImages } }) => {
     }
   }
   )
-  console.log(pdf)
   const saveFile = () => {
     saveAs(
       pdf,
@@ -44,7 +45,9 @@ const Index = ({ data: { listImages } }) => {
       <TitlePage text={catalog} />
       <hr style={{ margin: `2rem 0` }} />
       <img style={{ position: "relative", zIndex: 500, width: "300px" }} src={image} onClick={saveFile} />
-
+      <TitlePage text={ourimages} />
+      <hr style={{ margin: `2rem 0` }} />
+      <FacilityImages />
     </div>
   )
 }

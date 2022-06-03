@@ -43,7 +43,7 @@ const Page = props => {
             <TitlePage text={post.frontmatter.title} />
             <hr style={{ margin: `2rem 0` }} />
             <S.Content>
-                <div dangerouslySetInnerHTML={{ __html: post.html }}></div>
+                <div style={{ position: "relative", zIndex: 999 }} dangerouslySetInnerHTML={{ __html: post.html }}></div>
             </S.Content>
             <Maps />
         </>

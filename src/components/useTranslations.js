@@ -45,7 +45,7 @@ const query = graphql`
                         next
                         prev
                         of
-
+                        ourimages
                         button
 
                         aboutProject
