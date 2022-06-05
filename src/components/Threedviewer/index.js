@@ -33,6 +33,7 @@ export const ThreeD = (props) => {
     const [blockScroll, allowScroll] = useScrollBlock()
     const [zoomState, setZoomState] = React.useState(false)
     const [dragState, setDragState] = React.useState(false)
+    const [rotateState, setRotateState] = React.useState(true)
 
     return (
         <main>
@@ -49,10 +50,12 @@ export const ThreeD = (props) => {
                     setDragState(true)
                 }}
                 onTouchEnd={e => {
-                    setDragState(false)
+                    setDragState(false);
+                    setRotateState(false);
                 }}
                 onMouseUp={e => {
-                    setDragState(false)
+                    setDragState(false);
+                    setRotateState(false);
                 }}
                 onMouseDown={e => {
                     setDragState(true)
@@ -75,33 +78,33 @@ export const ThreeD = (props) => {
                 <ambientLight color='#696969' intensity={2} />
                 <color attach="background" args={['#eaeaea']} />
                 <RectAreaLightDecl
-                    intensity={3}
+                    intensity={2}
                     width={5000}
                     height={50000}
                     position={[0, 0, -12000]}
                 />
                 <RectAreaLightDecl
-                    intensity={3}
+                    intensity={2}
                     width={5000}
                     height={50000}
                     position={[0, 12000, 0]}
                 />
 
                 <RectAreaLightDecl
-                    intensity={3}
+                    intensity={2}
                     width={5000}
                     height={50000}
                     position={[-12000, 0, 0]}
                 />
                 <RectAreaLightDecl
-                    intensity={3}
+                    intensity={2}
                     width={5000}
                     height={50000}
                     position={[12000, 0, 0]}
                 />
                 <Model url={props.threed} scale={props.scale} />
                 <Controls
-                    autoRotate
+                    autoRotate={rotateState}
                     enablePan={false}
                     enableZoom={zoomState}
                     enableDamping
