@@ -5,6 +5,7 @@ description: Flanged Pin
 productcategory: marble
 maincategory: Facade Systems
 background: '#e58e26'
+prioritiy: 1311
 image: '/assets/img/flansli_pim_render.jpg'
 techimage: '/assets/img/flansli_pim_teknik_cizim.jpg'
 threedmodel: '/assets/glb/flansli_pim.glb'

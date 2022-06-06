@@ -5,6 +5,7 @@ description: Flanşlı Pim
 productcategory: mermer
 maincategory: Dış Cephe Sistemleri
 background: '#e58e26'
+prioritiy: 1311
 image: '/assets/img/flansli_pim_render.jpg'
 techimage: '/assets/img/flansli_pim_teknik_cizim.jpg'
 threedmodel: '/assets/glb/flansli_pim.glb'

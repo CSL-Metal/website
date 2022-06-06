@@ -5,6 +5,7 @@ description: Plain Washer
 productcategory: marble
 maincategory: Facade Systems
 background: '#e58e26'
+prioritiy: 1312
 image: '/assets/img/duz_pul_render.jpg'
 techimage: '/assets/img/duz_pul_teknik_cizim.jpg'
 threedmodel: '/assets/glb/duz_pul.glb'

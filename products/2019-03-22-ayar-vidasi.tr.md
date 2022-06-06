@@ -5,6 +5,7 @@ description: Ayar Vidası
 productcategory: mermer
 maincategory: Dış Cephe Sistemleri
 background: '#e58e26'
+prioritiy: 1305
 image: '/assets/img/ayar_vidasi_render.jpg'
 techimage: '/assets/img/ayar_vidasi_teknik_cizim.jpg'
 specsimage: '/assets/img/ayar_vidasi_tablo_tr.jpg'

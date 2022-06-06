@@ -5,6 +5,7 @@ description: Twisted Leaf Anchorage
 productcategory: marble
 maincategory: Facade Systems
 background: '#e58e26'
+prioritiy: 1304
 image: '/assets/img/bukumlu_yaprak_ankraj_render.jpg'
 techimage: '/assets/img/bukumlu_yaprak_ankraj_teknik_cizim.jpg'
 specsimage: '/assets/img/bukumlu_yaprak_ankraj_tablo_en.jpg'

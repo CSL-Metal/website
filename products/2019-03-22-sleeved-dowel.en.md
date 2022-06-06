@@ -5,6 +5,7 @@ description: Sleeved Dowel
 productcategory: Dowel
 maincategory: Hardware
 background: '#e58e26'
+prioritiy: 9901
 image: '/assets/img/sac_gomlekli_dubel_render.jpg'
 techimage: '/assets/img/sac_gomlekli_dubel_teknik_cizim.jpg'
 specsimage: '/assets/img/sac_gomlekli_dubel_tablo_en.jpg'

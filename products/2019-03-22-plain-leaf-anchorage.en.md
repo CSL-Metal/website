@@ -5,6 +5,7 @@ description: Plain Leaf Anchorage
 productcategory: marble
 maincategory: Facade Systems
 background: '#e58e26'
+prioritiy: 1303
 image: '/assets/img/duz_yaprak_ankraj_render.jpg'
 techimage: '/assets/img/duz_yaprak_ankraj_teknik_cizim.jpg'
 specsimage: '/assets/img/duz_yaprak_ankraj_tablo_en.jpg'

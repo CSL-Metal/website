@@ -13,8 +13,8 @@ const FacilityImages = () => {
             showArrows={true}
             showDots={true}
             infinite
-            autoSlide={2500}
-            pauseOnMouseOver={false}
+            autoSlide={3500}
+            pauseOnMouseOver={true}
         >
             {facilityImages.nodes.map(item => (
                 <img src={item.publicURL} />

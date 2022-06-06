@@ -5,6 +5,7 @@ description: Düz Pul
 productcategory: mermer
 maincategory: Dış Cephe Sistemleri
 background: '#e58e26'
+prioritiy: 1313
 image: '/assets/img/duz_pul_render.jpg'
 techimage: '/assets/img/duz_pul_teknik_cizim.jpg'
 threedmodel: '/assets/glb/duz_pul.glb'

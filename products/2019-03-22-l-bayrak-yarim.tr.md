@@ -5,6 +5,7 @@ description: Yarım L Bayrak
 productcategory: mermer
 maincategory: Dış Cephe Sistemleri
 background: '#e58e26'
+prioritiy: 1307
 image: '/assets/img/l_bayrak_yarim_render.jpg'
 techimage: '/assets/img/l_bayrak_yarim_teknik_cizim.jpg'
 specsimage: '/assets/img/l_bayrak_yarim_tablo_tr.jpg'

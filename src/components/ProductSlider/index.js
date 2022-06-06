@@ -27,7 +27,7 @@ const ProductSlider = () => {
             showArrows={false}
             showDots={false}
             infinite
-            autoSlide={2500}
+            autoSlide={1000}
             pauseOnMouseOver={false}
         >
             {sliderData.map(item => (

@@ -51,7 +51,7 @@ const ProductPage = props => {
 
 export const query = graphql`
  query ProductList($locale: String!, $dateFormat: String!, $skip: Int!, $limit: Int!) {
-  allMarkdownRemark(sort: {fields: frontmatter___description, order: ASC}, filter: {fields: {locale: {eq: $locale}}, fileAbsolutePath: {regex: "/(products)/.*\\.md$/"}}, limit: $limit, skip: $skip) {
+  allMarkdownRemark(sort: {fields: frontmatter___prioritiy, order: ASC}, filter: {fields: {locale: {eq: $locale}}, fileAbsolutePath: {regex: "/(products)/.*\\.md$/"}}, limit: $limit, skip: $skip) {
     edges {
       node {
         frontmatter {
@@ -61,6 +61,7 @@ export const query = graphql`
           background
           image
           date(formatString: $dateFormat)
+          prioritiy
           product
           maincategory
         }

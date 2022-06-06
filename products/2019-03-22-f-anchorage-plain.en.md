@@ -5,6 +5,7 @@ description: F Anchorage
 productcategory: marble
 maincategory: Facade Systems
 background: '#e58e26'
+prioritiy: 1301
 image: '/assets/img/f_ankraj_duz_render.jpg'
 techimage: '/assets/img/f_ankraj_duz_teknik_cizim.jpg'
 specsimage: '/assets/img/f_ankraj_duz_tablo_en.jpg'

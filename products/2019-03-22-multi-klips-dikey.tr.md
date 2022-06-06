@@ -5,6 +5,7 @@ description: Dikey Multi Klips
 productcategory: seramik
 maincategory: Dış Cephe Sistemleri
 background: '#e58e26'
+prioritiy: 1202
 image: '/assets/img/multi_klips_dikey_render.jpg'
 techimage: '/assets/img/multi_klips_dikey_teknik_cizim.jpg'
 threedmodel: '/assets/glb/multi_klips_dikey.glb'
@@ -22,5 +23,8 @@ specs: "● Seramik dış cephe giydirmede alüminyum T profillerin üzerine mon
 
 
 ● Tüm ürünler belirtilen kalitelerde talebe göre RAL kodlu elektrostatik toz boyalı olarak imal edilebilir.
+
+
+● Ürün Kodu : CSL.D.0300.SCK.12.033.82
     "
 ---

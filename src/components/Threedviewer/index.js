@@ -34,7 +34,7 @@ export const ThreeD = (props) => {
     const [zoomState, setZoomState] = React.useState(false)
     const [dragState, setDragState] = React.useState(false)
     const [rotateState, setRotateState] = React.useState(true)
-
+    let intensity = 1.3
     return (
         <main>
             <Canvas
@@ -75,29 +75,29 @@ export const ThreeD = (props) => {
                     touchAction: 'none',
                 }}
             >
-                <ambientLight color='#696969' intensity={2} />
+                <ambientLight color='#696969' intensity={2.5} />
                 <color attach="background" args={['#eaeaea']} />
                 <RectAreaLightDecl
-                    intensity={2}
+                    intensity={intensity}
                     width={5000}
                     height={50000}
                     position={[0, 0, -12000]}
                 />
                 <RectAreaLightDecl
-                    intensity={2}
+                    intensity={intensity}
                     width={5000}
                     height={50000}
                     position={[0, 12000, 0]}
                 />
 
                 <RectAreaLightDecl
-                    intensity={2}
+                    intensity={intensity}
                     width={5000}
                     height={50000}
                     position={[-12000, 0, 0]}
                 />
                 <RectAreaLightDecl
-                    intensity={2}
+                    intensity={intensity}
                     width={5000}
                     height={50000}
                     position={[12000, 0, 0]}

@@ -5,6 +5,7 @@ description: Tırtıklı F Ankraj
 productcategory: mermer
 maincategory: Dış Cephe Sistemleri
 background: '#e58e26'
+prioritiy: 1302
 image: '/assets/img/f_ankraj_tirtikli_render.jpg'
 techimage: '/assets/img/f_ankraj_duz_teknik_cizim.jpg'
 specsimage: '/assets/img/f_ankraj_duz_tablo_tr.jpg'

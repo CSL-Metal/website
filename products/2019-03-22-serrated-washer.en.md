@@ -5,6 +5,7 @@ description: Serrated Washer
 productcategory: marble
 maincategory: Facade Systems
 background: '#e58e26'
+prioritiy: 1313
 image: '/assets/img/tirtikli_pul_render.jpg'
 techimage: '/assets/img/tirtikli_pul_teknik_cizim.jpg'
 threedmodel: '/assets/glb/tirtikli_pul.glb'

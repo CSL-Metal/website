@@ -5,6 +5,7 @@ description: 5.5x25mm Trapezoidal Screw
 productcategory: Bolt, Nut, Screw etc.
 maincategory: Hardware
 background: '#e58e26'
+prioritiy: 9906
 image: '/assets/img/5_5_trapez_vida_render.jpg'
 product: true
 
