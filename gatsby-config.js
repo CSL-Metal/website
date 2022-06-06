@@ -3,7 +3,7 @@ module.exports = {
         title: `CSL Metal React`,
         description: `CSL Metal React`,
         author: `@soulwind420`,
-        siteUrl: `cslmetal.com`,
+        siteUrl: `https://cslmultinewkadirboi.gatsbyjs.io/`,
     },
     plugins: [
         `gatsby-plugin-netlify-cms`,
