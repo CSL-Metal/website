@@ -6,7 +6,6 @@ import React from 'react'
 
 const FacilityImages = () => {
     const { facilityImages } = useStaticQuery(query)
-    console.log(facilityImages)
     return (
         <Slider
             cardsToShow={1}

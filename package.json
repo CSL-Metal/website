@@ -44,12 +44,12 @@
         "react-helmet": "^5.2.1",
         "react-slick": "^0.29.0",
         "react-styled-carousel": "^0.5.1",
-        "react-three-fiber": "^2.4.3",
+        "react-three-fiber": "^2.2.11",
         "recompose": "^0.30.0",
         "styled-components": "^4.4.0",
         "styled-icons": "^8.6.0",
         "styled-media-query": "^2.1.2",
-        "three": "^0.107",
+        "three": "^0.106.2",
         "url-loader": "^4.1.1"
     },
     "devDependencies": {
