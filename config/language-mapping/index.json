@@ -5,40 +5,12 @@
             "tr": "/hakkimizda"
         },
         {
-            "en": "/blog",
-            "tr": "/blog"
-        },
-        {
             "en": "/contact",
             "tr": "/iletisim"
         },
         {
             "en": "/products",
             "tr": "/products"
-        },
-        {
-            "en": "/services",
-            "tr": "/faaliyet"
-        },
-        {
-            "en": "/blog/markdown-examples",
-            "tr": "/blog/exemplos-de-markdown"
-        },
-        {
-            "en": "/blog/javascript-language",
-            "tr": "/blog/linguagem-javascript"
-        },
-        {
-            "en": "/blog/digital-image-processing",
-            "tr": "/blog/processamento-de-imagens-digitais"
-        },
-        {
-            "en": "/blog/adding-menu-items",
-            "tr": "/blog/adicionando-itens-no-menu"
-        },
-        {
-            "en": "/blog/creating-posts-and-pages",
-            "tr": "/blog/criacao-de-posts-e-paginas"
         },
         {
             "en": "/products/adjustment-screw",
@@ -87,6 +59,50 @@
         {
             "en": "/products/u-profile",
             "tr": "/products/u-profil"
+        },
+        {
+            "en": "/products/serrated-washer",
+            "tr": "/products/tirtikli-pul"
+        },
+        {
+            "en": "/products/plain-washer",
+            "tr": "/products/duz-pul"
+        },
+        {
+            "en": "/products/nut",
+            "tr": "/products/somun"
+        },
+        {
+            "en": "/products/bolt",
+            "tr": "/products/civata"
+        },
+        {
+            "en": "/products/washer",
+            "tr": "/products/pul"
+        },
+        {
+            "en": "/products/sleeved-dowel",
+            "tr": "/products/sac-gomlekli-dubel"
+        },
+        {
+            "en": "/products/multi-clips-horizontal",
+            "tr": "/products/multi-klips-yatay"
+        },
+        {
+            "en": "/products/multi-clips-veritical",
+            "tr": "/products/multi-klips-dikey"
+        },
+        {
+            "en": "/products/3-9-countersunk_screw",
+            "tr": "/products/3-9-havsa_bas_vida"
+        },
+        {
+            "en": "/products/5-5-trapezoidal_screw",
+            "tr": "/products/5-5-trapez_vida"
+        },
+        {
+            "en": "/products/clip-on-steel-dowel",
+            "tr": "/products/klipsli-dubel"
         }
     ]
 }

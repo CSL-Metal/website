@@ -40,7 +40,6 @@ const BaseLayout = ({ children, pageContext: { locale } }) => {
                 <S.SiteContent role="main">
                     <S.Container>{children}</S.Container>
                 </S.SiteContent>
-                <Footer />
             </S.Wrapper>
         </>
     )

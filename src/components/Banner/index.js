@@ -1,4 +1,4 @@
-import { useStaticQuery } from 'gatsby'
+import { useStaticQuery, graphql } from 'gatsby'
 import React from 'react'
 import Slider from 'react-styled-carousel'
 import { ArrowDropLeft } from 'styled-icons/remix-line'
@@ -49,7 +49,6 @@ const Banner = props => {
             }
         }
     `)
-
     return (
         <div
             style={{
@@ -59,10 +58,10 @@ const Banner = props => {
                     globalHistory.location.pathname === '/'
                         ? 'flex'
                         : globalHistory.location.pathname === '/en'
-                        ? 'flex'
-                        : globalHistory.location.pathname === '/en/'
-                        ? 'flex'
-                        : 'none',
+                            ? 'flex'
+                            : globalHistory.location.pathname === '/en/'
+                                ? 'flex'
+                                : 'none',
             }}
         >
             <Slider
@@ -104,15 +103,15 @@ const Banner = props => {
                 {typeof window !== 'undefined'
                     ? window.innerWidth <= 600
                         ? data.listImagesSmall.edges.map(images => (
-                              <img
-                                  src={images.node.childImageSharp.fluid.src}
-                              />
-                          ))
+                            <img
+                                src={images.node.childImageSharp.fluid.src}
+                            />
+                        ))
                         : data.listImages.edges.map(images => (
-                              <img
-                                  src={images.node.childImageSharp.fluid.src}
-                              />
-                          ))
+                            <img
+                                src={images.node.childImageSharp.fluid.src}
+                            />
+                        ))
                     : null}
             </Slider>
         </div>

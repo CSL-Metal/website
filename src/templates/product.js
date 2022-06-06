@@ -16,17 +16,71 @@ const Product = props => {
     const post = props.data.markdownRemark
     const SpecCheck = () => {
         if (post.frontmatter.specsimage) {
+            console.log("3")
             return (
                 <div>
                     <hr />
+
+                    {locale === "tr" ? <TitlePage text={"Ölçü Tablosu"} /> : <TitlePage text={"Size Chart"} />}
                     <img src={post.frontmatter.specsimage} width={'100%'} />
 
-                    <hr />
                 </div>
             )
         } else {
             return (
-                <hr />
+                <br />
+            )
+        }
+    }
+    const ThreedCheck = () => {
+        if (post.frontmatter.threedmodel) {
+            console.log("1")
+            return (
+                <div>
+                    <hr />
+                    <D.ListWrapper>
+                        <img
+                            src={post.frontmatter.threedlogo}
+                            style={{
+                                background: 'var(--gray-extra-light)',
+                                width: '100%',
+                                height: '100%',
+                                borderRadius: '10px',
+                                marginBottom: '10px',
+                                zIndex: 999
+                            }}
+                        />
+                        <ThreeD
+                            threed={post.frontmatter.threedmodel}
+                            scale={post.frontmatter.threedscale}
+                        />
+                    </D.ListWrapper>
+                </div>
+            )
+        } else {
+            return (
+
+                <br />
+            )
+        }
+    }
+    const DescriptionCheck = () => {
+        if (post.frontmatter.specs) {
+            console.log("2")
+            return (
+                <div>
+                    <hr />
+                    {locale === "tr" ? <TitlePage text={"Ürün Açıklaması"} /> : <TitlePage text={"Product Description"} />}
+                    <div
+                        dangerouslySetInnerHTML={{
+                            __html: paragraphs(post.frontmatter.specs),
+                        }}
+                    ></div>
+                </div>
+            )
+        } else {
+            return (
+                <br />
             )
         }
     }
@@ -61,30 +115,10 @@ const Product = props => {
                             </D.ListWrapper>
                         </div>
 
-                        <hr />
-                        <D.ListWrapper>
-                            <img
-                                src={post.frontmatter.threedlogo}
-                                style={{
-                                    background: 'var(--gray-extra-light)',
-                                    width: '100%',
-                                    height: '100%',
-                                    borderRadius: '10px',
-                                    marginBottom: '10px',
-                                }}
-                            />
-                            <ThreeD
-                                threed={post.frontmatter.threedmodel}
-                                scale={post.frontmatter.threedscale}
-                            />
-                        </D.ListWrapper>
+                        <ThreedCheck />
                         <SpecCheck />
-                        {locale === "tr" ? <TitlePage text={"Ürün Açıklaması"} /> : <TitlePage text={"Product Description"} />}
-                        <div
-                            dangerouslySetInnerHTML={{
-                                __html: paragraphs(post.frontmatter.specs),
-                            }}
-                        ></div>
+                        <DescriptionCheck />
+
                     </S.Content>
                 </div>
             </div>

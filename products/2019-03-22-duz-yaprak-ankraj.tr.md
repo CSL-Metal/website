@@ -5,9 +5,10 @@ description: Düz Yaprak Ankraj
 productcategory: mermer
 maincategory: Dış Cephe Sistemleri
 background: '#e58e26'
+prioritiy: 1303
 image: '/assets/img/duz_yaprak_ankraj_render.jpg'
-techimage: '/assets/img/f_ankraj_duz_teknik_cizim.jpg'
-specsimage: '/assets/img/f_ankraj_duz_tablo.jpg'
+techimage: '/assets/img/duz_yaprak_ankraj_teknik_cizim.jpg'
+specsimage: '/assets/img/duz_yaprak_ankraj_tablo_tr.jpg'
 threedmodel: '/assets/glb/duz_yaprak_ankraj.glb'
 threedscale: 4000
 product: true

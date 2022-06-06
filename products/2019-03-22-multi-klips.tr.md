@@ -5,19 +5,23 @@ description: Multi Klips
 productcategory: seramik
 maincategory: Dış Cephe Sistemleri
 background: '#e58e26'
-image: '/assets/img/f_ankraj_duz_render.jpg'
-techimage: '/assets/img/f_ankraj_duz_teknik_cizim.jpg'
-specsimage: '/assets/img/f_ankraj_duz_tablo.jpg'
+prioritiy: 1201
+image: '/assets/img/multi_klips_render.jpg'
+techimage: '/assets/img/multi_klips_teknik_cizim.jpg'
 threedmodel: '/assets/glb/multi_klips.glb'
 threedscale: 8000
 product: true
 threedlogo: '/assets/img/3d_logo_tr.png'
-specs: "● Kullanım  şekline göre U proil veya L proil üzerine monte edilir.
+specs: "● Seramik dış cephe giydirmede alüminyum T profillerin üzerine montajlanır.
 
 
-● Urünler isteğe göre TS 149 elektro galvaniz, TS 822 pregalvaniz , TS 914 sıcak daldırma galvaniz, 304 ve 430
-paslanmaz çelikten üretilebilmektedir.
+● Ürünler AISI 304 paslanmaz çelik, AISI 430 paslanmaz çelik, TS 822 galvanizli sac kullanılarak
+üretilebilmektedir.
 
 
-● Tüm değerler mm cinsindedir."
+● Tüm ürünler belirtilen kalitelerde talebe göre RAL kodlu elektrostatik toz boyalı olarak imal edilebilir.
+
+
+● Ürün Kodu : CSL.D.0300.SCK.12.066.82
+    "
 ---

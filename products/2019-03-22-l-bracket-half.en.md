@@ -5,20 +5,21 @@ description: L Bracket Half
 productcategory: marble
 maincategory: Facade Systems
 background: '#e58e26'
+prioritiy: 1307
 image: '/assets/img/l_bayrak_yarim_render.jpg'
 techimage: '/assets/img/l_bayrak_yarim_teknik_cizim.jpg'
-specsimage: '/assets/img/f_ankraj_duz_tablo.jpg'
+specsimage: '/assets/img/l_bayrak_yarim_tablo_en.jpg'
 threedmodel: '/assets/glb/l_bayrak_yarim.glb'
 threedscale: 3500
 product: true
 threedlogo: '/assets/img/3d_logo_en.png'
-specs: "● L braket dübel yardımıyla betona monte edilir. Somun, civata ve pul yardımıyla u profil l braket üzerine monte edilir.
+specs: "● L bracket is fixed on concrete using dowels. The U profile is mounted on the L bracket with the help of nuts, bolts and washers.
 
 
-●  Ürünler isteğe göre TS 914 sıcak daldırma galvaniz ve TS 822 pregalvanizden üretilebilmektedir.
+● The products can be produced from TS 914 hot-dip galvanized and TS 822 pregalvanized upon request.
 
 
-●  Tüm değerler mm cinsindendir."
+● All dimensions are in mm."
 
 
 ---

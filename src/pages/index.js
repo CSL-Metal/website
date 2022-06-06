@@ -1,77 +1,55 @@
 import React from 'react'
+import { saveAs } from 'file-saver';
 import { graphql } from 'gatsby'
 import SEO from '../components/seo'
-import PostItem from '../components/PostItem'
 import TitlePage from '../components/TitlePage'
-import LocalizedLink from '../components/LocalizedLink'
 import useTranslations from '../components/useTranslations'
 import ProductSlider from '../components/ProductSlider'
+import FacilityImages from '../components/FacilityImages'
 
 import * as S from '../components/ListWrapper/styled'
 
-const Index = ({ data: { allMarkdownRemark, listImages } }) => {
-    // useTranslations is aware of the global context (and therefore also "locale")
-    // so it'll automatically give back the right translations
-    const {
-        hello,
-        subline,
-        category,
-        latestPosts,
-        allPosts,
-    } = useTranslations()
-
-    const postList = allMarkdownRemark.edges
-
-
-    console.log(
-        listImages.edges.map(images => images.node.childImageSharp.fluid.src)
+const Index = ({ data: { listImages } }) => {
+  // useTranslations is aware of the global context (and therefore also "locale")
+  // so it'll automatically give back the right translations
+  const {
+    hello,
+    catalog,
+    ourimages,
+  } = useTranslations()
+  let pdf;
+  let image;
+  listImages.nodes.map(item => {
+    if (item.extension === "pdf" && item.name === "CSL_Katalog_1") {
+      pdf = item.publicURL
+    } else if (item.extension === "jpg" && item.name === "CSL_Katalog_Cover_1") {
+      image = item.publicURL
+    }
+  }
+  )
+  const saveFile = () => {
+    saveAs(
+      pdf,
+      "CSL_KATALOG.pdf"
     )
+  };
 
-    return (
-        <div className="homepage">
-            <SEO title="Home" />
-             <ProductSlider />
-            <TitlePage text={hello} />
-            <p>{subline}</p>
-            <hr style={{ margin: `2rem 0` }} />
-            <h2>
-                <strong>{latestPosts}</strong>
-            </h2>
-            <br />
-            <S.ListWrapper>
-                {postList.map(
-                    ({
-                        node: {
-                            frontmatter: {
-                                background,
-                                category,
-                                date,
-                                description,
-                                title,
-                                image,
-                            },
-                            timeToRead,
-                            fields: { slug },
-                        },
-                    }) => (
-                        <PostItem
-                            slug={`/blog/${slug}`}
-                            background={background}
-                            category={category}
-                            date={date}
-                            timeToRead={timeToRead}
-                            title={title}
-                            description={description}
-                            image={image}
-                            key={slug}
-                        />
-                    )
-                )}
-            </S.ListWrapper>
-            <br />
-            <LocalizedLink to={`/blog/`}>{allPosts}</LocalizedLink>
-        </div>
-    )
+  return (
+    <div className="homepage">
+      <SEO title="Home" />
+      <br />
+      <TitlePage text={hello} />
+      <hr style={{ margin: `2rem 0` }} />
+      <ProductSlider />
+      <br />
+      <TitlePage text={catalog} />
+      <hr style={{ margin: `2rem 0` }} />
+      <img style={{ position: "relative", zIndex: 500, width: "300px" }} src={image} onClick={saveFile} />
+      <TitlePage text={ourimages} />
+      <hr style={{ margin: `2rem 0` }} />
+      <FacilityImages />
+    </div>
+  )
 }
 
 export default Index
@@ -97,17 +75,14 @@ query Index($locale: String!, $dateFormat: String!) {
       }
     }
   }
-  listImages: allFile(filter: {childImageSharp: {fluid: {src: {regex: "/hp_/"}}}}, sort: {fields: childImageSharp___fluid___originalName, order: ASC}) {
-    edges {
-      node {
-        childImageSharp {
-          fluid(maxWidth: 2080, quality: 100) {
-            src
-          }
-        }
+  listImages: allFile(filter: {relativePath: {regex: "/atalog/"}}) {
+      nodes {
+        publicURL
+        extension
+        name
       }
     }
-  }
+
   
 }
 

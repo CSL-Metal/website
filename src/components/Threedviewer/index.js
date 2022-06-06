@@ -33,7 +33,8 @@ export const ThreeD = (props) => {
     const [blockScroll, allowScroll] = useScrollBlock()
     const [zoomState, setZoomState] = React.useState(false)
     const [dragState, setDragState] = React.useState(false)
-
+    const [rotateState, setRotateState] = React.useState(true)
+    let intensity = 1.3
     return (
         <main>
             <Canvas
@@ -49,10 +50,12 @@ export const ThreeD = (props) => {
                     setDragState(true)
                 }}
                 onTouchEnd={e => {
-                    setDragState(false)
+                    setDragState(false);
+                    setRotateState(false);
                 }}
                 onMouseUp={e => {
-                    setDragState(false)
+                    setDragState(false);
+                    setRotateState(false);
                 }}
                 onMouseDown={e => {
                     setDragState(true)
@@ -72,41 +75,41 @@ export const ThreeD = (props) => {
                     touchAction: 'none',
                 }}
             >
-                <ambientLight color='#696969' intensity={2} />
+                <ambientLight color='#696969' intensity={2.5} />
                 <color attach="background" args={['#eaeaea']} />
                 <RectAreaLightDecl
-                    intensity={3}
+                    intensity={intensity}
                     width={5000}
                     height={50000}
                     position={[0, 0, -12000]}
                 />
                 <RectAreaLightDecl
-                    intensity={3}
+                    intensity={intensity}
                     width={5000}
                     height={50000}
                     position={[0, 12000, 0]}
                 />
 
                 <RectAreaLightDecl
-                    intensity={3}
+                    intensity={intensity}
                     width={5000}
                     height={50000}
                     position={[-12000, 0, 0]}
                 />
                 <RectAreaLightDecl
-                    intensity={3}
+                    intensity={intensity}
                     width={5000}
                     height={50000}
                     position={[12000, 0, 0]}
                 />
                 <Model url={props.threed} scale={props.scale} />
                 <Controls
-                    autoRotate
+                    autoRotate={rotateState}
                     enablePan={false}
                     enableZoom={zoomState}
                     enableDamping
-                    dampingFactor={0.5}
-                    rotateSpeed={1.2}
+                    dampingFactor={1.5}
+                    rotateSpeed={3.1}
                     enableRotate={dragState}
 
                 // maxZoom={2}
