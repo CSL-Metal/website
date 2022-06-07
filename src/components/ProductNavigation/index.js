@@ -63,7 +63,7 @@ function ProductCats(props) {
                         <AccordionDetails className={classes.products}>
                             <Typography>
                                 <LocalizedLink
-                                    to={`products/${item.link}`}
+                                    to={`/products/${item.link}`}
                                     style={{ fontSize: '15px', color: 'white' }}
                                 >
                                     {item.product}

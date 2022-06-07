@@ -263,7 +263,6 @@ exports.createPages = async ({ graphql, actions }) => {
     const langs = Object.keys(locales).length
     const numPages = Math.ceil(postsTotal / langs / postsPerPage)
 
-    console.log(postsTotal)
 
     // list = list.filter((x, i, a) => a.indexOf(x) == i) find uniq items
 
@@ -297,7 +296,6 @@ exports.createPages = async ({ graphql, actions }) => {
     // Creating Product List and its Pagination
     const productsPerPage = 999
     const numProductPages = Math.ceil(productsTotal / langs / productsPerPage)
-    console.log(productsTotal)
 
     Object.keys(locales).map(lang => {
         // Use the values defined in "locales" to construct the path
@@ -330,7 +328,6 @@ exports.createPages = async ({ graphql, actions }) => {
 
     const productCategories = productResult.data.allMarkdownRemark.group
 
-    console.log(productCategories[0].totalCount)
 
     productCategories.forEach(tag => {
         //find number of pgs on each category and figure out if its in default language

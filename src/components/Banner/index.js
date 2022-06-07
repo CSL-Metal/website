@@ -49,19 +49,27 @@ const Banner = props => {
             }
         }
     `)
+    console.warn = () => { };
+    console.error = () => { };
+    var path = globalHistory.location.pathname.split("/").filter(item => { return item !== '' })
+    var isHomePage = false
+    if (path.length === 0) {
+        isHomePage = true
+    } else if (path.length === 1 && path[0] === "en") {
+        isHomePage = true
+    }
+    console.log(isHomePage)
+    console.log(path)
+    console.log(globalHistory.location.pathname)
     return (
         <div
             style={{
                 width: '100%',
                 overflow: 'hidden',
                 display:
-                    globalHistory.location.pathname === '/'
+                    isHomePage
                         ? 'flex'
-                        : globalHistory.location.pathname === '/en'
-                            ? 'flex'
-                            : globalHistory.location.pathname === '/en/'
-                                ? 'flex'
-                                : 'none',
+                        : 'none',
             }}
         >
             <Slider

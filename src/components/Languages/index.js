@@ -32,9 +32,11 @@ const Languages = () => {
 
         if (!associatedUrls) return navigate('/')
 
-        return lang === 'tr'
-            ? navigate(`/${associatedUrls[lang]}`)
-            : navigate(`/${lang}/${associatedUrls[lang]}`)
+        {
+            return lang === 'tr'
+                ? navigate(`${associatedUrls[lang]}`)
+                : navigate(`/${lang}${associatedUrls[lang]}`)
+        }
     }
 
     return (
