@@ -33,6 +33,7 @@ const ProductCategoryPage = props => {
                         node: {
                             frontmatter: {
                                 background,
+                                category,
                                 date,
                                 description,
                                 title,
@@ -45,6 +46,7 @@ const ProductCategoryPage = props => {
                         <PostItem
                             slug={`/products/${slug}`}
                             background={background}
+                            category={category}
                             date={date}
                             timeToRead={timeToRead}
                             title={title}
@@ -102,6 +104,7 @@ export const query = graphql`
         frontmatter {
           title
           description
+          category
           background
           image
           date(formatString: $dateFormat)

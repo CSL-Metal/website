@@ -11,12 +11,18 @@ exports.localizedSlug = ({
     productCategory,
     mainCategory,
 }) => {
-
+    // if (isPage) {
+    //     return isDefault ? `/${slug}` : `/${locale}/${slug}`
+    // } else if (isProduct) {
+    //     return isDefault
+    //         ? `/products/${productCategory}/${mainCategory}/${slug}`
+    //         : `/${locale}/products/${productCategory}/${mainCategory}/${slug}`
+    // } else return isDefault ? `/blog/${slug}` : `/${locale}/blog/${slug}`
     if (isPage) {
         return isDefault ? `/${slug}` : `/${locale}/${slug}`
     } else if (isProduct) {
         return isDefault ? `/products/${slug}` : `/${locale}/products/${slug}`
-    }
+    } else return isDefault ? `/blog/${slug}` : `/${locale}/blog/${slug}`
 }
 
 // From lodash:
