@@ -32,7 +32,7 @@ const ProductSlider = () => {
         >
             {sliderData.map(item => (
                 <LocalizedLink
-                    to={`products`}
+                    to={`/products`}
                     style={{ textDecoration: 'none' }}
                 >
                     <Card className={classes.root}>

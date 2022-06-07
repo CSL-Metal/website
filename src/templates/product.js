@@ -16,7 +16,6 @@ const Product = props => {
     const post = props.data.markdownRemark
     const SpecCheck = () => {
         if (post.frontmatter.specsimage) {
-            console.log("3")
             return (
                 <div>
                     <hr />
@@ -34,7 +33,6 @@ const Product = props => {
     }
     const ThreedCheck = () => {
         if (post.frontmatter.threedmodel) {
-            console.log("1")
             return (
                 <div>
                     <hr />
@@ -66,7 +64,6 @@ const Product = props => {
     }
     const DescriptionCheck = () => {
         if (post.frontmatter.specs) {
-            console.log("2")
             return (
                 <div>
                     <hr />

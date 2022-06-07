@@ -35,8 +35,8 @@ const BaseLayout = ({ children, pageContext: { locale } }) => {
             <div style={styleBackground}></div>
             <S.Wrapper>
                 <Header />
-                <Banner></Banner>
-                <SubBanner></SubBanner>
+                <Banner />
+                <SubBanner />
                 <S.SiteContent role="main">
                     <S.Container>{children}</S.Container>
                 </S.SiteContent>
