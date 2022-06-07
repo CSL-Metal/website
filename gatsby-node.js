@@ -103,7 +103,6 @@ exports.createPages = async ({ graphql, actions }) => {
     // Templates for Posts List and Single post
     const postTemplate = path.resolve(`./src/templates/post.js`)
     const productTemplate = path.resolve(`./src/templates/product.js`)
-    const postsListTemplate = path.resolve(`./src/templates/posts-list.js`)
     const pageTemplate = path.resolve(`./src/templates/page.js`)
     const productPageTemplate = path.resolve(`./src/templates/product-page.js`)
     const productCategoryPageTemplate = path.resolve(
@@ -142,7 +141,6 @@ exports.createPages = async ({ graphql, actions }) => {
                             title
                             page
                             product
-                            category
                             productcategory
                             maincategory
                         }
@@ -173,7 +171,6 @@ exports.createPages = async ({ graphql, actions }) => {
                             title
                             page
                             product
-                            category
                             productcategory
                             maincategory
                         }
@@ -266,32 +263,6 @@ exports.createPages = async ({ graphql, actions }) => {
 
     // list = list.filter((x, i, a) => a.indexOf(x) == i) find uniq items
 
-    Object.keys(locales).map(lang => {
-        // Use the values defined in "locales" to construct the path
-        const localizedPath = locales[lang].default
-            ? '/blog'
-            : `${locales[lang].path}/blog`
-
-        return Array.from({
-            length: numPages,
-        }).forEach((_, index) => {
-            createPage({
-                path:
-                    index === 0
-                        ? `${localizedPath}`
-                        : `${localizedPath}/page/${index + 1}`,
-                component: postsListTemplate,
-                context: {
-                    limit: postsPerPage,
-                    skip: index * postsPerPage,
-                    numPages,
-                    currentPage: index + 1,
-                    locale: lang,
-                    dateFormat: locales[lang].dateFormat,
-                },
-            })
-        })
-    })
 
     // Creating Product List and its Pagination
     const productsPerPage = 999

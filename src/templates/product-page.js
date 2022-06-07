@@ -57,7 +57,6 @@ export const query = graphql`
         frontmatter {
           title
           description
-          category
           background
           image
           date(formatString: $dateFormat)
