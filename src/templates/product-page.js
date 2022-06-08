@@ -6,24 +6,23 @@ import SEO from '../components/seo'
 import './styles.css'
 import * as S from '../components/ListWrapperProducts/styled'
 import ProductNavigation from '../components/ProductNavigation'
-import { useLocale } from '../hooks/locale'
+import useTranslations from '../components/useTranslations'
+
 
 const ProductPage = props => {
     const postList = props.data.allMarkdownRemark.edges
-    const { locale } = useLocale()
-
+    const {
+        product
+    } = useTranslations()
     return (
         <>
             <ProductNavigation />
-            <div>
-                <div>
+            <div style={{ width: "100%", display: "flex", flexDirection: "column", alignItems: "center" }}>
+                <div style={{ width: "100%", maxWidth: "1040px" }}>
                     <SEO title="products" />
-                    {locale === 'tr' ? (
-                        <TitlePage text="Ürünler" />
-                    ) : (
-                        <TitlePage text="Products" />
-                    )}
-
+                    <br />
+                    <br />
+                    <TitlePage text={product} />
                     <hr />
                     <S.ListWrapperProducts>
                         {postList.map(

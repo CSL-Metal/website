@@ -6,7 +6,7 @@ import TitlePage from '../components/TitlePage'
 import useTranslations from '../components/useTranslations'
 import ProductSlider from '../components/ProductSlider'
 import FacilityImages from '../components/FacilityImages'
-
+import Banner from '../components/Banner'
 import * as S from '../components/ListWrapper/styled'
 
 const Index = ({ data: { listImages } }) => {
@@ -16,7 +16,9 @@ const Index = ({ data: { listImages } }) => {
     hello,
     catalog,
     ourimages,
+    size
   } = useTranslations()
+  console.log(size)
   let pdf;
   let image;
   listImages.nodes.map(item => {
@@ -35,19 +37,22 @@ const Index = ({ data: { listImages } }) => {
   };
 
   return (
-    <div className="homepage">
-      <SEO title="Home" />
-      <br />
-      <TitlePage text={hello} />
-      <hr style={{ margin: `2rem 0` }} />
-      <ProductSlider />
-      <br />
-      <TitlePage text={catalog} />
-      <hr style={{ margin: `2rem 0` }} />
-      <img style={{ position: "relative", zIndex: 500, width: "300px" }} src={image} onClick={saveFile} />
-      <TitlePage text={ourimages} />
-      <hr style={{ margin: `2rem 0` }} />
-      <FacilityImages />
+    <div style={{ width: "100%", display: "flex", flexDirection: "column", alignItems: "center" }}>
+      <Banner />
+      <div style={{ width: "100%", maxWidth: "1040px" }}>
+        <SEO title="Home" />
+        <br />
+        <TitlePage text={hello} />
+        <hr style={{ margin: `2rem 0` }} />
+        <ProductSlider />
+        <br />
+        <TitlePage text={catalog} />
+        <hr style={{ margin: `2rem 0` }} />
+        <img style={{ position: "relative", zIndex: 500, width: "300px" }} src={image} onClick={saveFile} />
+        <TitlePage text={ourimages} />
+        <hr style={{ margin: `2rem 0` }} />
+        <FacilityImages />
+      </div>
     </div>
   )
 }

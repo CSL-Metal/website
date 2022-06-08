@@ -60,10 +60,6 @@ const GlobalStyles = createGlobalStyle`
   body {
     background: var(--body-bg);
 
-
-
-
-
     font-weight: 400;
     font-family: "Open Sans", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
 

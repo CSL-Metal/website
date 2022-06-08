@@ -15,10 +15,6 @@ export const SiteContent = styled.section`
 
 export const Container = styled.div`
     width: 100%;
-    max-width: var(--width-container);
     margin: 0 auto;
-    padding: calc(var(--space) * 1.3) var(--space);
-    ${media.greaterThan('large')`
-    padding: calc(var(--space)*1.3) var(--space-sm);
-  `}
+
 `

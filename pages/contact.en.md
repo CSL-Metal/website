@@ -1,6 +1,7 @@
 ---
 title: 'Contact'
 date: 2019-07-01 01:21:23
+image: '/assets/img/banner_iletisim_contact.jpg'
 page: true
 ---
 
