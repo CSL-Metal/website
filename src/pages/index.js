@@ -16,9 +16,7 @@ const Index = ({ data: { listImages } }) => {
     hello,
     catalog,
     ourimages,
-    size
   } = useTranslations()
-  console.log(size)
   let pdf;
   let image;
   listImages.nodes.map(item => {

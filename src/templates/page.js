@@ -32,6 +32,7 @@ const Maps = () => {
 
 const Page = props => {
     const post = props.data.markdownRemark
+    console.log(post.frontmatter.component)
     return (
         <div style={{ width: "100%", display: "flex", flexDirection: "column", alignItems: "center" }}>
             <div
@@ -65,7 +66,9 @@ const Page = props => {
                 <S.Content>
                     <div style={{ position: "relative", zIndex: 999 }} dangerouslySetInnerHTML={{ __html: post.html }}></div>
                 </S.Content>
-                <Maps />
+                <div>
+                    {post.frontmatter.component}
+                </div>
             </div>
         </div>
 
@@ -82,6 +85,7 @@ export const query = graphql`
                 title
                 description
                 image
+                component
             }
             html
         }

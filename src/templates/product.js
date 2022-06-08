@@ -17,7 +17,6 @@ const Product = props => {
         size,
         productdescription,
     } = useTranslations()
-    console.log(size)
     const post = props.data.markdownRemark
     const SpecCheck = () => {
         if (post.frontmatter.specsimage) {

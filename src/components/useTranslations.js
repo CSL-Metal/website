@@ -44,6 +44,9 @@ const query = graphql`
                         catalog
                         next
                         prev
+                        product
+                        size
+                        productdescription
                         of
                         ourimages
                         button
