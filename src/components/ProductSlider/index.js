@@ -1,5 +1,4 @@
 import React from 'react'
-import { makeStyles } from '@material-ui/core/styles'
 import Card from '@material-ui/core/Card'
 import CardContent from '@material-ui/core/CardContent'
 import CardMedia from '@material-ui/core/CardMedia'
@@ -14,10 +13,7 @@ const responsive = [
     { breakPoint: 360, cardsToShow: 2 },
 ]
 
-const useStyles = makeStyles({
-    root: { margin: '0.5rem' },
-    media: {},
-})
+
 const ProductSlider = () => {
     const classes = useStyles()
     const sliderData = sliderItems()
@@ -35,9 +31,9 @@ const ProductSlider = () => {
                     to={`/products`}
                     style={{ textDecoration: 'none' }}
                 >
-                    <Card className={classes.root}>
+                    <Card style={{ margin: '0.5rem' }}>
                         <CardMedia
-                            className={classes.media}
+
                             image={item.img}
                             component="img"
                         />
