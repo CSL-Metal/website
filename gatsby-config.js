@@ -1,7 +1,7 @@
 module.exports = {
     siteMetadata: {
-        title: `CSL Metal React`,
-        description: `CSL Metal React`,
+        title: `CSL Dış Cephe Sistemleri`,
+        description: `CSL Metal`,
         author: `@soulwind420`,
         siteUrl: `https://cslmultinewkadirboi.gatsbyjs.io/`,
     },
