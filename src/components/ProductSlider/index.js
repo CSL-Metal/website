@@ -15,7 +15,6 @@ const responsive = [
 
 
 const ProductSlider = () => {
-    const classes = useStyles()
     const sliderData = sliderItems()
     return (
         <Slider
