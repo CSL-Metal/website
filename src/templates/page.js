@@ -21,7 +21,7 @@ const Maps = () => {
         >
             <MyMapComponent
                 isMarkerShown
-                googleMapURL='https://maps.googleapis.com/maps/api/js?key=AIzaSyA-3Os_kH3U2p6d05DOlkEfqeapdAdwHok&libraries=geometry,drawing,places'
+                googleMapURL='https://maps.googleapis.com/maps/api/js?key=AIzaSyBKzs0ihkg4tEv9kE2HJLmyOmeWCIoxbZs&libraries=geometry,drawing,places'
                 loadingElement={<div style={{ height: `100%` }} />}
                 containerElement={<div style={{ height: `400px` }} />}
                 mapElement={<div style={{ height: `100%` }} />}
@@ -32,7 +32,6 @@ const Maps = () => {
 
 const Page = props => {
     const post = props.data.markdownRemark
-    console.log(post.frontmatter.component)
     return (
         <div style={{ width: "100%", display: "flex", flexDirection: "column", alignItems: "center" }}>
             <div
@@ -53,7 +52,7 @@ const Page = props => {
                 />
             </div>
 
-            <div style={{ width: "100%", maxWidth: "1040px" }}>
+            <div style={{ width: "100%", maxWidth: "1040px", padding: "2rem" }}>
                 <SEO
                     title={post.frontmatter.title}
                     description={post.frontmatter.description}
@@ -66,9 +65,7 @@ const Page = props => {
                 <S.Content>
                     <div style={{ position: "relative", zIndex: 999 }} dangerouslySetInnerHTML={{ __html: post.html }}></div>
                 </S.Content>
-                <div>
-                    {post.frontmatter.component}
-                </div>
+                <Maps />
             </div>
         </div>
 
@@ -85,7 +82,6 @@ export const query = graphql`
                 title
                 description
                 image
-                component
             }
             html
         }

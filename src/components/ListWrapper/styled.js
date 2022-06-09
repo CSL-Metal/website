@@ -3,6 +3,7 @@ import media from 'styled-media-query';
 
 export const ListWrapper = styled.section`
   margin-bottom: 20px;
+  width: 100%;
   ${media.greaterThan('small')`
         display: grid;
         grid-gap: 20px;

@@ -49,7 +49,7 @@ const Product = props => {
                                 height: '100%',
                                 borderRadius: '10px',
                                 marginBottom: '10px',
-                                zIndex: 999
+                                zIndex: 50
                             }}
                         />
                         <ThreeD
@@ -91,7 +91,7 @@ const Product = props => {
             <div style={{ display: 'flex', filexDirection: 'row' }}>
                 <ProductNavigation />
                 <div style={{ width: "100%", display: "flex", flexDirection: "column", alignItems: "center" }}>
-                    <div style={{ width: "100%", maxWidth: "1040px" }}>
+                    <div style={{ width: "100%", maxWidth: "1040px", padding: "2rem" }}>
                         <SEO
                             title={post.frontmatter.title}
                             description={post.frontmatter.description}

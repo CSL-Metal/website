@@ -18,7 +18,7 @@ const ProductPage = props => {
         <>
             <ProductNavigation />
             <div style={{ width: "100%", display: "flex", flexDirection: "column", alignItems: "center" }}>
-                <div style={{ width: "100%", maxWidth: "1040px" }}>
+                <div style={{ width: "100%", maxWidth: "1040px", padding: "2rem" }}>
                     <SEO title="products" />
                     <br />
                     <br />

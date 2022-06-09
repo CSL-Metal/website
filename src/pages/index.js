@@ -37,7 +37,7 @@ const Index = ({ data: { listImages } }) => {
   return (
     <div style={{ width: "100%", display: "flex", flexDirection: "column", alignItems: "center" }}>
       <Banner />
-      <div style={{ width: "100%", maxWidth: "1040px" }}>
+      <div style={{ width: "100%", maxWidth: "1040px", padding: "2rem" }}>
         <SEO title="Home" />
         <br />
         <TitlePage text={hello} />
