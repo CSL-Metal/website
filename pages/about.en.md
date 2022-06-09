@@ -1,6 +1,7 @@
 ---
 title: 'About'
 date: 2019-07-01 01:21:23
+image: '/assets/img/banner_hakkimizda_about.jpg'
 page: true
 ---
 

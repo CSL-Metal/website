@@ -6,13 +6,17 @@ import ThreeD from '../components/Threedviewer'
 import * as D from '../components/ListWrapper/styled'
 import * as S from '../components/Content/styled'
 import ProductNavigation from '../components/ProductNavigation'
-import { useLocale } from '../hooks/locale'
+import useTranslations from '../components/useTranslations'
+
 import './styles.css'
 
 var paragraphs = require('lines-to-paragraphs')
 
 const Product = props => {
-    const { locale } = useLocale()
+    const {
+        size,
+        productdescription,
+    } = useTranslations()
     const post = props.data.markdownRemark
     const SpecCheck = () => {
         if (post.frontmatter.specsimage) {
@@ -20,7 +24,7 @@ const Product = props => {
                 <div>
                     <hr />
 
-                    {locale === "tr" ? <TitlePage text={"Ölçü Tablosu"} /> : <TitlePage text={"Size Chart"} />}
+                    <TitlePage text={size} />
                     <img src={post.frontmatter.specsimage} width={'100%'} />
 
                 </div>
@@ -45,7 +49,7 @@ const Product = props => {
                                 height: '100%',
                                 borderRadius: '10px',
                                 marginBottom: '10px',
-                                zIndex: 999
+                                zIndex: 50
                             }}
                         />
                         <ThreeD
@@ -67,7 +71,8 @@ const Product = props => {
             return (
                 <div>
                     <hr />
-                    {locale === "tr" ? <TitlePage text={"Ürün Açıklaması"} /> : <TitlePage text={"Product Description"} />}
+                    <TitlePage text={productdescription} />
+
                     <div
                         dangerouslySetInnerHTML={{
                             __html: paragraphs(post.frontmatter.specs),
@@ -85,38 +90,42 @@ const Product = props => {
         <>
             <div style={{ display: 'flex', filexDirection: 'row' }}>
                 <ProductNavigation />
-                <div style={{ marginLeft: '10px' }}>
-                    <SEO
-                        title={post.frontmatter.title}
-                        description={post.frontmatter.description}
-                        image={post.frontmatter.image}
-                    />
-                    <TitlePage text={post.frontmatter.title} />
-                    <S.Content>
-                        <hr />
-                        <div
-                            style={{
-                                display: 'flex',
-                                'flex-direction': 'row',
-                                'flex-wrap': 'wrap',
-                                alignItems: 'center',
-                                justifyContent: 'space-between',
-                            }}
-                        >
-                            <D.ListWrapper>
-                                <img
-                                    src={post.frontmatter.image}
-                                    style={{ alignSelf: 'center' }}
-                                />
-                                <img src={post.frontmatter.techimage} />
-                            </D.ListWrapper>
-                        </div>
+                <div style={{ width: "100%", display: "flex", flexDirection: "column", alignItems: "center" }}>
+                    <div style={{ width: "100%", maxWidth: "1040px", padding: "2rem" }}>
+                        <SEO
+                            title={post.frontmatter.title}
+                            description={post.frontmatter.description}
+                            image={post.frontmatter.image}
+                        />
+                        <br />
+                        <br />
+                        <TitlePage text={post.frontmatter.title} />
+                        <S.Content>
+                            <hr />
+                            <div
+                                style={{
+                                    display: 'flex',
+                                    'flex-direction': 'row',
+                                    'flex-wrap': 'wrap',
+                                    alignItems: 'center',
+                                    justifyContent: 'space-between',
+                                }}
+                            >
+                                <D.ListWrapper>
+                                    <img
+                                        src={post.frontmatter.image}
+                                        style={{ alignSelf: 'center' }}
+                                    />
+                                    <img src={post.frontmatter.techimage} />
+                                </D.ListWrapper>
+                            </div>
 
-                        <ThreedCheck />
-                        <SpecCheck />
-                        <DescriptionCheck />
+                            <ThreedCheck />
+                            <SpecCheck />
+                            <DescriptionCheck />
 
-                    </S.Content>
+                        </S.Content>
+                    </div>
                 </div>
             </div>
         </>
