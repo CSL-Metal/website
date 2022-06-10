@@ -12,7 +12,7 @@ function Model(props) {
                     if (obj.type === 'Mesh') {
                         obj.material.dispose()
                         obj.material = new THREE.MeshPhysicalMaterial({
-                            roughness: 0.4,
+                            roughness: 0.3,
                             clearCoat: 5,
                             clearCoatRoughness: 0.3,
                             color: obj.material.color,

@@ -10,7 +10,7 @@ image: '/assets/img/duz_yaprak_ankraj_render.jpg'
 techimage: '/assets/img/duz_yaprak_ankraj_teknik_cizim.jpg'
 specsimage: '/assets/img/duz_yaprak_ankraj_tablo_en.jpg'
 threedmodel: '/assets/glb/duz_yaprak_ankraj.glb'
-threedscale: 4000
+threedscale: 3000
 product: true
 threedlogo: '/assets/img/3d_logo_en.png'
 specs: "● On brick and concrete walls, the curved end is mounted inside the wall with grout. A pin is attached to the perforated end and the exterior is fixed.

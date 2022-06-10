@@ -10,7 +10,7 @@ image: '/assets/img/ayar_vidasi_render.jpg'
 techimage: '/assets/img/ayar_vidasi_teknik_cizim.jpg'
 specsimage: '/assets/img/ayar_vidasi_tablo_tr.jpg'
 threedmodel: '/assets/glb/ayar_vidasi.glb'
-threedscale: 6000
+threedscale: 8000
 product: true
 threedlogo: '/assets/img/3d_logo_tr.png'
 specs: "●  F Ankrajların üzerine takılıp, pim yardımıyla doğaltaşların sabitlenmesine yarar.
