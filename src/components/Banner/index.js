@@ -49,8 +49,8 @@ const Banner = props => {
             }
         }
     `)
-    console.warn = () => { };
-    console.error = () => { };
+    console.warn = () => {}
+    console.error = () => {}
 
     return (
         <div
@@ -98,15 +98,16 @@ const Banner = props => {
                 {typeof window !== 'undefined'
                     ? window.innerWidth <= 600
                         ? data.listImagesSmall.edges.map(images => (
-                            <img
-                                src={images.node.childImageSharp.fluid.src}
-                            />
-                        ))
+                              <img
+                                  src={images.node.childImageSharp.fluid.src}
+                              />
+                          ))
                         : data.listImages.edges.map(images => (
-                            <img
-                                src={images.node.childImageSharp.fluid.src}
-                            />
-                        ))
+                              <img
+                                  src={images.node.childImageSharp.fluid.src}
+                                  width={'100%'}
+                              />
+                          ))
                     : null}
             </Slider>
         </div>
