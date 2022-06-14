@@ -102,12 +102,16 @@ const Banner = props => {
                         ? data.listImagesSmall.edges.map(images => (
                               <S.PostItemImg
                                   fluid={images.node.childImageSharp.fluid}
+                                  loading={'eager'}
+                                  critical
                               />
                           ))
                         : data.listImages.edges.map(images => (
                               <S.PostItemImg
                                   fluid={images.node.childImageSharp.fluid}
                                   style={{ width: '100%' }}
+                                  loading={'eager'}
+                                  critical
                               />
                           ))
                     : null}
