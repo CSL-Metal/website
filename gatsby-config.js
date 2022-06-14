@@ -2,7 +2,7 @@ module.exports = {
     siteMetadata: {
         title: `CSL Dış Cephe Sistemleri`,
         description: `CSL Metal`,
-        author: `@soulwind420`,
+        author: `@duqqqq&@soulwind420`,
         siteUrl: `https://cslmultinewkadirboi.gatsbyjs.io/`,
     },
     plugins: [
