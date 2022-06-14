@@ -41,7 +41,11 @@ const Banner = props => {
                 edges {
                     node {
                         childImageSharp {
-                            fluid(maxWidth: 1920, quality: 90, toFormat: WEBP) {
+                            fluid(
+                                maxWidth: 1920
+                                quality: 90
+                                srcSetBreakpoints: [400, 800, 1040, 1440]
+                            ) {
                                 src
                                 ...GatsbyImageSharpFluid_withWebp_noBase64
                             }
