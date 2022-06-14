@@ -8,6 +8,7 @@ import ProductSlider from '../components/ProductSlider'
 import FacilityImages from '../components/FacilityImages'
 import Banner from '../components/Banner'
 import * as S from '../components/ListWrapper/styled'
+import * as SD from '../components/PostItem/styled'
 
 const Index = ({ data: { listImages } }) => {
     // useTranslations is aware of the global context (and therefore also "locale")
@@ -48,13 +49,13 @@ const Index = ({ data: { listImages } }) => {
                 <br />
                 <TitlePage text={catalog} />
                 <hr style={{ margin: `2rem 0` }} />
-                <img
+                <SD.PostItemImg
                     style={{
                         position: 'relative',
                         zIndex: 500,
                         width: '300px',
                     }}
-                    src={image}
+                    fluid={listImages.edges[0].node.childImageSharp.fluid}
                     onClick={saveFile}
                 />
                 <TitlePage text={ourimages} />
@@ -89,14 +90,22 @@ query Index($locale: String!, $dateFormat: String!) {
     }
   }
   listImages: allFile(filter: {relativePath: {regex: "/atalog/"}}) {
-      nodes {
-        publicURL
-        extension
-        name
-      }
+    nodes {
+      publicURL
+      extension
+      name
     }
-
-  
+    edges {
+                    node {
+                        childImageSharp {
+                            fluid(maxWidth: 300, quality: 90, toFormat: WEBP) {
+                                src
+                                ...GatsbyImageSharpFluid_withWebp_noBase64
+                            }
+                        }
+                    }
+                }
+  }
 }
 
 

@@ -10,7 +10,26 @@ module.exports = {
         `gatsby-plugin-styled-components`,
         `gatsby-transformer-json`,
         `gatsby-transformer-sharp`,
-        `gatsby-plugin-sharp`,
+
+        {
+            resolve: `gatsby-plugin-sharp`,
+            options: {
+                defaults: {
+                    formats: [`auto`, `webp`],
+                    placeholder: `dominantColor`,
+                    quality: 90,
+                    breakpoints: [400, 750, 1080, 1366, 1920],
+                    backgroundColor: `transparent`,
+                    tracedSVGOptions: {},
+                    blurredOptions: {},
+                    jpgOptions: {},
+                    pngOptions: {},
+                    webpOptions: {},
+                    avifOptions: {},
+                },
+            },
+        },
+
         // It needs to be the first one to work with gatsby-remark-images
 
         {
@@ -117,8 +136,8 @@ module.exports = {
         {
             resolve: `gatsby-plugin-manifest`,
             options: {
-                name: `Gatsby multiple language`,
-                short_name: `Gatsby multiple language`,
+                name: `Gatsby MLP`,
+                short_name: `Gatsby mlp`,
                 start_url: `/`,
                 background_color: `#16202c`,
                 theme_color: `#16202c`,
