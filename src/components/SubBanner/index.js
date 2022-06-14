@@ -9,7 +9,7 @@ const SubBanner = () => {
             allImageSharp(filter: { fluid: { src: { regex: "/banner_/" } } }) {
                 edges {
                     node {
-                        fluid(maxWidth: 2080, quality: 100) {
+                        fluid(maxWidth: 2080, quality: 90) {
                             src
                         }
                     }
@@ -21,19 +21,20 @@ const SubBanner = () => {
     let astyle
     data.allImageSharp.edges.map(item => df.push(item.node.fluid.src))
     let path = globalHistory.location.pathname
-    path = path.slice(1,)
-    if (path.slice(0, 3) === "en/") {
-        path = path.slice(3,)
+    path = path.slice(1)
+    if (path.slice(0, 3) === 'en/') {
+        path = path.slice(3)
     }
-    let img = ""
-    if (path.slice(-1,) === "/") {
+    let img = ''
+    if (path.slice(-1) === '/') {
         path = path.slice(0, -1)
     }
     df.map((data, i) => {
-        if (data.includes(path) && (path != "") && (path != "en")) {
-            img = df[i]; astyle = { display: 'flex' }
+        if (data.includes(path) && path != '' && path != 'en') {
+            img = df[i]
+            astyle = { display: 'flex' }
         } else {
-            astyle = { display: "none" }
+            astyle = { display: 'none' }
         }
     })
 
