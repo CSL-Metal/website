@@ -9,7 +9,7 @@ prioritiy: 1311
 image: '/assets/img/flansli_pim_render.jpg'
 techimage: '/assets/img/flansli_pim_teknik_cizim.jpg'
 threedmodel: '/assets/glb/flansli_pim.glb'
-threedscale: 8000
+threedscale: 11000
 product: true
 threedlogo: '/assets/img/3d_logo_en.png'
 specs: "●  It is placed on the adjustment screw and used to fix the natural stones.

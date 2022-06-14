@@ -20,7 +20,7 @@ const PostItem = ({
     const { listImages } = useStaticQuery(
         graphql`
             query {
-                listImages: allFile {
+                listImages: allFile (filter: {childImageSharp: {fluid: {src: {regex: "/static/"}}}}) {
                     edges {
                         node {
                             childImageSharp {
@@ -37,15 +37,14 @@ const PostItem = ({
     )
 
     const postImgCover = listImages.edges.find(img => {
-        return img.node.childImageSharp.fluid.src.includes('cover')
+        return img.node.childImageSharp.fluid.src.includes('cover.jpg')
     })
 
     const imgName = image ? image.split('/')[3] : false
-
     const postImg = imgName
         ? listImages.edges.find(img => {
-              return img.node.childImageSharp.fluid.src.includes(imgName)
-          })
+            return img.node.childImageSharp.fluid.src.includes(imgName)
+        })
         : false
     return (
         <S.PostItemLink to={slug}>

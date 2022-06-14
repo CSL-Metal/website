@@ -10,7 +10,7 @@ image: '/assets/img/bukumlu_yaprak_ankraj_render.jpg'
 techimage: '/assets/img/bukumlu_yaprak_ankraj_teknik_cizim.jpg'
 specsimage: '/assets/img/bukumlu_yaprak_ankraj_tablo_tr.jpg'
 threedmodel: '/assets/glb/bukumlu_yaprak_ankraj.glb'
-threedscale: 4000
+threedscale: 3000
 product: true
 threedlogo: '/assets/img/3d_logo_tr.png'
 specs: "●  Tuğla ve beton duvarlarda kıvrımlı ucu harç ile duvarın içine monte edilir. Delikli ucuna ise pim takılıp dış cephenin sabitlenmesi yapılır.
