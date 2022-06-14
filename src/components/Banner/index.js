@@ -20,7 +20,7 @@ const Banner = props => {
                 edges {
                     node {
                         childImageSharp {
-                            fluid(maxWidth: 2080, quality: 100) {
+                            fluid(maxWidth: 2080, quality: 90) {
                                 src
                             }
                         }
@@ -40,7 +40,7 @@ const Banner = props => {
                 edges {
                     node {
                         childImageSharp {
-                            fluid(maxWidth: 2080, quality: 100) {
+                            fluid(maxWidth: 2080, quality: 90) {
                                 src
                             }
                         }

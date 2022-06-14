@@ -91,7 +91,7 @@ module.exports = {
                         options: {
                             maxWidth: 1040,
                             linkImagesToOriginal: false,
-                            quality: 100,
+                            quality: 90,
                         },
                     },
                     `gatsby-remark-lazy-load`,
