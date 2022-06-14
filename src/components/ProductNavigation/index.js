@@ -16,20 +16,22 @@ const useStyles = makeStyles(theme => ({
     sidebarroot: {
         width: '200px',
         top: 0,
-        background: '#eaeaea',
+        background: 'green',
         height: '50px',
         position: 'sticky',
         overflow: 'visible',
         zIndex: 999,
     },
     subcats: {
-        width: '200px',
-        background: '#eaeaea',
+        width: '100%',
+        background: 'var(--primary-color)',
+        color: 'white',
+        boxShadow: '0px 0px 2px 0px var(--primary-color)',
     },
     products: {
-        width: '200px',
-        background: '#797D7F',
-        boxShadow: 'none',
+        boxShadow: '0px 0px 1px 0px var(--gray-light)',
+        width: '100%',
+        background: 'var(--secondary-color)',
     },
 }))
 
@@ -47,16 +49,24 @@ function ProductCats(props) {
     productCategories = productCategories.filter(onlyUnique)
     return productCategories.map(item => (
         <AccordionDetails
-            style={{ background: '#797D7F', justifyContent: 'center' }}
+            style={{
+                background: 'green',
+                justifyContent: 'left',
+                width: '100%',
+                padding: '0px',
+            }}
         >
-            <Accordion>
+            <Accordion style={{ width: '100%' }}>
                 <AccordionSummary
                     expandIcon={<ExpandMoreIcon />}
                     className={classes.subcats}
                 >
-                    <Typography style={{ fontSize: '15px' }}>{item}</Typography>
+                    <Typography
+                        style={{ fontSize: '1.6rem', fontWeight: '600' }}
+                    >
+                        {item}
+                    </Typography>
                 </AccordionSummary>
-
                 {menuElements
                     .filter(products => products.productCategory === item)
                     .map(item => (
@@ -64,7 +74,10 @@ function ProductCats(props) {
                             <Typography>
                                 <LocalizedLink
                                     to={`/products/${item.link}`}
-                                    style={{ fontSize: '15px', color: 'white' }}
+                                    style={{
+                                        fontSize: '1.4rem',
+                                        color: 'white',
+                                    }}
                                 >
                                     {item.product}
                                 </LocalizedLink>
@@ -115,13 +128,17 @@ export default function ProductNavigation(props) {
             <div className={sidebarClass}>
                 <div className={classes.sidebarroot}>
                     {mainCategories.map(maincat => (
-                        <Accordion>
+                        <Accordion
+                            style={{
+                                margin: 0,
+                                boxShadow: '0px 0px 1px 0px var(--gray-light)',
+                            }}
+                        >
                             <AccordionSummary
                                 expandIcon={<ExpandMoreIcon />}
                                 className={classes.root}
-                                style={{ height: '100px' }}
                             >
-                                <Typography style={{ fontSize: '20px' }}>
+                                <Typography style={{ fontSize: '2rem' }}>
                                     {maincat}
                                 </Typography>
                             </AccordionSummary>
@@ -133,7 +150,10 @@ export default function ProductNavigation(props) {
                     onClick={handleViewSidebar}
                     className={sidebarButtonClass}
                     variant="contained"
-                    style={{ position: 'sticky', overflow: 'visible' }}
+                    style={{
+                        position: 'sticky',
+                        overflow: 'visible',
+                    }}
                 >
                     {locale === 'tr' ? (
                         <p

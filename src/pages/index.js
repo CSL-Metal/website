@@ -1,5 +1,5 @@
 import React from 'react'
-import { saveAs } from 'file-saver';
+import { saveAs } from 'file-saver'
 import { graphql } from 'gatsby'
 import SEO from '../components/seo'
 import TitlePage from '../components/TitlePage'
@@ -10,49 +10,59 @@ import Banner from '../components/Banner'
 import * as S from '../components/ListWrapper/styled'
 
 const Index = ({ data: { listImages } }) => {
-  // useTranslations is aware of the global context (and therefore also "locale")
-  // so it'll automatically give back the right translations
-  const {
-    hello,
-    catalog,
-    ourimages,
-  } = useTranslations()
-  let pdf;
-  let image;
-  listImages.nodes.map(item => {
-    if (item.extension === "pdf" && item.name === "CSL_Katalog_1") {
-      pdf = item.publicURL
-    } else if (item.extension === "jpg" && item.name === "CSL_Katalog_Cover_1") {
-      image = item.publicURL
+    // useTranslations is aware of the global context (and therefore also "locale")
+    // so it'll automatically give back the right translations
+    const { hello, catalog, ourimages, home } = useTranslations()
+    let pdf
+    let image
+    listImages.nodes.map(item => {
+        if (item.extension === 'pdf' && item.name === 'CSL_Katalog_1') {
+            pdf = item.publicURL
+        } else if (
+            item.extension === 'jpg' &&
+            item.name === 'CSL_Katalog_Cover_1'
+        ) {
+            image = item.publicURL
+        }
+    })
+    const saveFile = () => {
+        saveAs(pdf, 'CSL_KATALOG.pdf')
     }
-  }
-  )
-  const saveFile = () => {
-    saveAs(
-      pdf,
-      "CSL_KATALOG.pdf"
-    )
-  };
 
-  return (
-    <div style={{ width: "100%", display: "flex", flexDirection: "column", alignItems: "center" }}>
-      <Banner />
-      <div style={{ width: "100%", maxWidth: "1040px", padding: "2rem" }}>
-        <SEO title="Home" />
-        <br />
-        <TitlePage text={hello} />
-        <hr style={{ margin: `2rem 0` }} />
-        <ProductSlider />
-        <br />
-        <TitlePage text={catalog} />
-        <hr style={{ margin: `2rem 0` }} />
-        <img style={{ position: "relative", zIndex: 500, width: "300px" }} src={image} onClick={saveFile} />
-        <TitlePage text={ourimages} />
-        <hr style={{ margin: `2rem 0` }} />
-        <FacilityImages />
-      </div>
-    </div>
-  )
+    return (
+        <div
+            style={{
+                width: '100%',
+                display: 'flex',
+                flexDirection: 'column',
+                alignItems: 'center',
+            }}
+        >
+            <Banner />
+            <div style={{ width: '100%', maxWidth: '1040px', padding: '2rem' }}>
+                <SEO title={home} />
+                <br />
+                <TitlePage text={hello} />
+                <hr style={{ margin: `2rem 0` }} />
+                <ProductSlider />
+                <br />
+                <TitlePage text={catalog} />
+                <hr style={{ margin: `2rem 0` }} />
+                <img
+                    style={{
+                        position: 'relative',
+                        zIndex: 500,
+                        width: '300px',
+                    }}
+                    src={image}
+                    onClick={saveFile}
+                />
+                <TitlePage text={ourimages} />
+                <hr style={{ margin: `2rem 0` }} />
+                <FacilityImages />
+            </div>
+        </div>
+    )
 }
 
 export default Index

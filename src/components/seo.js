@@ -5,14 +5,14 @@
  * See: https://www.gatsbyjs.org/docs/use-static-query/
  */
 
-import React from 'react';
-import PropTypes from 'prop-types';
-import Helmet from 'react-helmet';
-import { useStaticQuery, graphql } from 'gatsby';
-import { useLocale } from '../hooks/locale';
+import React from 'react'
+import PropTypes from 'prop-types'
+import Helmet from 'react-helmet'
+import { useStaticQuery, graphql } from 'gatsby'
+import { useLocale } from '../hooks/locale'
 
 function SEO({ description, lang, meta, title, image }) {
-    const { locale } = useLocale();
+    const { locale } = useLocale()
     const { site } = useStaticQuery(
         graphql`
             query {
@@ -31,7 +31,7 @@ function SEO({ description, lang, meta, title, image }) {
     const metaDescription = description || site.siteMetadata.description
 
     const url = site.siteMetadata.siteUrl
-    const ogImage = `${url}${image || '/assets/img/cover.png'}`
+    const ogImage = `${url}${image || '/assets/img/gatsby-icon.png'}`
 
     // add rtl support - Arabic is Right to Left Language
     // change ar with your RTL language

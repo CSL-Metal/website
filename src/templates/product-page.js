@@ -8,18 +8,28 @@ import * as S from '../components/ListWrapperProducts/styled'
 import ProductNavigation from '../components/ProductNavigation'
 import useTranslations from '../components/useTranslations'
 
-
 const ProductPage = props => {
     const postList = props.data.allMarkdownRemark.edges
-    const {
-        product
-    } = useTranslations()
+    const { product } = useTranslations()
     return (
         <>
             <ProductNavigation />
-            <div style={{ width: "100%", display: "flex", flexDirection: "column", alignItems: "center" }}>
-                <div style={{ width: "100%", maxWidth: "1040px", padding: "2rem" }}>
-                    <SEO title="products" />
+            <div
+                style={{
+                    width: '100%',
+                    display: 'flex',
+                    flexDirection: 'column',
+                    alignItems: 'center',
+                }}
+            >
+                <div
+                    style={{
+                        width: '100%',
+                        maxWidth: '1040px',
+                        padding: '2rem',
+                    }}
+                >
+                    <SEO title={product} />
                     <br />
                     <br />
                     <TitlePage text={product} />
