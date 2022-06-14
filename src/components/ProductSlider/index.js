@@ -13,7 +13,6 @@ const responsive = [
     { breakPoint: 360, cardsToShow: 2 },
 ]
 
-
 const ProductSlider = () => {
     const sliderData = sliderItems()
     return (
@@ -22,7 +21,7 @@ const ProductSlider = () => {
             showArrows={false}
             showDots={false}
             infinite
-            autoSlide={1000}
+            autoSlide={2000}
             pauseOnMouseOver={false}
         >
             {sliderData.map(item => (
@@ -31,11 +30,7 @@ const ProductSlider = () => {
                     style={{ textDecoration: 'none' }}
                 >
                     <Card style={{ margin: '0.5rem' }}>
-                        <CardMedia
-
-                            image={item.img}
-                            component="img"
-                        />
+                        <CardMedia image={item.img} component="img" />
                         <CardContent>
                             <Typography
                                 variant="h6"

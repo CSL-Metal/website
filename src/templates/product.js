@@ -13,10 +13,7 @@ import './styles.css'
 var paragraphs = require('lines-to-paragraphs')
 
 const Product = props => {
-    const {
-        size,
-        productdescription,
-    } = useTranslations()
+    const { size, productdescription } = useTranslations()
     const post = props.data.markdownRemark
     const SpecCheck = () => {
         if (post.frontmatter.specsimage) {
@@ -26,13 +23,10 @@ const Product = props => {
 
                     <TitlePage text={size} />
                     <img src={post.frontmatter.specsimage} width={'100%'} />
-
                 </div>
             )
         } else {
-            return (
-                <br />
-            )
+            return <br />
         }
     }
     const ThreedCheck = () => {
@@ -49,7 +43,7 @@ const Product = props => {
                                 height: '100%',
                                 borderRadius: '10px',
                                 marginBottom: '10px',
-                                zIndex: 50
+                                zIndex: 50,
                             }}
                         />
                         <ThreeD
@@ -60,10 +54,7 @@ const Product = props => {
                 </div>
             )
         } else {
-            return (
-
-                <br />
-            )
+            return <br />
         }
     }
     const DescriptionCheck = () => {
@@ -81,17 +72,28 @@ const Product = props => {
                 </div>
             )
         } else {
-            return (
-                <br />
-            )
+            return <br />
         }
     }
     return (
         <>
             <div style={{ display: 'flex', filexDirection: 'row' }}>
                 <ProductNavigation />
-                <div style={{ width: "100%", display: "flex", flexDirection: "column", alignItems: "center" }}>
-                    <div style={{ width: "100%", maxWidth: "1040px", padding: "2rem" }}>
+                <div
+                    style={{
+                        width: '100%',
+                        display: 'flex',
+                        flexDirection: 'column',
+                        alignItems: 'center',
+                    }}
+                >
+                    <div
+                        style={{
+                            width: '100%',
+                            maxWidth: '1040px',
+                            padding: '2rem',
+                        }}
+                    >
                         <SEO
                             title={post.frontmatter.title}
                             description={post.frontmatter.description}
@@ -114,16 +116,23 @@ const Product = props => {
                                 <D.ListWrapper>
                                     <img
                                         src={post.frontmatter.image}
-                                        style={{ alignSelf: 'center' }}
+                                        style={{
+                                            alignSelf: 'center',
+                                            mixBlendMode: 'darken',
+                                        }}
                                     />
-                                    <img src={post.frontmatter.techimage} />
+                                    <img
+                                        src={post.frontmatter.techimage}
+                                        style={{
+                                            mixBlendMode: 'darken',
+                                        }}
+                                    />
                                 </D.ListWrapper>
                             </div>
 
                             <ThreedCheck />
                             <SpecCheck />
                             <DescriptionCheck />
-
                         </S.Content>
                     </div>
                 </div>
