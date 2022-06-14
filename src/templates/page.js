@@ -15,13 +15,13 @@ const Maps = () => {
                     globalHistory.location.pathname === '/en/contact'
                         ? 'block'
                         : globalHistory.location.pathname === '/iletisim'
-                            ? 'block'
-                            : 'none',
+                        ? 'block'
+                        : 'none',
             }}
         >
             <MyMapComponent
                 isMarkerShown
-                googleMapURL='https://maps.googleapis.com/maps/api/js?key=AIzaSyBKzs0ihkg4tEv9kE2HJLmyOmeWCIoxbZs&libraries=geometry,drawing,places'
+                googleMapURL="https://maps.googleapis.com/maps/api/js?key=AIzaSyBKzs0ihkg4tEv9kE2HJLmyOmeWCIoxbZs&libraries=geometry,drawing,places"
                 loadingElement={<div style={{ height: `100%` }} />}
                 containerElement={<div style={{ height: `400px` }} />}
                 mapElement={<div style={{ height: `100%` }} />}
@@ -33,7 +33,14 @@ const Maps = () => {
 const Page = props => {
     const post = props.data.markdownRemark
     return (
-        <div style={{ width: "100%", display: "flex", flexDirection: "column", alignItems: "center" }}>
+        <div
+            style={{
+                width: '100%',
+                display: 'flex',
+                flexDirection: 'column',
+                alignItems: 'center',
+            }}
+        >
             <div
                 style={{
                     width: '100%',
@@ -46,13 +53,14 @@ const Page = props => {
                 <img
                     src={post.frontmatter.image}
                     style={{
-                        maxWidth: 'calc(90vw + 400px)',
+                        width: 'calc(90vw + 400px)',
+                        maxWidth: 'calc(90vw + 800px)',
                         maxHeight: '400px',
                     }}
                 />
             </div>
 
-            <div style={{ width: "100%", maxWidth: "1040px", padding: "2rem" }}>
+            <div style={{ width: '100%', maxWidth: '1040px', padding: '2rem' }}>
                 <SEO
                     title={post.frontmatter.title}
                     description={post.frontmatter.description}
@@ -63,12 +71,14 @@ const Page = props => {
                 <TitlePage text={post.frontmatter.title} />
                 <hr style={{ margin: `2rem 0` }} />
                 <S.Content>
-                    <div style={{ position: "relative", zIndex: 999 }} dangerouslySetInnerHTML={{ __html: post.html }}></div>
+                    <div
+                        style={{ position: 'relative', zIndex: 999 }}
+                        dangerouslySetInnerHTML={{ __html: post.html }}
+                    ></div>
                 </S.Content>
                 <Maps />
             </div>
         </div>
-
     )
 }
 
