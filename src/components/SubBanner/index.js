@@ -9,7 +9,7 @@ const SubBanner = () => {
             allImageSharp(filter: { fluid: { src: { regex: "/banner_/" } } }) {
                 edges {
                     node {
-                        fluid(maxWidth: 2080, quality: 90) {
+                        fluid(maxWidth: 1040, quality: 90, toFormat: WEBP) {
                             src
                         }
                     }

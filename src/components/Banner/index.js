@@ -4,6 +4,7 @@ import Slider from 'react-styled-carousel'
 import { ArrowDropLeft } from 'styled-icons/remix-line'
 import { ArrowDropRight } from 'styled-icons/remix-line'
 import { globalHistory } from '@reach/router'
+import * as S from '../PostItem/styled'
 
 const Banner = props => {
     const data = useStaticQuery(graphql`
@@ -20,14 +21,14 @@ const Banner = props => {
                 edges {
                     node {
                         childImageSharp {
-                            fluid(maxWidth: 2080, quality: 90) {
+                            fluid(maxWidth: 1920, quality: 90, toFormat: WEBP) {
                                 src
+                                ...GatsbyImageSharpFluid_withWebp_noBase64
                             }
                         }
                     }
                 }
             }
-
             listImagesSmall: allFile(
                 filter: {
                     childImageSharp: { fluid: { src: { regex: "/hpsmall_/" } } }
@@ -40,8 +41,9 @@ const Banner = props => {
                 edges {
                     node {
                         childImageSharp {
-                            fluid(maxWidth: 2080, quality: 90) {
+                            fluid(maxWidth: 1920, quality: 90, toFormat: WEBP) {
                                 src
+                                ...GatsbyImageSharpFluid_withWebp_noBase64
                             }
                         }
                     }
@@ -98,14 +100,14 @@ const Banner = props => {
                 {typeof window !== 'undefined'
                     ? window.innerWidth <= 600
                         ? data.listImagesSmall.edges.map(images => (
-                              <img
-                                  src={images.node.childImageSharp.fluid.src}
+                              <S.PostItemImg
+                                  fluid={images.node.childImageSharp.fluid}
                               />
                           ))
                         : data.listImages.edges.map(images => (
-                              <img
-                                  src={images.node.childImageSharp.fluid.src}
-                                  width={'100%'}
+                              <S.PostItemImg
+                                  fluid={images.node.childImageSharp.fluid}
+                                  style={{ width: '100%' }}
                               />
                           ))
                     : null}
