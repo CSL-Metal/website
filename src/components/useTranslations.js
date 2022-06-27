@@ -50,7 +50,7 @@ const query = graphql`
                         of
                         ourimages
                         button
-
+                        privacy
                         aboutProject
                         seeMorePWA
                         maintainedBy

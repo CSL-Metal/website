@@ -7,6 +7,7 @@ import useTranslations from '../components/useTranslations'
 import ProductSlider from '../components/ProductSlider'
 import FacilityImages from '../components/FacilityImages'
 import Banner from '../components/Banner'
+import Footer from '../components/Footer'
 import * as S from '../components/ListWrapper/styled'
 import * as SD from '../components/PostItem/styled'
 
@@ -19,11 +20,6 @@ const Index = ({ data: { listImages } }) => {
     listImages.nodes.map(item => {
         if (item.extension === 'pdf' && item.name === 'CSL_Katalog_1') {
             pdf = item.publicURL
-        } else if (
-            item.extension === 'jpg' &&
-            item.name === 'CSL_Katalog_Cover_1'
-        ) {
-            image = item.publicURL
         }
     })
     const saveFile = () => {
@@ -49,19 +45,21 @@ const Index = ({ data: { listImages } }) => {
                 <br />
                 <TitlePage text={catalog} />
                 <hr style={{ margin: `2rem 0` }} />
-                <SD.PostItemImg
-                    style={{
-                        position: 'relative',
-                        zIndex: 500,
-                        width: '300px',
-                    }}
-                    fluid={listImages.edges[0].node.childImageSharp.fluid}
-                    onClick={saveFile}
-                />
+                <div onClick={saveFile}>
+                    <SD.PostItemImg
+                        style={{
+                            position: 'relative',
+                            zIndex: 5000,
+                            width: '300px',
+                        }}
+                        fluid={listImages.edges[0].node.childImageSharp.fluid}
+                    />
+                </div>
                 <TitlePage text={ourimages} />
                 <hr style={{ margin: `2rem 0` }} />
                 <FacilityImages />
             </div>
+            <Footer />
         </div>
     )
 }
@@ -96,15 +94,15 @@ query Index($locale: String!, $dateFormat: String!) {
       name
     }
     edges {
-                    node {
-                        childImageSharp {
-                            fluid(maxWidth: 300, quality: 90, toFormat: WEBP) {
-                                src
-                                ...GatsbyImageSharpFluid_withWebp_noBase64
-                            }
+                node {
+                    childImageSharp {
+                        fluid(maxWidth: 300, quality: 90, toFormat: WEBP) {
+                            src
+                            ...GatsbyImageSharpFluid_withWebp_noBase64
                         }
                     }
                 }
+            }
   }
 }
 
