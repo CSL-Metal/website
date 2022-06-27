@@ -4,6 +4,7 @@ import TitlePage from '../components/TitlePage'
 import SEO from '../components/seo'
 import MyMapComponent from '../components/Maps'
 import { globalHistory } from '@reach/router'
+import Footer from '../components/Footer'
 
 import * as S from '../components/Content/styled'
 
@@ -15,8 +16,8 @@ const Maps = () => {
                     globalHistory.location.pathname === '/en/contact'
                         ? 'block'
                         : globalHistory.location.pathname === '/iletisim'
-                        ? 'block'
-                        : 'none',
+                            ? 'block'
+                            : 'none',
             }}
         >
             <MyMapComponent
@@ -78,6 +79,7 @@ const Page = props => {
                 </S.Content>
                 <Maps />
             </div>
+            <Footer />
         </div>
     )
 }
