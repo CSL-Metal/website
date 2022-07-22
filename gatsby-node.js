@@ -70,7 +70,6 @@ exports.onCreateNode = ({ node, actions }) => {
         // https://nodejs.org/api/path.html#path_path_basename_path_ext
         // It will return the file name without '.md' string (e.g. "file-name" or "file-name.lang")
         const name = path.basename(node.fileAbsolutePath, `.md`)
-
         // Find the key that has "default: true" set (in this case it returns "en")
         const defaultKey = findKey(locales, o => o.default === true)
 
@@ -87,7 +86,7 @@ exports.onCreateNode = ({ node, actions }) => {
         const slugFileName = name.split(`.`)[0]
         // Than remove the date if the name has the date info
         const slug =
-            slugFileName.length >= 11 ? slugFileName.slice(11) : slugFileName
+            slugFileName.length >= 12 ? slugFileName.slice(12) : slugFileName
 
         // Adding the nodes on GraphQL for each post as "fields"
         createNodeField({ node, name: `slug`, value: slug })
@@ -190,7 +189,6 @@ exports.createPages = async ({ graphql, actions }) => {
 
     // Posts and Pages created by markdown (from blog and pages directory)
     const contentMarkdown = result.data.files.edges
-
     // Total of posts (only posts, no pages)
     // It will be increase by the next loop
     let postsTotal = 0

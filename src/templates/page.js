@@ -3,9 +3,9 @@ import { graphql } from 'gatsby'
 import TitlePage from '../components/TitlePage'
 import SEO from '../components/seo'
 import MyMapComponent from '../components/Maps'
+import Certificates from '../components/Certificates'
 import { globalHistory } from '@reach/router'
 import Footer from '../components/Footer'
-
 import * as S from '../components/Content/styled'
 
 const Maps = () => {
@@ -31,7 +31,27 @@ const Maps = () => {
     )
 }
 
+const CertificatesPageCheck = () => {
+    console.log(globalHistory.location.pathname)
+    return (
+        <div
+            style={{
+                display:
+                    globalHistory.location.pathname === '/en/certificate'
+                        ? 'block'
+                        : globalHistory.location.pathname === '/sertifika'
+                            ? 'block'
+                            : 'none',
+            }}
+        >
+            <Certificates />
+        </div>
+    )
+}
+
 const Page = props => {
+    // console.log("next")
+    // console.log(props)
     const post = props.data.markdownRemark
     return (
         <div
@@ -78,6 +98,7 @@ const Page = props => {
                     ></div>
                 </S.Content>
                 <Maps />
+                <CertificatesPageCheck />
             </div>
             <Footer />
         </div>

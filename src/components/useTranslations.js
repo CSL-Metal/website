@@ -43,6 +43,7 @@ const query = graphql`
                         toRead
                         catalog
                         next
+                        documents
                         prev
                         product
                         size
