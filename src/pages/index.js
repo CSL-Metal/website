@@ -35,7 +35,14 @@ const Index = ({ data: { listImages, catalogues } }) => {
             saveAs(pdf, 'CSL_CATALOGUE.pdf')
         }
     }
-    listImages.edges.map(item => { if (item.node.childImageSharp.fluid.src.includes("Cover_1_tr") && locale === "tr") { image = item.node.childImageSharp.fluid } else if (item.node.childImageSharp.fluid.src.includes("Cover_1_en") && locale === "en") { image = item.node.childImageSharp.fluid } })
+    listImages.edges.map(item => {
+        if (item.node.childImageSharp.fluid.src.includes("Cover_1_tr") && locale === "tr") {
+            image = item.node.childImageSharp.fluid
+        } else if (item.node.childImageSharp.fluid.src.includes("Cover_1_en") && locale === "en") {
+            image = item.node.childImageSharp.fluid
+        }
+    }
+    )
     return (
         <div
             style={{
@@ -69,9 +76,6 @@ const Index = ({ data: { listImages, catalogues } }) => {
                 <TitlePage text={ourimages} />
                 <hr style={{ margin: `2rem 0` }} />
                 <FacilityImages />
-                <TitlePage text={documents} />
-                <hr style={{ margin: `2rem 0` }} />
-                <Certificates />
             </div>
             <Footer />
         </div>

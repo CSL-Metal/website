@@ -6,7 +6,6 @@ import React from 'react'
 
 const Certificates = () => {
     const { listImages } = useStaticQuery(query)
-    console.log(listImages)
     return (
         <div style={{
             display: 'flex',
