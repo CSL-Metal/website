@@ -5,7 +5,6 @@ import SEO from '../components/seo'
 import MyMapComponent from '../components/Maps'
 import { globalHistory } from '@reach/router'
 import Footer from '../components/Footer'
-
 import * as S from '../components/Content/styled'
 
 const Maps = () => {
@@ -32,6 +31,8 @@ const Maps = () => {
 }
 
 const Page = props => {
+    console.log("next")
+    console.log(props)
     const post = props.data.markdownRemark
     return (
         <div

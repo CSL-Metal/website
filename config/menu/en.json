@@ -9,6 +9,10 @@
             "link": "/about"
         },
         {
+            "name": "Certificates",
+            "link": "/certificates"
+        },
+        {
             "name": "Products",
             "link": "/products"
         },
