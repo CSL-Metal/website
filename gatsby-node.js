@@ -86,7 +86,7 @@ exports.onCreateNode = ({ node, actions }) => {
         const slugFileName = name.split(`.`)[0]
         // Than remove the date if the name has the date info
         const slug =
-            slugFileName.length >= 12 ? slugFileName.slice(12) : slugFileName
+            slugFileName.length >= 12 ? slugFileName.slice(11) : slugFileName
 
         // Adding the nodes on GraphQL for each post as "fields"
         createNodeField({ node, name: `slug`, value: slug })
